@@ -9,7 +9,7 @@ PHP version 8
 
 * Full name: `\Whatis\WBAPI\Skeleton\BaseData`
 * This class implements:
-[`\Whatis\WBAPI\Skeleton\ArrayAccess`](./ArrayAccess.md), [`\Whatis\WBAPI\Skeleton\Iterator`](./Iterator.md)
+[`\ArrayAccess`](../../../ArrayAccess.md), [`\Iterator`](../../../Iterator.md)
 * This class is an **Abstract class**
 
 **See Also:**
