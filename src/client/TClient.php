@@ -65,18 +65,23 @@ trait TClient
      * @param string $method Метод
      * @param string $uri    URI запроса
      * @param array  $data   Данные
+     * @param array  $query  Данные для uri данных GET
      *
      * @return array
      */
     public function request(
         string $method,
         string $uri,
-        array $data = []
+        array $data = [],
+        array $query = []
     ): array {
         $response = $this->client->request(
-            $method, $uri, $method === 'GET'
-                ? [RequestOptions::QUERY => $data]
-                : [RequestOptions::JSON => $data]
+            $method, $uri, $method === 'GET' ? [
+                RequestOptions::QUERY => array_merge($data, $query)
+            ] : [
+                RequestOptions::QUERY => $query,
+                RequestOptions::JSON => $data
+            ]
         );
 
         $answer = $response->getBody()->getContents();
