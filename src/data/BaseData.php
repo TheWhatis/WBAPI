@@ -15,7 +15,7 @@
 
 namespace Whatis\WBAPI\Skeleton\Data;
 
-use Whatis\WBAPI\Support;
+use Whatis\WBAPI\Skeleton\Support;
 
 /**
  * Абстрактный класс для работы с

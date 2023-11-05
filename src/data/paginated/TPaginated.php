@@ -14,9 +14,6 @@
 
 namespace Whatis\WBAPI\Skeleton\Data;
 
-use Whatis\WBAPI\Support;
-use Generator;
-
 /**
  * Трейт, реализующий основные
  * методы интерфейса `IPaginated`
@@ -36,9 +33,9 @@ trait TPaginated
      * получения данных из wildberries api,
      * которые разбиты на пакеты
      *
-     * @return Generator
+     * @return \Generator
      */
-    public function asGenerator(): Generator
+    public function asGenerator(): \Generator
     {
         yield $this;
         while ($this->getNext() !== null && count($this->next())) {
