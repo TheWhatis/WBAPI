@@ -44,17 +44,17 @@ trait TClient
     /**
      * Тип клиента
      *
-     * @var ClientType
+     * @var ServiceType
      */
-    protected ClientType $type;
+    protected ServiceType $type;
 
     /**
      * Иницилизация клиента
      *
-     * @param string     $token Токен Wildberries
-     * @param ClientType $type  Тип клиента
+     * @param string      $token Токен Wildberries
+     * @param ServiceType $type  Тип сервиса
      */
-    public function __construct(string $token, ClientType $type)
+    public function __construct(string $token, ServiceType $type)
     {
         $this->type = $type;
         $this->client = new GuzzleClient(
@@ -71,11 +71,11 @@ trait TClient
     }
 
     /**
-     * Получить тип клиента
+     * Получить тип сервиса
      *
-     * @return ClientType
+     * @return ServiceType
      */
-    public function getType(): ClientType
+    public function getType(): ServiceType
     {
         return $this->type;
     }

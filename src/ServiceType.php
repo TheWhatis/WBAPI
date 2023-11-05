@@ -1,7 +1,7 @@
 <?php
 /**
  * Файл с перечислением
- * типа клиента
+ * типа сервиса
  *
  * PHP version 8
  *
@@ -16,7 +16,7 @@ namespace Whatis\WBAPI\Skeleton;
 
 /**
  * Перечисление типа
- * клиента
+ * сервиса
  *
  * PHP version 8
  *
@@ -26,7 +26,7 @@ namespace Whatis\WBAPI\Skeleton;
  * @license  unlicense
  * @link     https://github.com/TheWhatis/wb-api-skeleton
  */
-enum ClientType: string
+enum ServiceType: string
 {
     /**
      * Стандартный тип клиента

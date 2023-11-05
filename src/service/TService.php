@@ -56,9 +56,9 @@ trait TService
      * Получить тип сервиса
      * (стандарт или статистика)
      *
-     * @return ClientType
+     * @return ServiceType
      */
-    abstract public static function getType(): ClientType;
+    abstract public static function getType(): ServiceType;
 
     /**
      * Воспроизвести запрос

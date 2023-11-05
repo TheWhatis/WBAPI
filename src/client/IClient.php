@@ -31,18 +31,18 @@ interface IClient
     /**
      * Иницилизация клиента
      *
-     * @param string     $token Токен Wildberries
-     * @param ClientType $type  Тип клиента
+     * @param string      $token Токен Wildberries
+     * @param ServiceType $type  Тип сервиса
      */
-    public function __construct(string $token, ClientType $type);
+    public function __construct(string $token, ServiceType $type);
 
     /**
      * Получить тип клиента
      *
-     * @return ClientType
+     * @return ServiceType
      */
-    public function getType(): ClientType;
-    
+    public function getType(): ServiceType;
+
     /**
      * Выполнить запрос к wb api
      *
