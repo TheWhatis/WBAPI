@@ -236,7 +236,7 @@
 которые разбиты на пакеты</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_count">count()</a>
+    <a href="classes/Whatis-WBAPI-Skeleton-Support-Countable.html#method_count">count()</a>
     <span>
                                 &nbsp;: int    </span>
 </dt>
@@ -262,6 +262,35 @@
                                 &nbsp;: void    </span>
 </dt>
 <dd>Перейти к следующей позиции в массиве</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetExists">offsetExists()</a>
+    <span>
+                                &nbsp;: bool    </span>
+</dt>
+<dd>Проверить есть ли значение
+в массиве</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetGet">offsetGet()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Получить значение</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetSet">offsetSet()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Установить новое значение</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetUnset">offsetUnset()</a>
+    <span>
+                                &nbsp;: void    </span>
+</dt>
+<dd>Удалить значение из массива</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_rewind">rewind()</a>
@@ -390,7 +419,7 @@
 >
     <h4 class="phpdocumentor-element__name" id="method_count">
         count()
-        <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_count" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Whatis-WBAPI-Skeleton-Support-Countable.html#method_count" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
@@ -514,6 +543,196 @@
         </div>
     
     
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_offsetExists">
+        offsetExists()
+        <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetExists" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/support/ArrayAccess.php"><a href="files/src-support-arrayaccess.html"><abbr title="src/support/ArrayAccess.php">ArrayAccess.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">78</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Проверить есть ли значение
+в массиве</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">offsetExists</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">bool</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$offset</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Ключ</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">bool</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_offsetGet">
+        offsetGet()
+        <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetGet" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/support/ArrayAccess.php"><a href="files/src-support-arrayaccess.html"><abbr title="src/support/ArrayAccess.php">ArrayAccess.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">102</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Получить значение</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">offsetGet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$offset</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Ключ</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_offsetSet">
+        offsetSet()
+        <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetSet" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/support/ArrayAccess.php"><a href="files/src-support-arrayaccess.html"><abbr title="src/support/ArrayAccess.php">ArrayAccess.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">60</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Установить новое значение</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">offsetSet</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$value</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$offset</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Ключ</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$value</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Значение</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_offsetUnset">
+        offsetUnset()
+        <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetUnset" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/support/ArrayAccess.php"><a href="files/src-support-arrayaccess.html"><abbr title="src/support/ArrayAccess.php">ArrayAccess.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">90</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Удалить значение из массива</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">offsetUnset</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">mixed&nbsp;</span><span class="phpdocumentor-signature__argument__name">$offset</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$offset</span>
+                : <span class="phpdocumentor-signature__argument__return-type">mixed</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Ключ</p>
+</section>
+
+            </dd>
+            </dl>
+
     
 
     
@@ -738,10 +957,14 @@
                 <ul class="phpdocumentor-list -clean">
                                             <li><a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method___construct">__construct()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-Skeleton-Data-TPaginated.html#method_asGenerator">asGenerator()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_count">count()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-Skeleton-Support-Countable.html#method_count">count()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_current">current()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_key">key()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_next">next()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetExists">offsetExists()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetGet">offsetGet()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetSet">offsetSet()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetUnset">offsetUnset()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_rewind">rewind()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method_toArray">toArray()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_valid">valid()</a></li>

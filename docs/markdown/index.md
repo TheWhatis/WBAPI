@@ -76,8 +76,8 @@ This is an automatically generated documentation for **Documentation**.
 | Trait | Description |
 |-------|-------------|
 | [`ArrayAccess`](./classes/Whatis/WBAPI/Skeleton/Support/ArrayAccess.md) | Трейт реализующий ArrayAccess|
-| [`ArrayAccess`](./classes/Whatis/WBAPI/Skeleton/Support/ArrayAccess.md) | Трейт реализующий Countable|
 | [`AssocIterator`](./classes/Whatis/WBAPI/Skeleton/Support/AssocIterator.md) | Трейт реализующий Iterator|
+| [`Countable`](./classes/Whatis/WBAPI/Skeleton/Support/Countable.md) | Трейт реализующий Countable|
 
 
 

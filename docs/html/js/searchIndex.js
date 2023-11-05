@@ -163,7 +163,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess",
             "name": "ArrayAccess",
-            "summary": "\u0422\u0440\u0435\u0439\u0442\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\u0020Countable",
+            "summary": "\u0422\u0440\u0435\u0439\u0442\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\u0020ArrayAccess",
             "url": "classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess\u003A\u003AoffsetSet\u0028\u0029",
@@ -216,10 +216,15 @@ Search.appendIndex(
             "summary": "\u041F\u0435\u0440\u0435\u0439\u0442\u0438\u0020\u043A\u0020\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0439\u0020\u043F\u043E\u0437\u0438\u0446\u0438\u0438\u0020\u0432\u0020\u043C\u0430\u0441\u0441\u0438\u0432\u0435",
             "url": "classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_next"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess\u003A\u003Acount\u0028\u0029",
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\Countable",
+            "name": "Countable",
+            "summary": "\u0422\u0440\u0435\u0439\u0442\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\u0020Countable",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-Countable.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\Countable\u003A\u003Acount\u0028\u0029",
             "name": "count",
             "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u043D\u043E\u0432\u043E\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435",
-            "url": "classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_count"
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-Countable.html#method_count"
         },                {
             "fqsen": "\\",
             "name": "\\",

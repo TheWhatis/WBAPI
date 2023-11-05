@@ -25,6 +25,26 @@ PHP version 8
 ## Inherited methods
 
 
+### count
+
+Установить новое значение
+
+```php
+public count(): int
+```
+
+
+
+
+
+
+
+
+
+
+
+***
+
 ### __construct
 
 Иницилизация данных
@@ -71,12 +91,12 @@ public toArray(): array
 
 ***
 
-### count
+### offsetSet
 
 Установить новое значение
 
 ```php
-public count(): int
+public offsetSet(mixed $offset, mixed $value): void
 ```
 
 
@@ -85,6 +105,92 @@ public count(): int
 
 
 
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$offset` | **mixed** | Ключ |
+| `$value` | **mixed** | Значение |
+
+
+
+
+***
+
+### offsetExists
+
+Проверить есть ли значение
+в массиве
+
+```php
+public offsetExists(mixed $offset): bool
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$offset` | **mixed** | Ключ |
+
+
+
+
+***
+
+### offsetUnset
+
+Удалить значение из массива
+
+```php
+public offsetUnset(mixed $offset): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$offset` | **mixed** | Ключ |
+
+
+
+
+***
+
+### offsetGet
+
+Получить значение
+
+```php
+public offsetGet(mixed $offset): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$offset` | **mixed** | Ключ |
 
 
 
