@@ -1,6 +1,21 @@
 Search.appendIndex(
     [
                 {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\BaseData",
+            "name": "BaseData",
+            "summary": "\u0410\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u044B\u0439\u0020\u043A\u043B\u0430\u0441\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0431\u043E\u0442\u044B\u0020\u0441\n\u0434\u0430\u043D\u043D\u044B\u043C\u0438\u0020wildberries\u0020api",
+            "url": "classes/Whatis-WBAPI-Skeleton-BaseData.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\BaseData\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u0434\u0430\u043D\u043D\u044B\u0445",
+            "url": "classes/Whatis-WBAPI-Skeleton-BaseData.html#method___construct"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\BaseData\u003A\u003AtoArray\u0028\u0029",
+            "name": "toArray",
+            "summary": "\u041A\u043E\u043D\u0432\u0435\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0020\u0432\u0020\u043C\u0430\u0441\u0441\u0438\u0432",
+            "url": "classes/Whatis-WBAPI-Skeleton-BaseData.html#method_toArray"
+        },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\BaseClient",
             "name": "BaseClient",
             "summary": "\u0410\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u044B\u0439\u0020\u043A\u043B\u0430\u0441\u0441\u0020\u043A\u043B\u0438\u0435\u043D\u0442\u0430\n\u0434\u043B\u044F\u0020wildberries\u0020api",
@@ -106,6 +121,61 @@ Search.appendIndex(
             "summary": "\u0421\u0435\u0440\u0432\u0438\u0441\u0020\u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043A\u0438\u0020\u0441\n\u0442\u043E\u043A\u0435\u043D\u043E\u043C\u0020\u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043A\u0438",
             "url": "classes/Whatis-WBAPI-Skeleton-ServiceType.html#enumcase_Statistics"
         },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess",
+            "name": "ArrayAccess",
+            "summary": "\u0422\u0440\u0435\u0439\u0442\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\u0020ArrayAccess",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess\u003A\u003AoffsetSet\u0028\u0029",
+            "name": "offsetSet",
+            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u043D\u043E\u0432\u043E\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetSet"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess\u003A\u003AoffsetExists\u0028\u0029",
+            "name": "offsetExists",
+            "summary": "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C\u0020\u0435\u0441\u0442\u044C\u0020\u043B\u0438\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\n\u0432\u0020\u043C\u0430\u0441\u0441\u0438\u0432\u0435",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetExists"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess\u003A\u003AoffsetUnset\u0028\u0029",
+            "name": "offsetUnset",
+            "summary": "\u0423\u0434\u0430\u043B\u0438\u0442\u044C\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435\u0020\u0438\u0437\u0020\u043C\u0430\u0441\u0441\u0438\u0432\u0430",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetUnset"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess\u003A\u003AoffsetGet\u0028\u0029",
+            "name": "offsetGet",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_offsetGet"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\AssocIterator",
+            "name": "AssocIterator",
+            "summary": "\u0422\u0440\u0435\u0439\u0442\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\u0020Iterator",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\AssocIterator\u003A\u003Arewind\u0028\u0029",
+            "name": "rewind",
+            "summary": "\u0412\u0435\u0440\u043D\u0443\u0442\u044C\u0020\u043F\u043E\u0437\u0438\u0446\u0438\u044E\u0020\u0432\u0020\u043D\u0430\u0447\u0430\u043B\u043E",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_rewind"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\AssocIterator\u003A\u003Avalid\u0028\u0029",
+            "name": "valid",
+            "summary": "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C\u0020\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442\u0020\u043B\u0438\u0020\u044D\u043B\u0435\u043C\u0435\u043D\u0442\n\u043F\u043E\u0020\u043F\u043E\u0437\u0438\u0446\u0438\u0438\u0020\u0432\u0020\u043C\u0430\u0441\u0441\u0438\u0432\u0435",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_valid"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\AssocIterator\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0442\u0435\u043A\u0443\u0449\u0438\u0439\u0020\u044D\u043B\u0435\u043C\u0435\u043D\u0442",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_current"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\AssocIterator\u003A\u003Akey\u0028\u0029",
+            "name": "key",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043A\u043B\u044E\u0447\u0020\u044D\u043B\u0435\u043C\u0435\u043D\u0442\u0430",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_key"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\AssocIterator\u003A\u003Anext\u0028\u0029",
+            "name": "next",
+            "summary": "\u041F\u0435\u0440\u0435\u0439\u0442\u0438\u0020\u043A\u0020\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0439\u0020\u043F\u043E\u0437\u0438\u0446\u0438\u0438\u0020\u0432\u0020\u043C\u0430\u0441\u0441\u0438\u0432\u0435",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_next"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -125,5 +195,10 @@ Search.appendIndex(
             "name": "Whatis",
             "summary": "",
             "url": "namespaces/whatis.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support",
+            "name": "Support",
+            "summary": "",
+            "url": "namespaces/whatis-wbapi-skeleton-support.html"
         }            ]
 );

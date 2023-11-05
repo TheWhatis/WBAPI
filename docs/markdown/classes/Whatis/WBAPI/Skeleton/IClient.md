@@ -11,7 +11,7 @@ PHP version 8
 
 **See Also:**
 
-* https://github.com/TheWhatis/wb-api-skeleton - 
+* https://github.com/TheWhatis/WBApiSkeleton - 
 
 
 
