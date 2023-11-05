@@ -68,7 +68,7 @@ public static getType(): \Whatis\WBAPI\Skeleton\ServiceType
 Воспроизвести запрос
 
 ```php
-public request(string $method, string $uri, array $data): array
+public request( $args): array
 ```
 
 
@@ -82,9 +82,7 @@ public request(string $method, string $uri, array $data): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$method` | **string** | Метод |
-| `$uri` | **string** | URI запроса |
-| `$data` | **array** | Данные |
+| `$args` | **** | Аргументы для запроса Request |
 
 
 

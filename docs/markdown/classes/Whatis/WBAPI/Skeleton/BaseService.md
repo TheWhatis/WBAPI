@@ -55,7 +55,7 @@ public __construct(string|\Whatis\WBAPI\Skeleton\IClient $tokenOrClient): mixed
 Воспроизвести запрос
 
 ```php
-public request(string $method, string $uri, array $data): array
+public request( $args): array
 ```
 
 
@@ -69,9 +69,7 @@ public request(string $method, string $uri, array $data): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$method` | **string** | Метод |
-| `$uri` | **string** | URI запроса |
-| `$data` | **array** | Данные |
+| `$args` | **** | Аргументы для запроса Request |
 
 
 
