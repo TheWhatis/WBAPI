@@ -39,9 +39,9 @@ interface IPaginated
      * Получить следующий пакет
      * данных
      *
-     * @return BaseData
+     * @return static
      */
-    public function next(): BaseData;
+    public function next(): static;
 
     /**
      * Получить опцию `next` для следующего

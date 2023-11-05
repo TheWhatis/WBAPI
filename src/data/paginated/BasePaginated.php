@@ -30,7 +30,7 @@ namespace Whatis\WBAPI\Skeleton\Data;
  * @license  unlicense
  * @link     https://github.com/TheWhatis/WBApiSkeleton
  */
-abstract class BasePaginated implements IPaginated
+abstract class BasePaginated extends BaseCollection implements IPaginated
 {
     use TPaginated;
 }
