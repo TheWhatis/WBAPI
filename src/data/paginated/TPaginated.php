@@ -38,7 +38,7 @@ trait TPaginated
     public function asGenerator(): \Generator
     {
         yield $this;
-        while ($this->getNext() !== null && count($this->next())) {
+        while ($this->getNext() !== null && count($this->nextData())) {
             yield $this;
         }
     }

@@ -41,7 +41,7 @@ interface IPaginated
      *
      * @return static
      */
-    public function next(): static;
+    public function nextData(): static;
 
     /**
      * Получить опцию `next` для следующего
