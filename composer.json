@@ -7,8 +7,7 @@
         "wildberries",
         "php",
         "api",
-        "guzzle",
-        "guzzlehttp",
+        "client",
         "skeleton"
     ],
     "require": {
@@ -29,7 +28,8 @@
     "authors": [
         {
             "name": "Whatis",
-            "email": "anton-gogo@mail.ru"
+            "email": "anton-gogo@mail.ru",
+            "role": "Developer"
         }
     ]
 }
