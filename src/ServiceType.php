@@ -29,13 +29,13 @@ namespace Whatis\WBAPI\Skeleton;
 enum ServiceType: string
 {
     /**
-     * Стандартный тип клиента
+     * Стандартный тип сервиса
      * со стандартным токеном
      */
     case Suppliers = 'suppliers-api.wildberries.ru';
 
     /**
-     * Клиент статистики с
+     * Сервис статистики с
      * токеном статистики
      */
     case Statistics = 'statistics-api.wildberries.ru';
