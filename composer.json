@@ -27,6 +27,10 @@
                 "src/client",
                 "src/service"
             ],
+            "Whatis\\WBAPI\\Skeleton\\Data\\": [
+                "src/data",
+                "src/data/paginated"
+            ],
             "Whatis\\WBAPI\\Skeleton\\Support\\": "src/support"
         }
     },
