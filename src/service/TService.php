@@ -53,14 +53,6 @@ trait TService
     }
 
     /**
-     * Получить тип сервиса
-     * (стандарт или статистика)
-     *
-     * @return ServiceType
-     */
-    abstract public static function getType(): ServiceType;
-
-    /**
      * Воспроизвести запрос
      *
      * @param string $method Метод

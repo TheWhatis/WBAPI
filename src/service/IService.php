@@ -34,6 +34,13 @@ interface IService
     public function __construct(string|IClient $tokenOrClient);
 
     /**
+     * Получить тип сервиса
+     *
+     * @return ServiceType
+     */
+    public static function getType(): ServiceType;
+
+    /**
      * Воспроизвести запрос
      *
      * @param string $method Метод

@@ -42,13 +42,6 @@ trait TClient
     public GuzzleClient $client;
 
     /**
-     * Тип клиента
-     *
-     * @var ServiceType
-     */
-    protected ServiceType $type;
-
-    /**
      * Иницилизация клиента
      *
      * @param string      $token Токен Wildberries
@@ -68,16 +61,6 @@ trait TClient
                 ]
             ]
         );
-    }
-
-    /**
-     * Получить тип сервиса
-     *
-     * @return ServiceType
-     */
-    public function getType(): ServiceType
-    {
-        return $this->type;
     }
 
     /**

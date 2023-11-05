@@ -37,13 +37,6 @@ interface IClient
     public function __construct(string $token, ServiceType $type);
 
     /**
-     * Получить тип клиента
-     *
-     * @return ServiceType
-     */
-    public function getType(): ServiceType;
-
-    /**
      * Выполнить запрос к wb api
      *
      * @param string $method Метод
