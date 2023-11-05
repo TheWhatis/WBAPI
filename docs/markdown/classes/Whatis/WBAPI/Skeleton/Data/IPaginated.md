@@ -26,7 +26,7 @@ PHP version 8
 данных
 
 ```php
-public next(): \Whatis\WBAPI\Skeleton\Data\BaseData
+public next(): static
 ```
 
 

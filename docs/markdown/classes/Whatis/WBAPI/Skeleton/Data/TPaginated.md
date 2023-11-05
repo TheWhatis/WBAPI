@@ -5,13 +5,6 @@
 Трейт, реализующий основные
 методы интерфейса `IPaginated`
 
-Чтобы изменить название свойства,
-которое будет использоваться для
-работы с массивом (по-умолчанию
-\- `array`), необходимо
-установить свойство
-`$property`
-
 PHP version 8
 
 * Full name: `\Whatis\WBAPI\Skeleton\Data\TPaginated`
@@ -42,33 +35,6 @@ public asGenerator(): \Generator
 
 
 
-
-
-
-
-***
-
-### setNext
-
-Установить опцию `next` для следующего
-пакета данных
-
-```php
-protected setNext(?int $next): void
-```
-
-
-
-
-* This method is **abstract**.
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$next` | **?int** | Опция `next` |
 
 
 

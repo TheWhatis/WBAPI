@@ -101,6 +101,9 @@
         <h2 class="phpdocumentor-content__title">
     BasePaginated
 
+        <span class="phpdocumentor-element__extends">
+        extends <a href="classes/Whatis-WBAPI-Skeleton-Data-BaseCollection.html"><abbr title="\Whatis\WBAPI\Skeleton\Data\BaseCollection">BaseCollection</abbr></a>
+    </span>
     
             <div class="phpdocumentor-element__package">
             in package
@@ -217,6 +220,13 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method___construct">__construct()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Иницилизация данных</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Whatis-WBAPI-Skeleton-Data-TPaginated.html#method_asGenerator">asGenerator()</a>
     <span>
                                 &nbsp;: <abbr title="\Generator">Generator</abbr>    </span>
@@ -225,13 +235,12 @@
 получения данных из wildberries api,
 которые разбиты на пакеты</dd>
 
-            <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Whatis-WBAPI-Skeleton-Data-TPaginated.html#method_setNext">setNext()</a>
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method_toArray">toArray()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
 </dt>
-<dd>Установить опцию `next` для следующего
-пакета данных</dd>
+<dd>Конвертировать в массив</dd>
 
     </dl>
 
@@ -252,6 +261,50 @@
         class="phpdocumentor-element
             -method
             -public
+                        -abstract                                "
+>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/data/BaseData.php"><a href="files/src-data-basedata.html"><abbr title="src/data/BaseData.php">BaseData.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">42</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Иницилизация данных</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$options</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$options</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Опции</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
                                                         "
 >
     <h4 class="phpdocumentor-element__name" id="method_asGenerator">
@@ -262,7 +315,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/data/paginated/TPaginated.php"><a href="files/src-data-paginated-tpaginated.html"><abbr title="src/data/paginated/TPaginated.php">TPaginated.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">62</span>
+    <span class="phpdocumentor-element-found-in__line">41</span>
 
     </aside>
 
@@ -289,47 +342,38 @@
                     <article
         class="phpdocumentor-element
             -method
-            -protected
+            -public
                         -abstract                                "
 >
-    <h4 class="phpdocumentor-element__name" id="method_setNext">
-        setNext()
-        <a href="classes/Whatis-WBAPI-Skeleton-Data-TPaginated.html#method_setNext" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_toArray">
+        toArray()
+        <a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method_toArray" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/data/paginated/TPaginated.php"><a href="files/src-data-paginated-tpaginated.html"><abbr title="src/data/paginated/TPaginated.php">TPaginated.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/data/BaseData.php"><a href="files/src-data-basedata.html"><abbr title="src/data/BaseData.php">BaseData.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">89</span>
+    <span class="phpdocumentor-element-found-in__line">49</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Установить опцию `next` для следующего
-пакета данных</p>
+        <p class="phpdocumentor-summary">Конвертировать в массив</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">setNext</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$next</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+    <span class="phpdocumentor-signature__visibility">public</span>
+    <span class="phpdocumentor-signature__abstract">abstract</span>                <span class="phpdocumentor-signature__name">toArray</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
     
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$next</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int|null</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Опция <code class="prettyprint">next</code></p>
-</section>
-
-            </dd>
-            </dl>
-
+    
     
 
-    
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
+            </section>
+
 </article>
             </section>
 
@@ -444,8 +488,9 @@
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method___construct">__construct()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-Skeleton-Data-TPaginated.html#method_asGenerator">asGenerator()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-Skeleton-Data-TPaginated.html#method_setNext">setNext()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method_toArray">toArray()</a></li>
                                     </ul>
             </li>
                     </ul>

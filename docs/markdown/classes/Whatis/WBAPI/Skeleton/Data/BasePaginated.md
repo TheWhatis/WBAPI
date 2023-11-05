@@ -10,6 +10,7 @@
 PHP version 8
 
 * Full name: `\Whatis\WBAPI\Skeleton\Data\BasePaginated`
+* Parent class: [`\Whatis\WBAPI\Skeleton\Data\BaseCollection`](./BaseCollection.md)
 * This class implements:
 [`\Whatis\WBAPI\Skeleton\Data\IPaginated`](./IPaginated.md)
 * This class is an **Abstract class**
@@ -48,13 +49,12 @@ public asGenerator(): \Generator
 
 ***
 
-### setNext
+### __construct
 
-Установить опцию `next` для следующего
-пакета данных
+Иницилизация данных
 
 ```php
-protected setNext(?int $next): void
+public __construct(array $options): mixed
 ```
 
 
@@ -68,7 +68,27 @@ protected setNext(?int $next): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$next` | **?int** | Опция `next` |
+| `$options` | **array** | Опции |
+
+
+
+
+***
+
+### toArray
+
+Конвертировать в массив
+
+```php
+public toArray(): array
+```
+
+
+
+
+* This method is **abstract**.
+
+
 
 
 
