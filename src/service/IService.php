@@ -8,7 +8,7 @@
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/wb-api-skeleton
+ * @link     https://github.com/TheWhatis/WBApiSkeleton
  */
 
 namespace Whatis\WBAPI\Skeleton;
@@ -22,7 +22,7 @@ namespace Whatis\WBAPI\Skeleton;
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/wb-api-skeleton
+ * @link     https://github.com/TheWhatis/WBApiSkeleton
  */
 interface IService
 {
