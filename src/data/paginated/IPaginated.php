@@ -37,7 +37,7 @@ interface IPaginated
 {
     /**
      * Получить следующий пакет
-     * заказов
+     * данных
      *
      * @return BaseData
      */
