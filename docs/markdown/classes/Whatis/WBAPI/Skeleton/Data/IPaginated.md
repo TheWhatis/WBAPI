@@ -20,13 +20,13 @@ PHP version 8
 ## Methods
 
 
-### next
+### nextData
 
 Получить следующий пакет
 данных
 
 ```php
-public next(): static
+public nextData(): static
 ```
 
 
