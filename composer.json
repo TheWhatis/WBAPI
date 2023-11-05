@@ -1,5 +1,6 @@
 {
     "name": "whatis/wb-api-skeleton",
+    "version": "1.1.9",
     "description": "Скелет для работы с wildberries api",
     "type": "library",
     "keywords": [
@@ -22,7 +23,7 @@
     "autoload": {
         "psr-4": {
             "Whatis\\WBAPI\\Skeleton\\": "src/",
-            "Whatis\\WBAPI\\Skeleton\\": "src/client",
+            "Whatis\\WBAPI\\Skeleton\\": "src/client"
         }
     },
     "authors": [
@@ -31,5 +32,14 @@
             "email": "anton-gogo@mail.ru",
             "role": "Developer"
         }
-    ]
+    ],
+    "scripts": {
+        "phpdoc-html": [
+            "phpdoc -d src -t docs/html"
+        ],
+        "phpdoc-markdown": [
+            "phpdoc -d src -t docs/markdown --template=vendor/saggre/phpdocumentor-markdown/themes/markdown"
+        ],
+        "phpdoc": [ "@phpdoc-html", "@phpdoc-markdown" ]
+    }
 }
