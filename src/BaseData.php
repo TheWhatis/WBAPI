@@ -27,7 +27,7 @@ namespace Whatis\WBAPI\Skeleton;
  * @license  unlicense
  * @link     https://github.com/TheWhatis/WBApiSkeleton
  */
-abstract class BaseData implements ArrayAccess, Iterator
+abstract class BaseData implements \ArrayAccess, \Iterator
 {
     use Support\ArrayAccess;
     use Support\AssocIterator;
