@@ -78,7 +78,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\IPaginated\u003A\u003Anext\u0028\u0029",
             "name": "next",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439\u0020\u043F\u0430\u043A\u0435\u0442\n\u0437\u0430\u043A\u0430\u0437\u043E\u0432",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439\u0020\u043F\u0430\u043A\u0435\u0442\n\u0434\u0430\u043D\u043D\u044B\u0445",
             "url": "classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_next"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\IPaginated\u003A\u003AgetNext\u0028\u0029",

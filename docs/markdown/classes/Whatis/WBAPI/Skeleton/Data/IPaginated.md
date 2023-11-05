@@ -23,7 +23,7 @@ PHP version 8
 ### next
 
 Получить следующий пакет
-заказов
+данных
 
 ```php
 public next(): \Whatis\WBAPI\Skeleton\Data\BaseData
