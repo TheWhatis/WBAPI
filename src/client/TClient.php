@@ -14,8 +14,12 @@
 
 namespace Whatis\WBAPI\Skeleton;
 
-use Whatis\WBAPI\ClientType;
 use GuzzleHttp\Client as GuzzleClient;
+use Http\Adapter\Guzzle6\Client as GuzzleAdapter;
+
+use GuzzleHttp\Middleware;
+use GuzzleHttp\Psr7\Request;
+use GuzzleHttp\RequestOptions;
 
 /**
  * Трейт, реализующий `IClient`
@@ -55,7 +59,7 @@ trait TClient
         $this->type = $type;
         $this->client = new GuzzleClient(
             [
-                'base_uri' => "https://{$type->value}",
+                'base_uri' => "https://{$type->value}/api/",
                 'headers' => [
                     'Host' => $type->value,
                     'Authorization' => $token,
@@ -90,35 +94,21 @@ trait TClient
         string $uri,
         array $data
     ): array {
-        $body = json_encode($data);
+        $response = $this->client->request(
+            $method, $uri, $method === 'GET'
+                ? [RequestOptions::QUERY => $data]
+                : [RequestOptions::JSON => $data]
+        );
+
+        $answer = $response->getBody()->getContents();
+        $answer = json_decode($answer, true);
         if (JSON_ERROR_NONE !== json_last_error()) {
             throw new \RuntimeException(
-                'Json encode error:' . json_last_error_msg()
+                'Invalid json response: ' .
+                    $answer
             );
         }
 
-        $response = $this->client->request(
-            $method, $uri, ['body' => $body]
-        );
-
-        if ($response->getStatusCode() === 200) {
-            $decodedResponseContents = json_decode(
-                $response->getBody()->getContents(), true
-            );
-            if (JSON_ERROR_NONE !== json_last_error()) {
-                throw new \RuntimeException(
-                    'Invalid json response: ' .
-                        $decodedResponseContents
-                );
-            }
-
-            return $decodedResponseContents;
-        }
-
-        throw new \RuntimeException(
-            'Request sended with status code: ' .
-                $response->getStatusCode() . ' and contents' .
-                $response->getBody()->getContents()
-        );
+        return $answer;
     }
 }

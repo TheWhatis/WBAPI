@@ -32,4 +32,19 @@ interface IService
      * @param string|IClient $tokenOrClient Токен
      */
     public function __construct(string|IClient $tokenOrClient);
+
+    /**
+     * Воспроизвести запрос
+     *
+     * @param string $method Метод
+     * @param string $uri    URI запроса
+     * @param array  $data   Данные
+     *
+     * @return array
+     */
+    public function request(
+        string $method,
+        string $uri,
+        array $data
+    ): array;
 }
