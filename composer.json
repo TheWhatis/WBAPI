@@ -26,7 +26,8 @@
                 "src/",
                 "src/client",
                 "src/service"
-            ]
+            ],
+            "Whatis\\WBAPI\\Skeleton\\Support\\": "src/support"
         }
     },
     "authors": [
