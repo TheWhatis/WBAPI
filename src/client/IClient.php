@@ -6,7 +6,7 @@
  * PHP version 8
  *
  * @category Skeleton
- * @package  WbApi
+ * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
  * @link     https://github.com/TheWhatis/wb-api-skeleton
@@ -21,7 +21,7 @@ namespace Whatis\WBAPI\Skeleton;
  * PHP version 8
  *
  * @category Skeleton
- * @package  WbApi
+ * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
  * @link     https://github.com/TheWhatis/wb-api-skeleton
