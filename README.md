@@ -1,4 +1,4 @@
-# Классы-помощники для работы с массивами
+# Скелет для работы с wildberries api
 ## Документация
   * [Documentation](https://github.com/TheWhatis/WBApiSkeleton/tree/master/docs/markdown/index.md "Documentation")
 ## Установка
