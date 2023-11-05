@@ -33,7 +33,7 @@ namespace Whatis\WBAPI\Skeleton\Support;
  * @license  unlicense
  * @link     https://github.com/TheWhatis/Settings
  */
-trait ArrayAccess
+trait Countable
 {
     /**
      * Стандартное название свойства
