@@ -13,7 +13,7 @@
     ],
     "require": {
         "php": "^8.2",
-        "guzzlehttp/guzzle": "*"
+        "guzzlehttp/guzzle": "^7.8"
     },
     "require-dev": {
         "php": "^8.2",
@@ -22,8 +22,11 @@
     "license": "unlicense",
     "autoload": {
         "psr-4": {
-            "Whatis\\WBAPI\\Skeleton\\": "src/",
-            "Whatis\\WBAPI\\Skeleton\\": "src/client"
+            "Whatis\\WBAPI\\Skeleton\\": [
+                "src/",
+                "src/client",
+                "src/service"
+            ]
         }
     },
     "authors": [
