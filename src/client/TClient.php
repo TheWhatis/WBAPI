@@ -15,10 +15,6 @@
 namespace Whatis\WBAPI\Skeleton;
 
 use GuzzleHttp\Client as GuzzleClient;
-use Http\Adapter\Guzzle6\Client as GuzzleAdapter;
-
-use GuzzleHttp\Middleware;
-use GuzzleHttp\Psr7\Request;
 use GuzzleHttp\RequestOptions;
 
 /**
