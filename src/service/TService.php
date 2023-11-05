@@ -55,17 +55,12 @@ trait TService
     /**
      * Воспроизвести запрос
      *
-     * @param string $method Метод
-     * @param string $uri    URI запроса
-     * @param array  $data   Данные
+     * @param ...$args Аргументы для запроса Request
      *
      * @return array
      */
-    public function request(
-        string $method,
-        string $uri,
-        array $data
-    ): array {
-        return $this->client->request($method, $uri, $data);
+    public function request(...$args): array
+    {
+        return $this->client->request(...$args);
     }
 }

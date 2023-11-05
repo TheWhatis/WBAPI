@@ -43,15 +43,9 @@ interface IService
     /**
      * Воспроизвести запрос
      *
-     * @param string $method Метод
-     * @param string $uri    URI запроса
-     * @param array  $data   Данные
+     * @param ...$args Аргументы для запроса Request
      *
      * @return array
      */
-    public function request(
-        string $method,
-        string $uri,
-        array $data
-    ): array;
+    public function request(...$args): array;
 }
