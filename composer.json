@@ -1,6 +1,6 @@
 {
     "name": "whatis/wb-api-skeleton",
-    "version": "1.0.3",
+    "version": "1.0.5",
     "description": "Скелет для работы с wildberries api",
     "type": "library",
     "keywords": [
