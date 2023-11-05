@@ -1,21 +1,6 @@
 Search.appendIndex(
     [
                 {
-            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\BaseData",
-            "name": "BaseData",
-            "summary": "\u0410\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u044B\u0439\u0020\u043A\u043B\u0430\u0441\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0431\u043E\u0442\u044B\u0020\u0441\n\u0434\u0430\u043D\u043D\u044B\u043C\u0438\u0020wildberries\u0020api",
-            "url": "classes/Whatis-WBAPI-Skeleton-BaseData.html"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\BaseData\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u0434\u0430\u043D\u043D\u044B\u0445",
-            "url": "classes/Whatis-WBAPI-Skeleton-BaseData.html#method___construct"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\BaseData\u003A\u003AtoArray\u0028\u0029",
-            "name": "toArray",
-            "summary": "\u041A\u043E\u043D\u0432\u0435\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0020\u0432\u0020\u043C\u0430\u0441\u0441\u0438\u0432",
-            "url": "classes/Whatis-WBAPI-Skeleton-BaseData.html#method_toArray"
-        },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\BaseClient",
             "name": "BaseClient",
             "summary": "\u0410\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u044B\u0439\u0020\u043A\u043B\u0430\u0441\u0441\u0020\u043A\u043B\u0438\u0435\u043D\u0442\u0430\n\u0434\u043B\u044F\u0020wildberries\u0020api",
@@ -60,6 +45,66 @@ Search.appendIndex(
             "name": "Client",
             "summary": "\u041E\u0441\u043D\u043E\u0432\u043D\u043E\u0439\u0020\u043A\u043B\u0430\u0441\u0441\u0020\u043A\u043B\u0438\u0435\u043D\u0442\u0430\nwildberries\u0020api",
             "url": "classes/Whatis-WBAPI-Skeleton-Client.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BaseCollection",
+            "name": "BaseCollection",
+            "summary": "\u0410\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u044B\u0439\u0020\u043A\u043B\u0430\u0441\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0431\u043E\u0442\u044B\u0020\u0441\n\u043A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u044F\u043C\u0438\u0020\u0434\u0430\u043D\u043D\u044B\u0445\u0020wildberries\u0020api",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseCollection.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BaseData",
+            "name": "BaseData",
+            "summary": "\u0410\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u044B\u0439\u0020\u043A\u043B\u0430\u0441\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0431\u043E\u0442\u044B\u0020\u0441\n\u0434\u0430\u043D\u043D\u044B\u043C\u0438\u0020wildberries\u0020api",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseData.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BaseData\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u0434\u0430\u043D\u043D\u044B\u0445",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method___construct"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BaseData\u003A\u003AtoArray\u0028\u0029",
+            "name": "toArray",
+            "summary": "\u041A\u043E\u043D\u0432\u0435\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0020\u0432\u0020\u043C\u0430\u0441\u0441\u0438\u0432",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method_toArray"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BasePaginated",
+            "name": "BasePaginated",
+            "summary": "\u0410\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u044B\u0439\u0020\u043A\u043B\u0430\u0441\u0441,\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\n\u043E\u0441\u043D\u043E\u0432\u043D\u044B\u0435\u0020\u043C\u0435\u0442\u043E\u0434\u044B\u0020\u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430\n\u0060IPaginated\u0060\u0020\u0028\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u0442\n\u0442\u0440\u0435\u0439\u0442\u0020\u0060TPaginated\u0060\u0029",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-BasePaginated.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\IPaginated",
+            "name": "IPaginated",
+            "summary": "\u0418\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438\n\u0434\u0430\u043D\u043D\u044B\u0445,\u0020\u043A\u043E\u0442\u043E\u0440\u044B\u0435\u0020\u0440\u0430\u0437\u0431\u0438\u0442\u044B\n\u043D\u0430\u0020\u043F\u0430\u043A\u0435\u0442\u044B\u0020\u0434\u0430\u043D\u043D\u044B\u0445\u0020\u0438\u0020\u0438\u0445\n\u0432\u043E\u0437\u043C\u043E\u0436\u043D\u043E\u0020\u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043F\u043E\u0440\u0446\u0438\u043E\u043D\u043D\u043E",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\IPaginated\u003A\u003Anext\u0028\u0029",
+            "name": "next",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0438\u0439\u0020\u043F\u0430\u043A\u0435\u0442\n\u0437\u0430\u043A\u0430\u0437\u043E\u0432",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_next"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\IPaginated\u003A\u003AgetNext\u0028\u0029",
+            "name": "getNext",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043E\u043F\u0446\u0438\u044E\u0020\u0060next\u0060\u0020\u0434\u043B\u044F\u0020\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0433\u043E\n\u043F\u0430\u043A\u0435\u0442\u0430\u0020\u0434\u0430\u043D\u043D\u044B\u0445",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_getNext"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\IPaginated\u003A\u003AasGenerator\u0028\u0029",
+            "name": "asGenerator",
+            "summary": "\u0421\u043E\u0437\u0434\u0430\u0442\u044C\u0020\u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0020\u0434\u043B\u044F\u0020\u0446\u0438\u043A\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E\n\u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F\u0020\u0434\u0430\u043D\u043D\u044B\u0445\u0020\u0438\u0437\u0020wildberries\u0020api,\n\u043A\u043E\u0442\u043E\u0440\u044B\u0435\u0020\u0440\u0430\u0437\u0431\u0438\u0442\u044B\u0020\u043D\u0430\u0020\u043F\u0430\u043A\u0435\u0442\u044B",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_asGenerator"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\TPaginated",
+            "name": "TPaginated",
+            "summary": "\u0422\u0440\u0435\u0439\u0442,\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\u0020\u043E\u0441\u043D\u043E\u0432\u043D\u044B\u0435\n\u043C\u0435\u0442\u043E\u0434\u044B\u0020\u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430\u0020\u0060IPaginated\u0060",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-TPaginated.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\TPaginated\u003A\u003AasGenerator\u0028\u0029",
+            "name": "asGenerator",
+            "summary": "\u0421\u043E\u0437\u0434\u0430\u0442\u044C\u0020\u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0020\u0434\u043B\u044F\u0020\u0446\u0438\u043A\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0433\u043E\n\u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u044F\u0020\u0434\u0430\u043D\u043D\u044B\u0445\u0020\u0438\u0437\u0020wildberries\u0020api,\n\u043A\u043E\u0442\u043E\u0440\u044B\u0435\u0020\u0440\u0430\u0437\u0431\u0438\u0442\u044B\u0020\u043D\u0430\u0020\u043F\u0430\u043A\u0435\u0442\u044B",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-TPaginated.html#method_asGenerator"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\TPaginated\u003A\u003AsetNext\u0028\u0029",
+            "name": "setNext",
+            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u043E\u043F\u0446\u0438\u044E\u0020\u0060next\u0060\u0020\u0434\u043B\u044F\u0020\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0433\u043E\n\u043F\u0430\u043A\u0435\u0442\u0430\u0020\u0434\u0430\u043D\u043D\u044B\u0445",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-TPaginated.html#method_setNext"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\BaseService",
             "name": "BaseService",
@@ -123,7 +168,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess",
             "name": "ArrayAccess",
-            "summary": "\u0422\u0440\u0435\u0439\u0442\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\u0020ArrayAccess",
+            "summary": "\u0422\u0440\u0435\u0439\u0442\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\u0020Countable",
             "url": "classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess\u003A\u003AoffsetSet\u0028\u0029",
@@ -176,6 +221,11 @@ Search.appendIndex(
             "summary": "\u041F\u0435\u0440\u0435\u0439\u0442\u0438\u0020\u043A\u0020\u0441\u043B\u0435\u0434\u0443\u044E\u0449\u0435\u0439\u0020\u043F\u043E\u0437\u0438\u0446\u0438\u0438\u0020\u0432\u0020\u043C\u0430\u0441\u0441\u0438\u0432\u0435",
             "url": "classes/Whatis-WBAPI-Skeleton-Support-AssocIterator.html#method_next"
         },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support\\ArrayAccess\u003A\u003Acount\u0028\u0029",
+            "name": "count",
+            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u043D\u043E\u0432\u043E\u0435\u0020\u0437\u043D\u0430\u0447\u0435\u043D\u0438\u0435",
+            "url": "classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_count"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -195,6 +245,11 @@ Search.appendIndex(
             "name": "Whatis",
             "summary": "",
             "url": "namespaces/whatis.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data",
+            "name": "Data",
+            "summary": "",
+            "url": "namespaces/whatis-wbapi-skeleton-data.html"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Support",
             "name": "Support",

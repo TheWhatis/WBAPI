@@ -94,36 +94,39 @@
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/whatis.html">Whatis</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/whatis-wbapi.html">WBAPI</a></li>
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/whatis-wbapi-skeleton.html">Skeleton</a></li>
-            <li class="phpdocumentor-breadcrumb"><a href="namespaces/whatis-wbapi-skeleton-support.html">Support</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/whatis-wbapi-skeleton-data.html">Data</a></li>
     </ul>
 
-    <article class="phpdocumentor-element -trait">
+    <article class="phpdocumentor-element -interface">
         <h2 class="phpdocumentor-content__title">
-    ArrayAccess
+    IPaginated
+                <div class="phpdocumentor-element__package">
+            in
+            <ul class="phpdocumentor-breadcrumbs">
+                                    <li><a href="packages/WBAPI.html">WBAPI</a></li>
+                            </ul>
+        </div>
     </h2>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/support/Countable.php"><a href="files/src-support-countable.html"><abbr title="src/support/Countable.php">Countable.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/data/paginated/IPaginated.php"><a href="files/src-data-paginated-ipaginated.html"><abbr title="src/data/paginated/IPaginated.php">IPaginated.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">36</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Трейт реализующий Countable</p>
+            <p class="phpdocumentor-summary">Интерфейс для реализации
+данных, которые разбиты
+на пакеты данных и их
+возможно получить порционно</p>
 
-    <section class="phpdocumentor-description"><p>Чтобы изменить название свойства,
-которое будет использоваться для
-работы с массивом (по-умолчанию
-- <code class="prettyprint">array</code>), необходимо
-установить свойство
-<code class="prettyprint">$property</code></p>
-<p>PHP version 8</p>
+    <section class="phpdocumentor-description"><p>PHP version 8</p>
 </section>
 
 
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -132,7 +135,7 @@
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
                                                                                 
-                                                 <section class="phpdocumentor-description"><p>Skeleton</p>
+                                                 <section class="phpdocumentor-description"><p>Data</p>
 </section>
 
                                     </dd>
@@ -158,7 +161,7 @@
                     <span class="phpdocumentor-tag__name">link</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                                                        <a class="phpdocumentor-tag-link" href="https://github.com/TheWhatis/Settings"> https://github.com/TheWhatis/Settings </a>
+                                                                                                        <a class="phpdocumentor-tag-link" href="https://github.com/TheWhatis/WBApiSkeleton"> https://github.com/TheWhatis/WBApiSkeleton </a>
                     
                                     </dd>
                                             </dl>
@@ -167,7 +170,7 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -182,16 +185,34 @@
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_count">count()</a>
+    <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_asGenerator">asGenerator()</a>
     <span>
-                                &nbsp;: int    </span>
+                                &nbsp;: <abbr title="\Generator">Generator</abbr>    </span>
 </dt>
-<dd>Установить новое значение</dd>
+<dd>Создать генератор для циклического
+получения данных из wildberries api,
+которые разбиты на пакеты</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_getNext">getNext()</a>
+    <span>
+                                &nbsp;: int|null    </span>
+</dt>
+<dd>Получить опцию `next` для следующего
+пакета данных</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_next">next()</a>
+    <span>
+                                &nbsp;: <a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html"><abbr title="\Whatis\WBAPI\Skeleton\Data\BaseData">BaseData</abbr></a>    </span>
+</dt>
+<dd>Получить следующий пакет
+заказов</dd>
 
     </dl>
 
@@ -200,12 +221,10 @@
 
         
 
-        
-
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -214,23 +233,25 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_count">
-        count()
-        <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_count" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_asGenerator">
+        asGenerator()
+        <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_asGenerator" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/support/Countable.php"><a href="files/src-support-countable.html"><abbr title="src/support/Countable.php">Countable.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/data/paginated/IPaginated.php"><a href="files/src-data-paginated-ipaginated.html"><abbr title="src/data/paginated/IPaginated.php">IPaginated.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">57</span>
+    <span class="phpdocumentor-element-found-in__line">61</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Установить новое значение</p>
+        <p class="phpdocumentor-summary">Создать генератор для циклического
+получения данных из wildberries api,
+которые разбиты на пакеты</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">count</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+                    <span class="phpdocumentor-signature__name">asGenerator</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Generator">Generator</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -240,7 +261,81 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">int</span>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Generator">Generator</abbr></span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getNext">
+        getNext()
+        <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_getNext" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/data/paginated/IPaginated.php"><a href="files/src-data-paginated-ipaginated.html"><abbr title="src/data/paginated/IPaginated.php">IPaginated.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">52</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Получить опцию `next` для следующего
+пакета данных</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getNext</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int|null</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int|null</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_next">
+        next()
+        <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_next" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/data/paginated/IPaginated.php"><a href="files/src-data-paginated-ipaginated.html"><abbr title="src/data/paginated/IPaginated.php">IPaginated.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">44</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Получить следующий пакет
+заказов</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">next</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html"><abbr title="\Whatis\WBAPI\Skeleton\Data\BaseData">BaseData</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Skeleton-Data-BaseData.html"><abbr title="\Whatis\WBAPI\Skeleton\Data\BaseData">BaseData</abbr></a></span>
             </section>
 
 </article>
@@ -250,7 +345,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/support/Countable.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/data/paginated/IPaginated.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -341,7 +436,7 @@
     </article>
                                 </section>
                 <section class="phpdocumentor-on-this-page__sidebar">
-                                
+                            
     <section class="phpdocumentor-on-this-page__content">
         <strong class="phpdocumentor-on-this-page__title">On this page</strong>
 
@@ -349,15 +444,19 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                                                <li><a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#toc-methods">Methods</a></li>
-                                    </ul>
+                    <li><a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#toc-constants">Constants</a></li>
+                    <li><a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#toc-methods">Methods</a></li>
+                </ul>
             </li>
-                                                <li class="phpdocumentor-on-this-page-section__title">Methods</li>
-            <li>
-                <ul class="phpdocumentor-list -clean">
-                                            <li><a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#method_count">count()</a></li>
-                                    </ul>
-            </li>
+                            <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_asGenerator">asGenerator()</a></li>
+                                                    <li><a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_getNext">getNext()</a></li>
+                                                    <li><a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#method_next">next()</a></li>
+                                            </ul>
+                </li>
+            
                     </ul>
     </section>
 
@@ -375,7 +474,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/Whatis-WBAPI-Skeleton-Support-ArrayAccess.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/Whatis-WBAPI-Skeleton-Data-IPaginated.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 
