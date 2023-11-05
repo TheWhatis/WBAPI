@@ -71,7 +71,7 @@ trait TClient
     public function request(
         string $method,
         string $uri,
-        array $data
+        array $data = []
     ): array {
         $response = $this->client->request(
             $method, $uri, $method === 'GET'

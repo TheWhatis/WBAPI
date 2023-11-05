@@ -48,6 +48,6 @@ interface IClient
     public function request(
         string $method,
         string $uri,
-        array $data
+        array $data = []
     ): array;
 }
