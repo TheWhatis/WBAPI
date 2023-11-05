@@ -50,7 +50,7 @@ public __construct(string $token, \Whatis\WBAPI\Skeleton\ServiceType $type): mix
 Выполнить запрос к wb api
 
 ```php
-public request(string $method, string $uri, array $data = []): array
+public request(string $method, string $uri, array $data = [], array $query = []): array
 ```
 
 
@@ -67,6 +67,7 @@ public request(string $method, string $uri, array $data = []): array
 | `$method` | **string** | Метод |
 | `$uri` | **string** | URI запроса |
 | `$data` | **array** | Данные |
+| `$query` | **array** | Данные для uri данных GET |
 
 
 
