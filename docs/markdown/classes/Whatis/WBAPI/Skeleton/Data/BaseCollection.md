@@ -9,8 +9,6 @@ PHP version 8
 
 * Full name: `\Whatis\WBAPI\Skeleton\Data\BaseCollection`
 * Parent class: [`\Whatis\WBAPI\Skeleton\Data\BaseData`](./BaseData.md)
-* This class implements:
-[`\Countable`](../../../../Countable.md)
 * This class is an **Abstract class**
 
 **See Also:**
@@ -52,26 +50,6 @@ public __construct(array $options): mixed
 
 ## Inherited methods
 
-
-### count
-
-Установить новое значение
-
-```php
-public count(): int
-```
-
-
-
-
-
-
-
-
-
-
-
-***
 
 ### __construct
 
@@ -340,6 +318,26 @@ public key(): string|int
 
 ```php
 public next(): void
+```
+
+
+
+
+
+
+
+
+
+
+
+***
+
+### count
+
+Установить новое значение
+
+```php
+public count(): int
 ```
 
 

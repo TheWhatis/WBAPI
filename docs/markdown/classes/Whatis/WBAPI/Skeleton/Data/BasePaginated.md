@@ -75,26 +75,6 @@ public __construct(array $options): mixed
 
 ***
 
-### count
-
-Установить новое значение
-
-```php
-public count(): int
-```
-
-
-
-
-
-
-
-
-
-
-
-***
-
 ### wrap
 
 Завернуть в "оболочку"
@@ -336,6 +316,26 @@ public key(): string|int
 
 ```php
 public next(): void
+```
+
+
+
+
+
+
+
+
+
+
+
+***
+
+### count
+
+Установить новое значение
+
+```php
+public count(): int
 ```
 
 

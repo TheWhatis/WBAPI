@@ -9,7 +9,7 @@ PHP version 8
 
 * Full name: `\Whatis\WBAPI\Skeleton\Data\BaseData`
 * This class implements:
-[`\ArrayAccess`](../../../../ArrayAccess.md), [`\Iterator`](../../../../Iterator.md)
+[`\ArrayAccess`](../../../../ArrayAccess.md), [`\Iterator`](../../../../Iterator.md), [`\Countable`](../../../../Countable.md)
 * This class is an **Abstract class**
 
 **See Also:**
@@ -325,6 +325,26 @@ public key(): string|int
 
 ```php
 public next(): void
+```
+
+
+
+
+
+
+
+
+
+
+
+***
+
+### count
+
+Установить новое значение
+
+```php
+public count(): int
 ```
 
 
