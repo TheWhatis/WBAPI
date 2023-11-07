@@ -4,13 +4,6 @@
 
 Трейт реализующий Countable
 
-Чтобы изменить название свойства,
-которое будет использоваться для
-работы с массивом (по-умолчанию
-\- `array`), необходимо
-установить свойство
-`$property`
-
 PHP version 8
 
 * Full name: `\Whatis\WBAPI\Skeleton\Support\Countable`
@@ -24,6 +17,27 @@ PHP version 8
 
 ## Methods
 
+
+### getArray
+
+Получить массив с данными, с которыми
+работает трейт
+
+```php
+protected getArray(): array
+```
+
+
+
+
+* This method is **abstract**.
+
+
+
+
+
+
+***
 
 ### count
 

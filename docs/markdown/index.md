@@ -40,33 +40,6 @@ This is an automatically generated documentation for **Documentation**.
 
 
 
-### \Whatis\WBAPI\Skeleton\Data
-
-#### Classes
-
-| Class | Description |
-|-------|-------------|
-| [`BaseCollection`](./classes/Whatis/WBAPI/Skeleton/Data/BaseCollection.md) | Абстрактный класс для работы с<br />коллекциями данных wildberries api|
-| [`BaseData`](./classes/Whatis/WBAPI/Skeleton/Data/BaseData.md) | Абстрактный класс для работы с<br />данными wildberries api|
-| [`BasePaginated`](./classes/Whatis/WBAPI/Skeleton/Data/BasePaginated.md) | Абстрактный класс, реализующий<br />основные методы интерфейса<br />`IPaginated` (использует<br />трейт `TPaginated`)|
-
-
-#### Traits
-
-| Trait | Description |
-|-------|-------------|
-| [`TPaginated`](./classes/Whatis/WBAPI/Skeleton/Data/TPaginated.md) | Трейт, реализующий основные<br />методы интерфейса `IPaginated`|
-
-
-
-#### Interfaces
-
-| Interface | Description |
-|-----------|-------------|
-| [`IPaginated`](./classes/Whatis/WBAPI/Skeleton/Data/IPaginated.md) | Интерфейс для реализации<br />данных, которые разбиты<br />на пакеты данных и их<br />возможно получить порционно|
-
-
-
 ### \Whatis\WBAPI\Skeleton\Support
 
 
