@@ -32,4 +32,34 @@ use Whatis\WBAPI\Skeleton\Support;
 abstract class BaseCollection extends BaseData implements \Countable
 {
     use Support\Countable;
+
+    /**
+     * Стандартное название свойства
+     * для работы с массивом
+     *
+     * @internal
+     *
+     * @var ?string
+     */
+    private ?string $_property = 'data';
+
+    // И здесь можете указать своё
+    // свойства с названием $property
+    // protected/public string $property = 'array'
+    
+    /**
+     * Иницилизация данных
+     *
+     * @param array $options Опции
+     */
+    public function __construct(array $options)
+    {
+        parent::__construct($options);
+        $property = $this->property ?? $this->_property;
+        $this->$property = array_map(
+            function ($unit) use ($options) {
+                return $this->wrap($unit, $options);
+            }, $this->data[$property]
+        );
+    }
 }

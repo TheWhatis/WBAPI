@@ -58,13 +58,6 @@ abstract class BaseData implements \ArrayAccess, \Iterator
         foreach ($options as $key => $value) {
             $this->$key = $value;
         }
-
-        $property = $this->property ?? $this->_property;
-        $this->$property = array_map(
-            function ($unit) use ($options) {
-                return $this->wrap($unit, $options);
-            }, $this->data[$property]
-        );
     }
 
     /**

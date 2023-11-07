@@ -21,7 +21,7 @@ namespace Whatis\WBAPI\Skeleton\Support;
  * Чтобы изменить название свойства,
  * которое будет использоваться для
  * работы с массивом (по-умолчанию
- * \- `data`), необходимо
+ * \- `array`), необходимо
  * установить свойство
  * `$property`
  *
@@ -43,11 +43,11 @@ trait ArrayAccess
      *
      * @var string
      */
-    private string $_property = 'data';
+    private string $_property = 'array';
 
     // И здесь можете указать своё
     // свойства с названием $property
-    // protected/public string $property = 'data'
+    // protected/public string $property = 'array'
 
     /**
      * Установить новое значение
