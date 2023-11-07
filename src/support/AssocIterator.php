@@ -23,13 +23,6 @@ namespace Whatis\WBAPI\Skeleton\Support;
  * интерфейс Iterator для
  * ассоциативного массива
  *
- * Чтобы изменить название свойства,
- * которое будет использоваться для
- * работы с массивом (по-умолчанию
- * \- `array`), необходимо
- * установить свойство
- * `$property`
- *
  * PHP version 8
  *
  * @category Skeleton
@@ -41,25 +34,19 @@ namespace Whatis\WBAPI\Skeleton\Support;
 trait AssocIterator
 {
     /**
-     * Стандартное название свойства
-     * для работы с массивом
+     * Получить массив с данными, с которыми
+     * работает трейт
      *
-     * @internal
-     *
-     * @var string
+     * @return array
      */
-    private string $_property = 'array';
-
-    // И здесь можете указать своё
-    // свойства с названием $property
-    // protected/public string $property = 'array'
+    abstract protected function getArray(): array;
 
     /**
      * Вернуть позицию в начало
      */
     public function rewind(): void
     {
-        reset($this->{$this->property ?? $this->_property});
+        reset($this->getArray());
     }
 
     /**
@@ -70,7 +57,7 @@ trait AssocIterator
      */
     public function valid(): bool
     {
-        return key($this->{$this->property ?? $this->_property}) !== null;
+        return key($this->getArray()) !== null;
     }
 
     /**
@@ -80,7 +67,7 @@ trait AssocIterator
      */
     public function current(): mixed
     {
-        return current($this->{$this->property ?? $this->_property});
+        return current($this->getArray());
     }
 
     /**
@@ -90,7 +77,7 @@ trait AssocIterator
      */
     public function key(): string|int
     {
-        return key($this->{$this->property ?? $this->_property});
+        return key($this->getArray());
     }
 
     /**
@@ -100,6 +87,6 @@ trait AssocIterator
      */
     public function next(): void
     {
-        next($this->{$this->property ?? $this->_property});
+        next($this->getArray());
     }
 }

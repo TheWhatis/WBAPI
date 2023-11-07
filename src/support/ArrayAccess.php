@@ -18,13 +18,6 @@ namespace Whatis\WBAPI\Skeleton\Support;
 /**
  * Трейт реализующий ArrayAccess
  *
- * Чтобы изменить название свойства,
- * которое будет использоваться для
- * работы с массивом (по-умолчанию
- * \- `array`), необходимо
- * установить свойство
- * `$property`
- *
  * PHP version 8
  *
  * @category Skeleton
@@ -36,18 +29,12 @@ namespace Whatis\WBAPI\Skeleton\Support;
 trait ArrayAccess
 {
     /**
-     * Стандартное название свойства
-     * для работы с массивом
+     * Получить массив с данными, с которыми
+     * работает трейт
      *
-     * @internal
-     *
-     * @var string
+     * @return array
      */
-    private string $_property = 'array';
-
-    // И здесь можете указать своё
-    // свойства с названием $property
-    // protected/public string $property = 'array'
+    abstract protected function getArray(): array;
 
     /**
      * Установить новое значение
@@ -60,11 +47,11 @@ trait ArrayAccess
     public function offsetSet(mixed $offset, mixed $value): void
     {
         if (is_null($offset)) {
-            $this->{$this->property ?? $this->_property}[] = $value;
+            $this->getArray()[] = $value;
             return;
         }
 
-        $this->{$this->property ?? $this->_property}[$offset] = $value;
+        $this->getArray()[$offset] = $value;
     }
 
     /**
@@ -77,7 +64,7 @@ trait ArrayAccess
      */
     public function offsetExists(mixed $offset): bool
     {
-        return isset($this->{$this->property ?? $this->_property}[$offset]);
+        return isset($this->getArray()[$offset]);
     }
 
     /**
@@ -89,7 +76,7 @@ trait ArrayAccess
      */
     public function offsetUnset(mixed $offset): void
     {
-        unset($this->{$this->property ?? $this->_property}[$offset]);
+        unset($this->getArray()[$offset]);
     }
 
     /**
@@ -101,6 +88,6 @@ trait ArrayAccess
      */
     public function offsetGet(mixed $offset): mixed
     {
-        return $this->{$this->property ?? $this->_property}[$offset];
+        return $this->getArray()[$offset];
     }
 }
