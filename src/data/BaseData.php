@@ -29,10 +29,11 @@ use Whatis\WBAPI\Skeleton\Support;
  * @license  unlicense
  * @link     https://github.com/TheWhatis/WBApiSkeleton
  */
-abstract class BaseData implements \ArrayAccess, \Iterator
+abstract class BaseData implements \ArrayAccess, \Iterator, \Countable
 {
     use Support\ArrayAccess;
     use Support\AssocIterator;
+    use Support\Countable;
 
     /**
      * Полученные данные

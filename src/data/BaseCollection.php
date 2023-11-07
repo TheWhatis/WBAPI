@@ -29,13 +29,11 @@ use Whatis\WBAPI\Skeleton\Support;
  * @license  unlicense
  * @link     https://github.com/TheWhatis/WBApiSkeleton
  */
-abstract class BaseCollection extends BaseData implements \Countable
+abstract class BaseCollection extends BaseData
 {
-    use Support\Countable;
-
     /**
      * Стандартное название свойства
-     * для работы с массивом
+     * для работы с данными
      *
      * @internal
      *
