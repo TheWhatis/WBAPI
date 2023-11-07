@@ -51,6 +51,11 @@ Search.appendIndex(
             "summary": "\u0410\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u044B\u0439\u0020\u043A\u043B\u0430\u0441\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0431\u043E\u0442\u044B\u0020\u0441\n\u043A\u043E\u043B\u043B\u0435\u043A\u0446\u0438\u044F\u043C\u0438\u0020\u0434\u0430\u043D\u043D\u044B\u0445\u0020wildberries\u0020api",
             "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseCollection.html"
         },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BaseCollection\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u0434\u0430\u043D\u043D\u044B\u0445",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseCollection.html#method___construct"
+        },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BaseData",
             "name": "BaseData",
             "summary": "\u0410\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u044B\u0439\u0020\u043A\u043B\u0430\u0441\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0431\u043E\u0442\u044B\u0020\u0441\n\u0434\u0430\u043D\u043D\u044B\u043C\u0438\u0020wildberries\u0020api",

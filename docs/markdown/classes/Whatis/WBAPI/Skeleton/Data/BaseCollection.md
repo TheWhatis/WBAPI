@@ -20,6 +20,34 @@ PHP version 8
 
 
 
+## Methods
+
+
+### __construct
+
+Иницилизация данных
+
+```php
+public __construct(array $options): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$options` | **array** | Опции |
+
+
+
+
+***
 
 
 ## Inherited methods

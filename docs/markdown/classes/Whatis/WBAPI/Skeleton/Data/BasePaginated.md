@@ -49,26 +49,6 @@ public asGenerator(): \Generator
 
 ***
 
-### count
-
-Установить новое значение
-
-```php
-public count(): int
-```
-
-
-
-
-
-
-
-
-
-
-
-***
-
 ### __construct
 
 Иницилизация данных
@@ -89,6 +69,26 @@ public __construct(array $options): mixed
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$options` | **array** | Опции |
+
+
+
+
+***
+
+### count
+
+Установить новое значение
+
+```php
+public count(): int
+```
+
+
+
+
+
+
+
 
 
 
