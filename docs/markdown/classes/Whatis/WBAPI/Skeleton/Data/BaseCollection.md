@@ -56,7 +56,7 @@ public __construct(array $options): mixed
 
 
 
-* This method is **abstract**.
+
 
 
 
@@ -65,6 +65,34 @@ public __construct(array $options): mixed
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$options` | **array** | Опции |
+
+
+
+
+***
+
+### wrap
+
+Завернуть в "оболочку"
+единицу данных
+
+```php
+public wrap(mixed $data, array $options): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$data` | **mixed** | Переданные данные |
+| `$options` | **array** | Опции, переданные в __construct |
 
 
 
@@ -82,7 +110,7 @@ public toArray(): array
 
 
 
-* This method is **abstract**.
+
 
 
 
@@ -300,4 +328,4 @@ public next(): void
 
 
 ***
-> Automatically generated from source code comments on 2023-11-05 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)
+> Automatically generated from source code comments on 2023-11-07 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)

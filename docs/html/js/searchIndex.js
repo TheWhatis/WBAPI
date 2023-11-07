@@ -61,10 +61,25 @@ Search.appendIndex(
             "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u0434\u0430\u043D\u043D\u044B\u0445",
             "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method___construct"
         },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BaseData\u003A\u003Awrap\u0028\u0029",
+            "name": "wrap",
+            "summary": "\u0417\u0430\u0432\u0435\u0440\u043D\u0443\u0442\u044C\u0020\u0432\u0020\u0022\u043E\u0431\u043E\u043B\u043E\u0447\u043A\u0443\u0022\n\u0435\u0434\u0438\u043D\u0438\u0446\u0443\u0020\u0434\u0430\u043D\u043D\u044B\u0445",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method_wrap"
+        },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BaseData\u003A\u003AtoArray\u0028\u0029",
             "name": "toArray",
             "summary": "\u041A\u043E\u043D\u0432\u0435\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0020\u0432\u0020\u043C\u0430\u0441\u0441\u0438\u0432",
             "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#method_toArray"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BaseData\u003A\u003A\u0024data",
+            "name": "data",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u043D\u044B\u0435\u0020\u0434\u0430\u043D\u043D\u044B\u0435",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#property_data"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BaseData\u003A\u003A\u0024context",
+            "name": "context",
+            "summary": "\u041A\u043E\u043D\u0442\u0435\u043A\u0441\u0442\u0020\u0432\u044B\u0437\u043E\u0432\u0430",
+            "url": "classes/Whatis-WBAPI-Skeleton-Data-BaseData.html#property_context"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Data\\BasePaginated",
             "name": "BasePaginated",
