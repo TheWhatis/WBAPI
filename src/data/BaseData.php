@@ -35,16 +35,6 @@ abstract class BaseData implements \ArrayAccess, \Iterator
     use Support\AssocIterator;
 
     /**
-     * Стандартное название свойства
-     * для работы с массивом
-     *
-     * @internal
-     *
-     * @var string
-     */
-    private string $_property = 'data';
-
-    /**
      * Полученные данные
      *
      * @var array
