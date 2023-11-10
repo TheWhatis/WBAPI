@@ -40,15 +40,19 @@ trait TClient
     /**
      * Иницилизация клиента
      *
-     * @param string      $token Токен Wildberries
-     * @param ServiceType $type  Тип сервиса
+     * @param string      $token   Токен Wildberries
+     * @param ServiceType $type    Тип сервиса
+     * @param string      $baseUri Стандартный uri
      */
-    public function __construct(string $token, ServiceType $type)
-    {
+    public function __construct(
+        string $token,
+        ServiceType $type,
+        string $baseUri = ''
+    ) {
         $this->type = $type;
         $this->client = new GuzzleClient(
             [
-                'base_uri' => "https://{$type->value}/api/",
+                'base_uri' => "https://{$type->value}/{$baseUri}",
                 'headers' => [
                     'Host' => $type->value,
                     'Authorization' => $token,

@@ -48,10 +48,20 @@ trait TService
         }
 
         $this->client = new Client(
-            $tokenOrClient, static::getType()
+            $tokenOrClient, static::getType(), static::baseUri()
         );
     }
 
+    /**
+     * Получить базовый uri
+     *
+     * @return string
+     */
+    public static function baseUri(): string
+    {
+        return '';
+    }
+    
     /**
      * Воспроизвести запрос
      *

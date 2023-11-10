@@ -39,7 +39,7 @@ interface IService
      * @return ServiceType
      */
     public static function getType(): ServiceType;
-
+    
     /**
      * Воспроизвести запрос
      *
