@@ -50,6 +50,7 @@ interface IClient
         string $method,
         string $uri,
         array $data = [],
-        array $query = []
+        array $query = [],
+        array $headers = []
     ): array;
 }
