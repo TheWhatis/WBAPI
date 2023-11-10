@@ -40,5 +40,19 @@ This is an automatically generated documentation for **Documentation**.
 
 
 
+### \Whatis\WBAPI\Skeleton\Traits
+
+
+
+#### Traits
+
+| Trait | Description |
+|-------|-------------|
+| [`StatisticsType`](./classes/Whatis/WBAPI/Skeleton/Traits/StatisticsType.md) | Трейт, реализующий<br />статический метод getType<br />для типа сервиса<br />Statistics|
+| [`SuppliersType`](./classes/Whatis/WBAPI/Skeleton/Traits/SuppliersType.md) | Трейт, реализующий<br />статический метод getType<br />для типа сервиса Suppliers|
+
+
+
+
 ***
 > Automatically generated from source code comments on 2023-11-10 using [phpDocumentor](http://www.phpdoc.org/) and [saggre/phpdocumentor-markdown](https://github.com/Saggre/phpDocumentor-markdown)

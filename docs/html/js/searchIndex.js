@@ -111,6 +111,26 @@ Search.appendIndex(
             "summary": "\u0421\u0435\u0440\u0432\u0438\u0441\u0020\u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043A\u0438\u0020\u0441\n\u0442\u043E\u043A\u0435\u043D\u043E\u043C\u0020\u0441\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043A\u0438",
             "url": "classes/Whatis-WBAPI-Skeleton-ServiceType.html#enumcase_Statistics"
         },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Traits\\StatisticsType",
+            "name": "StatisticsType",
+            "summary": "\u0422\u0440\u0435\u0439\u0442,\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\n\u0441\u0442\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439\u0020\u043C\u0435\u0442\u043E\u0434\u0020getType\n\u0434\u043B\u044F\u0020\u0442\u0438\u043F\u0430\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430\nStatistics",
+            "url": "classes/Whatis-WBAPI-Skeleton-Traits-StatisticsType.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Traits\\StatisticsType\u003A\u003AgetType\u0028\u0029",
+            "name": "getType",
+            "summary": "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u043C\u0020\u0442\u0438\u043F\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430\u0020Suppliers",
+            "url": "classes/Whatis-WBAPI-Skeleton-Traits-StatisticsType.html#method_getType"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Traits\\SuppliersType",
+            "name": "SuppliersType",
+            "summary": "\u0422\u0440\u0435\u0439\u0442,\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0443\u044E\u0449\u0438\u0439\n\u0441\u0442\u0430\u0442\u0438\u0447\u0435\u0441\u043A\u0438\u0439\u0020\u043C\u0435\u0442\u043E\u0434\u0020getType\n\u0434\u043B\u044F\u0020\u0442\u0438\u043F\u0430\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430\u0020Suppliers",
+            "url": "classes/Whatis-WBAPI-Skeleton-Traits-SuppliersType.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Traits\\SuppliersType\u003A\u003AgetType\u0028\u0029",
+            "name": "getType",
+            "summary": "\u0412\u043E\u0437\u0432\u0440\u0430\u0449\u0430\u0435\u043C\u0020\u0442\u0438\u043F\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430\u0020Suppliers",
+            "url": "classes/Whatis-WBAPI-Skeleton-Traits-SuppliersType.html#method_getType"
+        },                {
             "fqsen": "\\",
             "name": "\\",
             "summary": "",
@@ -130,5 +150,10 @@ Search.appendIndex(
             "name": "Whatis",
             "summary": "",
             "url": "namespaces/whatis.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Skeleton\\Traits",
+            "name": "Traits",
+            "summary": "",
+            "url": "namespaces/whatis-wbapi-skeleton-traits.html"
         }            ]
 );
