@@ -39,10 +39,12 @@ interface IClient
     /**
      * Выполнить запрос к wb api
      *
-     * @param string $method Метод
-     * @param string $uri    URI запроса
-     * @param array  $data   Данные
-     * @param array  $query  Данные для uri данных GET
+     * @param string $method    Метод
+     * @param string $uri       URI запроса
+     * @param array  $data      Данные
+     * @param array  $query     Данные для uri данных GET
+     * @param array  $headers   Доп. заголовки для запроса
+     * @param array  $multipart Параметр для передачи файлов
      *
      * @return array
      */
@@ -51,6 +53,7 @@ interface IClient
         string $uri,
         array $data = [],
         array $query = [],
-        array $headers = []
+        array $headers = [],
+        array $multipart = []
     ): array;
 }

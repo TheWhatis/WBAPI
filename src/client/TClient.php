@@ -78,16 +78,19 @@ trait TClient
         string $uri,
         array $data = [],
         array $query = [],
-        array $headers = []
+        array $headers = [],
+        array $multipart = []
     ): array {
         $response = $this->client->request(
             $method, $uri, $method === 'GET' ? [
                 RequestOptions::QUERY => array_merge($data, $query),
-                RequestOptions::HEADERS => $headers
+                RequestOptions::HEADERS => $headers,
+                RequestOptions::MULTIPART => $multipart
             ] : [
                 RequestOptions::QUERY => $query,
                 RequestOptions::JSON => $data,
-                RequestOptions::HEADERS => $headers
+                RequestOptions::HEADERS => $headers,
+                RequestOptions::MULTIPART => $multipart
             ]
         );
 
