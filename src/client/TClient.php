@@ -83,7 +83,9 @@ trait TClient
     ): array {
         $response = $this->client->request(
             $method, $uri, $method === 'GET' ? [
-                RequestOptions::QUERY => array_merge($data, $query),
+                RequestOptions::QUERY => array_merge(
+                    $data ?? [], $query
+                ),
                 RequestOptions::HEADERS => $headers,
                 RequestOptions::MULTIPART => $multipart
             ] : [
