@@ -76,7 +76,7 @@ trait TClient
     public function request(
         string $method,
         string $uri,
-        array $data = [],
+        array $data = null,
         array $query = [],
         array $headers = [],
         array $multipart = []
