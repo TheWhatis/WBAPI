@@ -1,6 +1,6 @@
 {
     "name": "whatis/wb-api-skeleton",
-    "version": "1.0.2",
+    "version": "1.1.0",
     "description": "Скелет для работы с wildberries api",
     "type": "library",
     "keywords": [
@@ -26,7 +26,8 @@
                 "src/",
                 "src/client",
                 "src/service"
-            ]
+            ],
+            "Whatis\\WBAPI\\Skeleton\\Traits\\": "src/traits"
         }
     },
     "authors": [
