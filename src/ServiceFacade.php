@@ -14,11 +14,6 @@
 namespace Whatis\WBAPI;
 
 use Whatis\WBAPI\Service\IService;
-
-use Whatis\WBAPI\V1;
-use Whatis\WBAPI\V2;
-use Whatis\WBAPI\V3;
-
 use Whatis\WBAPI\Exceptions\ServiceNotFound;
 use Whatis\WBAPI\Exceptions\ServiceAlreadyExists;
 use InvalidArgumentException;
@@ -43,25 +38,7 @@ final class ServiceFacade
      *
      * @var array
      */
-    public static array $mapping = [
-        'v1/prices' => V1\Prices::class,
-        'v1/statistics' => V1\Statistics::class,
-
-        // Content
-        'v2/config' => V2\Config::class,
-        'v2/media' => V2\Media::class,
-        'v2/tags' => V2\Tags::class,
-        'v2/trash' => V2\Trash::class,
-        'v2/upload' => V2\Upload::class,
-        'v2/view' => V2\View::class,
-
-        // Marketplace
-        'v3/orders' => V3\Orders::class,
-        'v3/passes' => V3\Passess::class,
-        'v3/stocks' => V3\Stocks::class,
-        'v3/supplies' => V3\Supplies::class,
-        'v3/warehouses' => V3\Warehouses::class
-    ];
+    public static array $mapping = [];
 
     /**
      * Используемый токен

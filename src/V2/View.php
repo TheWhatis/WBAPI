@@ -12,7 +12,7 @@
  * @link     https://github.com/TheWhatis/wb-api-skeleton
  */
 
-namespace Whatis\WBAPI\Content\V2;
+namespace Whatis\WBAPI\V2;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\ContentV2Category;
