@@ -1,4 +1,4 @@
-# Скелет для работы с wildberries api
+# Библиотека для WB API
 ## Документация
   * [Documentation](https://github.com/TheWhatis/WBAPI/tree/master/docs/markdown/index.md "Documentation")
 ## Установка
