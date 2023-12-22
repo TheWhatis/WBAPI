@@ -5,14 +5,16 @@
  *
  * PHP version 8
  *
- * @category Skeleton
+ * @category Main
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/WBApiSkeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 
-namespace Whatis\WBAPI\Skeleton;
+namespace Whatis\WBAPI;
+
+use Whatis\WBAPI\Client\BaseClient;
 
 /**
  * Основной класс клиента
@@ -20,11 +22,11 @@ namespace Whatis\WBAPI\Skeleton;
  *
  * PHP version 8
  *
- * @category Skeleton
+ * @category Main
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/WBApiSkeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 class Client extends BaseClient
 {
