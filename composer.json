@@ -1,15 +1,14 @@
 {
-    "name": "whatis/wb-api-skeleton",
-    "version": "1.1.4",
-    "description": "Скелет для работы с wildberries api",
+    "name": "whatis/wbapi",
+    "version": "0.8.0",
+    "description": "Библиотека для взаимодействия с wildberries api",
     "type": "library",
     "keywords": [
         "whatis",
         "wildberries",
         "php",
         "api",
-        "client",
-        "skeleton"
+        "client"
     ],
     "require": {
         "php": "^8.2",
@@ -22,12 +21,7 @@
     "license": "unlicense",
     "autoload": {
         "psr-4": {
-            "Whatis\\WBAPI\\Skeleton\\": [
-                "src/",
-                "src/client",
-                "src/service"
-            ],
-            "Whatis\\WBAPI\\Skeleton\\Traits\\": "src/traits"
+            "Whatis\\WBAPI\\": "src/"
         }
     },
     "authors": [
