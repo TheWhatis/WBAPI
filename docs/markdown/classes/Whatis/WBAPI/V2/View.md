@@ -1,14 +1,14 @@
 ***
 
-# Trash
+# View
 
 Класс-сервис для работы
-с корзиной
+с просмотром контента
 
 PHP version 8
 
-* Full name: `\Whatis\WBAPI\Content\V2\Trash`
-* Parent class: [`\Whatis\WBAPI\Service\BaseService`](../../Service/BaseService.md)
+* Full name: `\Whatis\WBAPI\V2\View`
+* Parent class: [`\Whatis\WBAPI\Service\BaseService`](../Service/BaseService.md)
 
 **See Also:**
 
@@ -22,14 +22,13 @@ PHP version 8
 
 ### list
 
-Получить список НМ, находящихся
-в корзине
+Список номенклатур
 
 ```php
-public list(array $sort, array $filter, array $cursor, string $locale = &#039;en&#039;): array
+public list(array $cursor, array $filter = [], array $sort = null): array
 ```
 
-`content/v2/cards/trash`
+`content/v2/get/cards/list`
 
 
 
@@ -40,10 +39,9 @@ public list(array $sort, array $filter, array $cursor, string $locale = &#039;en
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$sort` | **array** | Сортировка |
-| `$filter` | **array** | Фильтры |
 | `$cursor` | **array** | Элемент пагинации |
-| `$locale` | **string** | Параметр выбора языка |
+| `$filter` | **array** | Фильтры для поиска |
+| `$sort` | **array** | Сортировка |
 
 
 
@@ -51,15 +49,15 @@ public list(array $sort, array $filter, array $cursor, string $locale = &#039;en
 
 ***
 
-### recover
+### errList
 
-Восстановление НМ из корзины
+Список несозданных номенклатур с ошибками
 
 ```php
-public recover(array $nmIDs): array
+public errList(string $locale = &#039;en&#039;): array
 ```
 
-`content/v2/cards/recover`
+`content/v2/cards/error/list`
 
 
 
@@ -70,7 +68,28 @@ public recover(array $nmIDs): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$nmIDs` | **array** | Артикулы WB |
+| `$locale` | **string** | Параметр выбора языка вывода |
+
+
+
+
+
+***
+
+### getLimits
+
+Получить лимиты по карточкам товаров
+
+```php
+public getLimits(): array
+```
+
+`content/v2/cards/limits`
+
+
+
+
+
 
 
 
@@ -129,7 +148,7 @@ public __construct(string $token): mixed
 
 **Throws:**
 
-- [`PermissionsDoesNotExistsException`](../../Exceptions/PermissionsDoesNotExistsException.md)
+- [`PermissionsDoesNotExistsException`](../Exceptions/PermissionsDoesNotExistsException.md)
 
 
 

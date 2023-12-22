@@ -50,18 +50,6 @@ This is an automatically generated documentation for **Documentation**.
 
 
 
-### \Whatis\WBAPI\Content\V2
-
-#### Classes
-
-| Class | Description |
-|-------|-------------|
-| [`Trash`](./classes/Whatis/WBAPI/Content/V2/Trash.md) | Класс-сервис для работы<br />с корзиной|
-| [`View`](./classes/Whatis/WBAPI/Content/V2/View.md) | Класс-сервис для работы<br />с просмотром контента|
-
-
-
-
 ### \Whatis\WBAPI\Exceptions
 
 #### Classes
@@ -137,7 +125,9 @@ This is an automatically generated documentation for **Documentation**.
 | [`Config`](./classes/Whatis/WBAPI/V2/Config.md) | Класс-сервис для работы<br />с конфигурацией контента|
 | [`Media`](./classes/Whatis/WBAPI/V2/Media.md) | Класс-сервис для работы<br />с медиаконтентом|
 | [`Tags`](./classes/Whatis/WBAPI/V2/Tags.md) | Класс-сервис для работы<br />с тегами|
+| [`Trash`](./classes/Whatis/WBAPI/V2/Trash.md) | Класс-сервис для работы<br />с корзиной|
 | [`Upload`](./classes/Whatis/WBAPI/V2/Upload.md) | Класс-сервис для работы<br />с загрузкой контента|
+| [`View`](./classes/Whatis/WBAPI/V2/View.md) | Класс-сервис для работы<br />с просмотром контента|
 
 
 

@@ -596,20 +596,20 @@ Search.appendIndex(
             "summary": "\u0421\u043F\u0438\u0441\u043E\u043A\u0020\u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B\u0445\u0020\u0441\u0446\u0435\u0442\u043E\u0432\u0020\u0434\u043B\u044F\u0020\u0442\u0435\u0433\u043E\u0432",
             "url": "classes/Whatis-WBAPI-V2-Tags.html#property_colors"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Content\\V2\\Trash",
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Trash",
             "name": "Trash",
             "summary": "\u041A\u043B\u0430\u0441\u0441\u002D\u0441\u0435\u0440\u0432\u0438\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0431\u043E\u0442\u044B\n\u0441\u0020\u043A\u043E\u0440\u0437\u0438\u043D\u043E\u0439",
-            "url": "classes/Whatis-WBAPI-Content-V2-Trash.html"
+            "url": "classes/Whatis-WBAPI-V2-Trash.html"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Content\\V2\\Trash\u003A\u003Alist\u0028\u0029",
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Trash\u003A\u003Alist\u0028\u0029",
             "name": "list",
             "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0441\u043F\u0438\u0441\u043E\u043A\u0020\u041D\u041C,\u0020\u043D\u0430\u0445\u043E\u0434\u044F\u0449\u0438\u0445\u0441\u044F\n\u0432\u0020\u043A\u043E\u0440\u0437\u0438\u043D\u0435",
-            "url": "classes/Whatis-WBAPI-Content-V2-Trash.html#method_list"
+            "url": "classes/Whatis-WBAPI-V2-Trash.html#method_list"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Content\\V2\\Trash\u003A\u003Arecover\u0028\u0029",
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Trash\u003A\u003Arecover\u0028\u0029",
             "name": "recover",
             "summary": "\u0412\u043E\u0441\u0441\u0442\u0430\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435\u0020\u041D\u041C\u0020\u0438\u0437\u0020\u043A\u043E\u0440\u0437\u0438\u043D\u044B",
-            "url": "classes/Whatis-WBAPI-Content-V2-Trash.html#method_recover"
+            "url": "classes/Whatis-WBAPI-V2-Trash.html#method_recover"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\V2\\Upload",
             "name": "Upload",
@@ -641,25 +641,25 @@ Search.appendIndex(
             "summary": "\u0413\u0435\u043D\u0435\u0440\u0430\u0446\u0438\u044F\u0020\u0431\u0430\u0440\u043A\u043E\u0434\u043E\u0432",
             "url": "classes/Whatis-WBAPI-V2-Upload.html#method_barcodes"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Content\\V2\\View",
+            "fqsen": "\\Whatis\\WBAPI\\V2\\View",
             "name": "View",
             "summary": "\u041A\u043B\u0430\u0441\u0441\u002D\u0441\u0435\u0440\u0432\u0438\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0431\u043E\u0442\u044B\n\u0441\u0020\u043F\u0440\u043E\u0441\u043C\u043E\u0442\u0440\u043E\u043C\u0020\u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0430",
-            "url": "classes/Whatis-WBAPI-Content-V2-View.html"
+            "url": "classes/Whatis-WBAPI-V2-View.html"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Content\\V2\\View\u003A\u003Alist\u0028\u0029",
+            "fqsen": "\\Whatis\\WBAPI\\V2\\View\u003A\u003Alist\u0028\u0029",
             "name": "list",
             "summary": "\u0421\u043F\u0438\u0441\u043E\u043A\u0020\u043D\u043E\u043C\u0435\u043D\u043A\u043B\u0430\u0442\u0443\u0440",
-            "url": "classes/Whatis-WBAPI-Content-V2-View.html#method_list"
+            "url": "classes/Whatis-WBAPI-V2-View.html#method_list"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Content\\V2\\View\u003A\u003AerrList\u0028\u0029",
+            "fqsen": "\\Whatis\\WBAPI\\V2\\View\u003A\u003AerrList\u0028\u0029",
             "name": "errList",
             "summary": "\u0421\u043F\u0438\u0441\u043E\u043A\u0020\u043D\u0435\u0441\u043E\u0437\u0434\u0430\u043D\u043D\u044B\u0445\u0020\u043D\u043E\u043C\u0435\u043D\u043A\u043B\u0430\u0442\u0443\u0440\u0020\u0441\u0020\u043E\u0448\u0438\u0431\u043A\u0430\u043C\u0438",
-            "url": "classes/Whatis-WBAPI-Content-V2-View.html#method_errList"
+            "url": "classes/Whatis-WBAPI-V2-View.html#method_errList"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Content\\V2\\View\u003A\u003AgetLimits\u0028\u0029",
+            "fqsen": "\\Whatis\\WBAPI\\V2\\View\u003A\u003AgetLimits\u0028\u0029",
             "name": "getLimits",
             "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043B\u0438\u043C\u0438\u0442\u044B\u0020\u043F\u043E\u0020\u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0430\u043C\u0020\u0442\u043E\u0432\u0430\u0440\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-Content-V2-View.html#method_getLimits"
+            "url": "classes/Whatis-WBAPI-V2-View.html#method_getLimits"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\V3\\Orders",
             "name": "Orders",
@@ -930,16 +930,6 @@ Search.appendIndex(
             "name": "V2",
             "summary": "",
             "url": "namespaces/whatis-wbapi-v2.html"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Content\\V2",
-            "name": "V2",
-            "summary": "",
-            "url": "namespaces/whatis-wbapi-content-v2.html"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Content",
-            "name": "Content",
-            "summary": "",
-            "url": "namespaces/whatis-wbapi-content.html"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\V3",
             "name": "V3",
