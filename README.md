@@ -1,24 +1,56 @@
 # Скелет для работы с wildberries api
 ## Документация
-  * [Documentation](https://github.com/TheWhatis/WBApiSkeleton/tree/master/docs/markdown/index.md "Documentation")
+  * [Documentation](https://github.com/TheWhatis/WBAPI/tree/master/docs/markdown/index.md "Documentation")
 ## Установка
 ```
-composer require whatis/wb-api-skeleton
+composer require whatis/wbapi
 ```
 ## Использование
-### Создание своего сервиса
+```php
+/// ... Подключение пакета (require_once 'vendor/autoload.php')
+
+// Фасад для взаимодествия с "сервисами" -
+// классами, реализуюими методы для
+// взаимодействия с api
+use Whatis\WBAPI\ServiceFacade;
+
+$token 'some.jwt.token.-asdffsdfJLA';
+$facade = ServiceFacade::make($token)
+    ->useService(
+        'v2/tags', // Ключ сервиса, находиться
+                   // в ServiceFacade::$mapping,
+        'tags' // Алиас для последующего взаимодейстия
+    )
+    ->useService('v2/config', 'config')
+    ->useService('v3/orders', 'orders')
+    ->build(); // Создаем фасад
+
+// Получение сбор-х заданий
+$orders = $facade->use('orders')->get();
+var_dump($orders);
+
+// Получение тегов
+$tags = $facade->use('tags')->get();
+var_dump($tags);
+// ...
+```
+
+## Создание своего сервиса
 ```php
 <?php
 /// ... Подключение пакета (require_once 'vendor/autoload.php')
 
 namespace Whatis\WBAPI\Example;
 
-use Whatis\WBAPI\Skeleton\BaseService;
-use Whatis\WBAPI\Skeleton\Client;
-use Whatis\WBAPI\Skeleton\ServiceType;
+use Whatis\WBAPI\BaseService;
+use Whatis\WBAPI\Permission;
+use Whatis\WBAPI\Permissions;
+
+use DateTime;
+use DateTimeZone;
 
 /**
- * Пример срвиса
+ * Пример сервиса
  *
  * PHP version 8
  *
@@ -31,13 +63,28 @@ use Whatis\WBAPI\Skeleton\ServiceType;
 class Service extends BaseService
 {
     /**
-     * Получить тип сервиса
+     * Получить массив необходимых разрешений
+     * для этого сервиса
      *
-     * @return ServiceType
+     * @return Permissions
      */
-    public static function getType(): ServiceType
+    public static function getPermissions(): Permissions
     {
-        return ServiceType::Suppliers;
+        return new Permissions(
+            Permission::Orders,
+            Permission::Statistics,
+            Permission::Promotion
+        );
+    }
+
+    /**
+     * Получить базовый uri
+     *
+     * @return string
+     */
+    public static function getBaseUri(): string
+    {
+        return 'api/v3/';
     }
 
     /**
@@ -53,7 +100,7 @@ class Service extends BaseService
         $dateFrom = new DateTime('-3 day', $timezone);
 
         return $this->request(
-            'GET', 'v3/orders', [
+            'GET', 'orders', [
                 'limit' => 10,
                 'next' => 0,
                 'dateFrom' => $dateFrom->getTimestamp(),
