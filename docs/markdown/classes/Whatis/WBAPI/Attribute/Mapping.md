@@ -2,8 +2,11 @@
 
 # Mapping
 
-Трейт с реализацией
-интерфейса `IService`
+Атрибут для установки пути
+до api ресурса
+
+Нужен для метода
+ServiceManager::mapping
 
 PHP version 8
 

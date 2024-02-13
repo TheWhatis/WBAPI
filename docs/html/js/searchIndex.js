@@ -3,7 +3,7 @@ Search.appendIndex(
                 {
             "fqsen": "\\Whatis\\WBAPI\\Attribute\\Mapping",
             "name": "Mapping",
-            "summary": "\u0422\u0440\u0435\u0439\u0442\u0020\u0441\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0435\u0439\n\u0438\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0430\u0020\u0060IService\u0060",
+            "summary": "\u0410\u0442\u0440\u0438\u0431\u0443\u0442\u0020\u0434\u043B\u044F\u0020\u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0438\u0020\u043F\u0443\u0442\u0438\n\u0434\u043E\u0020api\u0020\u0440\u0435\u0441\u0443\u0440\u0441\u0430",
             "url": "classes/Whatis-WBAPI-Attribute-Mapping.html"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Attribute\\Mapping\u003A\u003A__construct\u0028\u0029",

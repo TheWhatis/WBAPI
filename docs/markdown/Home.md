@@ -30,7 +30,7 @@ This is an automatically generated documentation for **Documentation**.
 
 | Class | Description |
 |-------|-------------|
-| [`Mapping`](./classes/Whatis/WBAPI/Attribute/Mapping.md) | Трейт с реализацией<br />интерфейса `IService`|
+| [`Mapping`](./classes/Whatis/WBAPI/Attribute/Mapping.md) | Атрибут для установки пути<br />до api ресурса|
 
 
 
