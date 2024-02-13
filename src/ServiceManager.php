@@ -223,7 +223,7 @@ class ServiceManager
      *
      * @return bool
      */
-    function hasService(string $name): bool
+    public function hasService(string $name): bool
     {
         return array_key_exists($name, $this->services)
             || array_key_exists($name, $this->aliases);
@@ -258,7 +258,7 @@ class ServiceManager
      *
      * @return static
      */
-    function withFormatter(IJsonFormatter $formatter): static
+    public function withFormatter(IJsonFormatter $formatter): static
     {
         foreach ($this->services as $service) {
             $service->withFormatter($formatter);
