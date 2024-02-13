@@ -1,7 +1,7 @@
 <?php
 /**
  * Файл с трейтом, реализующим
- * интерфейса `IService`
+ * интерфейс `IService`
  *
  * PHP version 8
  *
@@ -14,13 +14,18 @@
 
 namespace Whatis\WBAPI\Service;
 
-use Whatis\WBAPI\Client\IClient;
+use Whatis\WBAPI\Http\IClient;
+use Whatis\WBAPI\Http\Client;
+use Whatis\WBAPI\Permissions;
+use Whatis\WBAPI\Http\Payload as ClientPayload;
+use Whatis\WBAPI\Enums\HttpMethod;
+use Whatis\WBAPI\Formatters\IJsonFormatter;
 use Whatis\WBAPI\Exceptions\PermissionsDoesNotExistsException;
 
-use Whatis\WBAPI\Client;
-use Whatis\WBAPI\Permissions;
-
+use Psr\Http\Message\RequestFactoryInterface;
 use InvalidArgumentException;
+use BadMethodCallException;
+use Throwable;
 
 /**
  * Трейт с реализацией
@@ -41,47 +46,67 @@ trait TService
      *
      * @var IClient
      */
-    public IClient $client;
+    public readonly IClient $client;
 
     /**
      * Разрешения сервиса
      *
      * @var Permissions
      */
-    public Permissions $permissions;
+    public readonly Permissions $permissions;
 
     /**
      * Иницилизация сервиса
      *
-     * @param string $token Токен
-     *
-     * @throw PermissionsDoesNotExistsException
+     * @param string $token   Токен
      */
     public function __construct(string $token)
     {
         $this->permissions = static::getPermissions();
+        $this->validateToken($token);
+
+        $this->client = new Client($token);
+    }
+
+    /**
+     * Вывести ошибку о том, что у токена
+     * недостаточно разрешений для работы
+     * этого сервиса
+     *
+     * @param string $token Токен
+     *
+     * @return never
+     * @throw  PermissionsDoesNotExistsException
+     */
+    protected function throwNotEnoughPermissions(string $token): never
+    {
+        $message = 'The token does not have enough rights '
+                 . 'to work with this service \'%s\', '
+                 . 'Required permissions: %s. Token: \'%s\'';
+
+        throw new PermissionsDoesNotExistsException(
+            sprintf(
+                $message,
+                $this::class,
+                $this->permissions->asString(),
+                $token
+            )
+        );
+    }
+
+    /**
+     * Валидировать токен
+     *
+     * @param string $token Токен
+     *
+     * @return void
+     * @throw  InvalidArgumentException
+     */
+    protected function validateToken(string $token): void
+    {
         try {
             if (!$this->permissions->hasByToken($token)) {
-                $message = 'The token does not have enough rights '
-                         . 'to work with this service \'%s\', '
-                         . 'Required permissions: %s. Token: \'%s\'';
-
-                throw new PermissionsDoesNotExistsException(
-                    sprintf(
-                        $message, get_class($this), implode(
-                            ', ', array_map(
-                                static function ($permission) {
-                                    return sprintf(
-                                        '\'%s:%s; %s\'',
-                                        get_class($permission),
-                                        $permission->name,
-                                        $permission->value
-                                    );
-                                }, $this->permissions->get()
-                            )
-                        ), $token
-                    )
-                );
+                $this->throwNotEnoughPermissions($token);
             }
         } catch (InvalidArgumentException $exception) {
             throw new InvalidArgumentException(
@@ -91,20 +116,6 @@ trait TService
                 ), $exception->getCode(), $exception
             );
         }
-
-        $this->client = new Client(
-            $token, static::getDomain(), static::getBaseUri()
-        );
-    }
-
-    /**
-     * Получить базовый uri
-     *
-     * @return string
-     */
-    public static function getBaseUri(): string
-    {
-        return '';
     }
 
     /**
@@ -112,20 +123,141 @@ trait TService
      *
      * @return string
      */
-    public static function getDomain(): string
+    public function domain(): string
     {
         return 'suppliers-api.wildberries.ru';
     }
 
     /**
-     * Воспроизвести запрос
+     * Получить базовый uri
      *
-     * @param ...$args Аргументы для запроса Request
+     * @return string
+     */
+    public function basePath(): string
+    {
+        return '';
+    }
+
+    /**
+     * Установить форматировщик
+     *
+     * @param IJsonFormatter $formatter Форматировщик
+     *
+     * @return static
+     */
+    public function withFormatter(IJsonFormatter $formatter): static
+    {
+        $this->client->withFormatter($formatter);
+        return $this;
+    }
+
+    /**
+     * Получить форматировщик
+     *
+     * @return IJsonFormatter
+     */
+    public function getFormatter(): IJsonFormatter
+    {
+        return $this->client->getFormatter();
+    }
+
+    /**
+     * Установить фабрику запросов
+     *
+     * @param RequestFactoryInterface $factory Фабрика запросов
+     *
+     * @return static
+     */
+    public function withRequestFactory(
+        RequestFactoryInterface $factory
+    ): static {
+        $this->client->withRequestFactory($factory);
+        return $this;
+    }
+
+    /**
+     * Получить фабрику запросов
+     *
+     * @return RequestFactoryInterface
+     */
+    public function getRequestFactory(): RequestFactoryInterface
+    {
+        return $this->client->getRequestFactory();
+    }
+
+    /**
+     * Получить заголовки из Payload
+     *
+     * @param mixed $payload Полезная нагрузка
      *
      * @return array
      */
-    public function request(...$args): array
+    protected function headers(mixed $payload): array
     {
-        return $this->client->request(...$args);
+        return is_a($payload, Payload::class)
+            ? $payload->headers : [];
+    }
+
+    /**
+     * Получить параметры из Payload
+     *
+     * @param mixed $payload Полезная нагрузка
+     *
+     * @return array
+     */
+    protected function params(mixed $payload)
+    {
+        return is_a($payload, Payload::class)
+            ? $payload->params : [];
+    }
+
+    /**
+     * Получить тело запроса из Payload
+     *
+     * @param mixed $payload Полезная нагрузка
+     *
+     * @return mixed
+     */
+    protected function body(mixed $payload): mixed
+    {
+        return is_a($payload, Payload::class)
+            ? $payload->body : $payload;
+    }
+
+    /**
+     * Воспроизвести запрос
+     *
+     * @param string|HttpMethod $method  Метод
+     * @param string            $path    Путь до запроса
+     * @param mixed             $payload Полезная нагрузка запроса
+     *
+     * @return mixed
+     */
+    public function request(
+        string|HttpMethod $method,
+        string $path,
+        mixed $payload = null
+    ): mixed {
+        $response = $this->client->request(
+            new ClientPayload(
+                HttpMethod::makeFrom($method),
+                $this->domain(),
+                $this->basePath() . '/' . $path,
+                $this->headers($payload),
+                $this->params($payload),
+                $this->body($payload)
+            )
+        );
+
+        $content = $response->getBody()->getContents();
+        if (in_array($response->getStatusCode(), [201, 204])) {
+            if (trim($content) === '') {
+                return true;
+            }
+        }
+
+        return $this->getFormatter()
+            ->withContext($response)
+            ->decode($content);
     }
 }
