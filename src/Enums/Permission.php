@@ -38,7 +38,7 @@ enum Permission: int
     case QuestionsFeedback = 1 << 7;
 
     /**
-     * Как строка
+     * Преобразовать в строку
      *
      * @return string
      */
