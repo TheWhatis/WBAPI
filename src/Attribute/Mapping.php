@@ -1,11 +1,11 @@
 <?php
 /**
- * Файл с трейтом, реализующим
- * интерфейс `IService`
+ * Файл с атрибутом для установки
+ * пути до api ресурса
  *
  * PHP version 8
  *
- * @category Service
+ * @category Attribute
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
@@ -17,12 +17,15 @@ namespace Whatis\WBAPI\Attribute;
 use Attribute;
 
 /**
- * Трейт с реализацией
- * интерфейса `IService`
+ * Атрибут для установки пути
+ * до api ресурса
+ *
+ * Нужен для метода
+ * ServiceManager::mapping
  *
  * PHP version 8
  *
- * @category Service
+ * @category Attribute
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
