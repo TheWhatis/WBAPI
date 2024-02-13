@@ -4,23 +4,21 @@
  *
  * PHP version 8
  *
- * @category Main
+ * @category Enums
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
  * @link     https://github.com/TheWhatis/WBAPI
  */
 
-namespace Whatis\WBAPI;
-
-use InvalidArgumentException;
+namespace Whatis\WBAPI\Enums;
 
 /**
  * Интерфейс сервиса
  *
  * PHP version 8
  *
- * @category Main
+ * @category Enums
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
@@ -38,4 +36,16 @@ enum Permission: int
     case ReadOnly          = 1 << 30;
     case PricesDiscounts   = 1 << 3;
     case QuestionsFeedback = 1 << 7;
+
+    /**
+     * Как строка
+     *
+     * @return string
+     */
+    public function asString(): string
+    {
+        return sprintf(
+            '%s::%s; %s', $this::class, $this->name, $this->value
+        );
+    }
 }
