@@ -39,8 +39,8 @@ trait MarketplaceV3Category
      *
      * @return string
      */
-    public function basePath(): string
+    public static function basePath(): string
     {
-        return $this->previousBasePath() . 'v3/';
+        return static::previousBasePath() . 'v3/';
     }
 }

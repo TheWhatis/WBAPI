@@ -16,6 +16,7 @@ namespace Whatis\WBAPI\V2;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\ContentV2Category;
+use Whatis\WBAPI\Attribute\Mapping;
 use RuntimeException;
 
 /**
@@ -66,6 +67,7 @@ class Upload extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('cards/update')]
     public function update(array $cards): mixed
     {
         if (count($cards) > 1000) {
@@ -113,6 +115,7 @@ class Upload extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('cards/upload')]
     public function create(int $subjectID, array $variants): mixed
     {
         if (count($variants) > 1000) {
@@ -150,6 +153,7 @@ class Upload extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('cards/upload/add')]
     public function addNm(int $imtID, array $cardsToAdd): mixed
     {
         return $this->request(
@@ -171,6 +175,7 @@ class Upload extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('cards/moveNm')]
     public function moveNm(int $targetIMT, array $nmIDs): mixed
     {
         return $this->request(
@@ -191,6 +196,7 @@ class Upload extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('barcodes')]
     public function barcodes(int $count): mixed
     {
         if ($count > 5000) {

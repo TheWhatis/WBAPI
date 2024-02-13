@@ -16,6 +16,7 @@ namespace Whatis\WBAPI\V3;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\MarketplaceV3Category;
+use Whatis\WBAPI\Attribute\Mapping;
 use RuntimeException;
 
 /**
@@ -44,6 +45,7 @@ class Stocks extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('stocks/{$warehouseId}')]
     public function update(int $warehouseId, array $stocks): mixed
     {
         if (count($stocks) > 1000) {
@@ -69,6 +71,7 @@ class Stocks extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('stocks/{$warehouseId}')]
     public function delete(int $warehouseId, array $skus): mixed
     {
         if (count($skus) > 1000) {
@@ -94,6 +97,7 @@ class Stocks extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('stocks/{$warehouseId}')]
     public function get(int $warehouseId, array $skus): mixed
     {
         if (count($skus) > 1000) {

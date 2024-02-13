@@ -16,6 +16,7 @@ namespace Whatis\WBAPI\V3;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\MarketplaceV3Category;
+use Whatis\WBAPI\Attribute\Mapping;
 
 /**
  * Класс-сервис для работы
@@ -41,6 +42,7 @@ class Passes extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('passes/offices')]
     public function offices(): mixed
     {
         return $this->request(
@@ -55,6 +57,7 @@ class Passes extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('passes')]
     public function get(): mixed
     {
         return $this->request(
@@ -75,6 +78,7 @@ class Passes extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('passes')]
     public function create(
         string $firstName,
         string $lastName,
@@ -107,6 +111,7 @@ class Passes extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('passes/{$passId}')]
     public function update(
         int $passId,
         string $firstName,
@@ -133,6 +138,7 @@ class Passes extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('passes/{$passId}')]
     public function delete(int $passId): mixed
     {
         return $this->request(

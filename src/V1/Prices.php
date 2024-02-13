@@ -18,6 +18,7 @@ use Whatis\WBAPI\Permissions;
 use Whatis\WBAPI\Enums\Permission;
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Service\Payload;
+use Whatis\WBAPI\Attribute\Mapping;
 use RuntimeException;
 
 /**
@@ -50,7 +51,7 @@ class Prices extends BaseService
      *
      * @return string
      */
-    public function basePath(): string
+    public static function basePath(): string
     {
         return 'public/api/v1/';
     }
@@ -65,6 +66,7 @@ class Prices extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('info')]
     public function get(int $quantity = 0): mixed
     {
         if (!in_array($quantity, [0, 1])) {
@@ -88,6 +90,7 @@ class Prices extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('prices')]
     public function set(array $prices): mixed
     {
         if (count($prices) > 1000) {

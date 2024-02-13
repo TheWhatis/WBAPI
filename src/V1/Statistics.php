@@ -18,6 +18,7 @@ use Whatis\WBAPI\Permissions;
 use Whatis\WBAPI\Enums\Permission;
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Service\Payload;
+use Whatis\WBAPI\Attribute\Mapping;
 use DateTime;
 
 /**
@@ -50,7 +51,7 @@ class Statistics extends BaseService
      *
      * @return string
      */
-    public function domain(): string
+    public static function domain(): string
     {
         return 'statistics-api.wildberries.ru';
     }
@@ -60,7 +61,7 @@ class Statistics extends BaseService
      *
      * @return string
      */
-    public function basePath(): string
+    public static function basePath(): string
     {
         return 'api/v1/supplier';
     }
@@ -75,6 +76,7 @@ class Statistics extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('incomes')]
     public function supplier(DateTime|string $dateFrom): mixed
     {
         return $this->request('GET', 'incomes', Payload::byParams([
@@ -95,6 +97,7 @@ class Statistics extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('stocks')]
     public function stocks(DateTime|string $dateFrom): mixed
     {
         return $this->request('GET', 'stocks', Payload::byParams([
@@ -115,6 +118,7 @@ class Statistics extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders')]
     public function orders(
         DateTime|string $dateFrom,
         int $flag = 0
@@ -139,6 +143,7 @@ class Statistics extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('sales')]
     public function sales(
         DateTime|string $dateFrom,
         int $flag = 0
@@ -163,6 +168,7 @@ class Statistics extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('reportDetailByPeriod')]
     public function reportDetailByPeriod(
         DateTime|string $dateFrom,
         DateTime|string $dateTo,

@@ -123,7 +123,7 @@ trait TService
      *
      * @return string
      */
-    public function domain(): string
+    public static function domain(): string
     {
         return 'suppliers-api.wildberries.ru';
     }
@@ -133,7 +133,7 @@ trait TService
      *
      * @return string
      */
-    public function basePath(): string
+    public static function basePath(): string
     {
         return '';
     }
@@ -241,8 +241,8 @@ trait TService
         $response = $this->client->request(
             new ClientPayload(
                 HttpMethod::makeFrom($method),
-                $this->domain(),
-                $this->basePath() . '/' . $path,
+                static::domain(),
+                static::basePath() . '/' . $path,
                 $this->headers($payload),
                 $this->params($payload),
                 $this->body($payload)

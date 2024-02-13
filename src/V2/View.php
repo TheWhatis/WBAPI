@@ -16,6 +16,7 @@ namespace Whatis\WBAPI\V2;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\ContentV2Category;
+use Whatis\WBAPI\Attribute\Mapping;
 use RuntimeException;
 
 /**
@@ -45,6 +46,7 @@ class View extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('get/cards/list')]
     public function list(
         array $cursor,
         array $filter = [],
@@ -97,6 +99,7 @@ class View extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('cards/error/list')]
     public function errList(string $locale = 'en'): mixed
     {
         return $this->request(
@@ -113,6 +116,7 @@ class View extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('cards/limits')]
     public function getLimits(): mixed
     {
         return $this->request('GET', 'cards/limits');

@@ -16,6 +16,7 @@ namespace Whatis\WBAPI\V3;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\MarketplaceV3Category;
+use Whatis\WBAPI\Attribute\Mapping;
 
 /**
  * Класс-сервис для работы
@@ -40,6 +41,7 @@ class Warehouses extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('offices')]
     public function wbGet(): mixed
     {
         return $this->request('GET', 'offices');
@@ -52,6 +54,7 @@ class Warehouses extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('warehouses')]
     public function get(): mixed
     {
         return $this->request('GET', 'warehouses');
@@ -67,6 +70,7 @@ class Warehouses extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('warehouses')]
     public function create(string $name, int $officeId): mixed
     {
         return $this->request(
@@ -88,6 +92,7 @@ class Warehouses extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('warehouses/{$warehouseId}')]
     public function update(
         int $warehouseId,
         string $name,
@@ -110,6 +115,7 @@ class Warehouses extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('warehouses/{$warehouseId}')]
     public function delete(int $warehouseId): mixed
     {
         return $this->request('DELETE', "warehouses/{$warehouseId}");

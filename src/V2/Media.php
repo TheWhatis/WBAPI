@@ -17,6 +17,7 @@ namespace Whatis\WBAPI\V2;
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\ContentV2Category;
 use Whatis\WBAPI\Service\Payload;
+use Whatis\WBAPI\Attribute\Mapping;
 
 use Psr\Http\Message\StreamInterface;
 use GuzzleHttp\Psr7\MultipartStream;
@@ -49,6 +50,7 @@ class Media extends BaseService
      *
      * @return array
      */
+    #[Mapping('media/save')]
     public function update(string $vendorCode, array $data): array
     {
         if (count($data) > 30) {
@@ -95,6 +97,7 @@ class Media extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('media/file')]
     public function addFile(
         string $vendorCode,
         int $photoNumber,

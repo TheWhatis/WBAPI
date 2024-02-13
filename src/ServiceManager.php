@@ -19,9 +19,14 @@ use Whatis\WBAPI\Service\IService;
 use Whatis\WBAPI\Exceptions\ServiceNotFound;
 use Whatis\WBAPI\Exceptions\ServiceAlreadyExists;
 use Whatis\WBAPI\Formatters\IJsonFormatter;
-use Psr\Http\Message\RequestFactoryInterface;
+use Whatis\WBAPI\Attribute\Mapping;
 
+use Psr\Http\Message\RequestFactoryInterface;
 use GuzzleHttp\Exception\ClientException;
+
+use ReflectionClass;
+// use ReflectionMethod;
+
 use InvalidArgumentException;
 use BadMethodCallException;
 use Throwable;
@@ -74,13 +79,42 @@ class ServiceManager
     /**
      * Иницилизировать фасад
      *
-     * @param string $token    Токен
-     * @param array  $services Массив с назвнаиями сервисов
-     *                         (и их алиасов)
+     * @param string $token Токен
      */
     public function __construct(string $token)
     {
         $this->token = $token;
+    }
+
+    /**
+     * Получить простую карту сервисов и запросов
+     *
+     * @return array
+     */
+    public static function mapping(): array
+    {
+        $mapping = [];
+        foreach (static::$mapping as $name => $service) {
+            $methods = Utils::serviceMappingMethods($service);
+            $mapping[$name] = array_combine(
+                array_map(
+                    fn ($method) => sprintf(
+                        '%s::%s', $service, $method->getName()
+                    ), $methods
+                ),
+                array_map(
+                    fn ($method) => Utils::preparePath(
+                        sprintf(
+                            '%s/%s', Utils::serviceBasePath(
+                                $service, $name
+                            ), Utils::serviceMethodPath($method)
+                        )
+                    ), $methods
+                )
+            );
+        }
+
+        return $mapping;
     }
 
     /**

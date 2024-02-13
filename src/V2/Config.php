@@ -17,6 +17,7 @@ namespace Whatis\WBAPI\V2;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\ContentV2Category;
+use Whatis\WBAPI\Attribute\Mapping;
 
 /**
  * Класс-сервис для работы
@@ -47,6 +48,7 @@ class Config extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('object/all')]
     public function getObjects(
         string $name = null,
         int $limit = 1000,
@@ -80,6 +82,7 @@ class Config extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('object/parent/all')]
     public function getParentCategories(string $locale = 'en'): mixed
     {
         return $this->request('GET', 'object/parent/all', [
@@ -98,6 +101,7 @@ class Config extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('object/charcs/{$subjectId}')]
     public function getObjectCharcs(
         string $subjectId, string $locale = 'en'
     ): mixed {
@@ -115,6 +119,7 @@ class Config extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('directory/colors')]
     public function getColors(string $locale = 'en'): mixed
     {
         return $this->request('GET', 'directory/colors', [
@@ -131,6 +136,7 @@ class Config extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('directory/kinds')]
     public function getKinds(string $locale = 'en'): mixed
     {
         return $this->request('GET', 'directory/kinds', [
@@ -148,6 +154,7 @@ class Config extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('directory/countries')]
     public function getCountries(string $locale = 'en'): mixed
     {
         return $this->request('GET', 'directory/countries', [
@@ -164,6 +171,7 @@ class Config extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('directory/seasons')]
     public function getSeasons(string $locale = 'en'): mixed
     {
         return $this->request('GET', 'directory/seasons', [
@@ -182,6 +190,7 @@ class Config extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('directory/tnved')]
     public function getTnved(
         int $subjectID,
         string $search,
@@ -203,6 +212,7 @@ class Config extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('directory/vat')]
     public function getVat(string $locale = 'en'): mixed
     {
         return $this->request('GET', 'directory/vat', [

@@ -19,6 +19,7 @@
 namespace Whatis\WBAPI\Http;
 
 use Whatis\WBAPI\Enums\HttpMethod;
+use Whatis\WBAPI\Utils;
 
 /**
  * Класс полезной нагрузки
@@ -100,23 +101,9 @@ class Payload
     ) {
         $this->method = $method;
         $this->domain = $domain;
-        $this->path = $this->correctPath($path);
+        $this->path = Utils::preparePath($path);
         $this->headers = $headers;
         $this->params = $params;
         $this->body = $body;
-    }
-
-    /**
-     * Получить корректный путь до ресурса
-     *
-     * @param string $path Путь
-     *
-     * @return string Корректный путь
-     */
-    protected function correctPath(string $path): string
-    {
-        $path = substr($path, 0, 1) == '/'
-              ? substr($path, 1) : $path;
-        return str_replace('//', '/', $path);
     }
 }

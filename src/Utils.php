@@ -13,6 +13,10 @@
 
 namespace Whatis\WBAPI;
 
+use Whatis\WBAPI\Attribute\Mapping;
+use ReflectionClass;
+use ReflectionMethod;
+
 /**
  * Класс с вспомогательными методами
  *
@@ -45,5 +49,81 @@ class Utils
             /x';
 
         return preg_split($regexp, $string);
+    }
+
+    /**
+     * Обработать путь до ресурса в более корректный
+     *
+     * @param string $path Путь до ресурса
+     *
+     * @return string
+     */
+    public static function preparePath(string $path): string
+    {
+        $path = substr($path, 0, 1) == '/'
+              ? substr($path, 1) : $path;
+        return preg_replace("/(\/)\\1+/", "$1", $path);
+    }
+
+    /**
+     * Получить корректный методы сервиса
+     * для mapping
+     *
+     * @param string|object $service Сервис
+     *
+     * @return array
+     */
+    public static function serviceMappingMethods(
+        string|object $service
+    ): array {
+
+        return array_filter(
+            (new ReflectionClass($service))->getMethods(),
+            fn ($method) => $method->isPublic()
+                && !in_array(
+                    ($name = $method->getName()), [
+                        'withFormatter',
+                        'getFormatter',
+                        'basePath',
+                        'withRequestFactory',
+                        'getRequestFactory',
+                        'getPermissions',
+                        'domain',
+                        'request'
+                    ]
+                ) && substr($name, 0, 1) !== '_'
+        );
+    }
+
+    /**
+     * Получить корректный основной путь
+     * до запроса, либо стандартное значение
+     *
+     * @param string $service Сервис
+     * @param string $default Стандартное значение
+     *
+     * @return string
+     */
+    public static function serviceBasePath(
+        string $service,
+        string $default = 'unknown'
+    ) {
+        return method_exists($service, 'basePath')
+            ? $service::basePath() : $default;
+    }
+
+    /**
+     * Получить корректный путь до запроса
+     * для mapping
+     *
+     * @param ReflectionMethod $method Метод
+     *
+     * @return string
+     */
+    public static function serviceMethodPath(
+        ReflectionMethod $method
+    ): string {
+        $map = $method->getAttributes(Mapping::class);
+        return $map ? $map[0]->newInstance()->path : '.../unknown';
     }
 }

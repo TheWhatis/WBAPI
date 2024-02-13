@@ -38,7 +38,7 @@ trait MarketplaceCategory
      *
      * @return string
      */
-    public function basePath(): string
+    public static function basePath(): string
     {
         return 'api/';
     }

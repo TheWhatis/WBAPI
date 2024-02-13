@@ -16,6 +16,7 @@ namespace Whatis\WBAPI\V2;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\ContentV2Category;
+use Whatis\WBAPI\Attribute\Mapping;
 
 /**
  * Класс-сервис для работы
@@ -46,6 +47,7 @@ class Trash extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('cards/trash')]
     public function list(
         array $sort,
         array $filter,
@@ -70,6 +72,7 @@ class Trash extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('cards/recover')]
     public function recover(array $nmIDs): mixed
     {
         return $this->request(

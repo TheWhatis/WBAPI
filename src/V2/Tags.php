@@ -16,6 +16,7 @@ namespace Whatis\WBAPI\V2;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\ContentV2Category;
+use Whatis\WBAPI\Attribute\Mapping;
 use RuntimeException;
 
 /**
@@ -55,6 +56,7 @@ class Tags extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('tags')]
     public function get(): mixed
     {
         return $this->request('GET', 'tags');
@@ -70,6 +72,7 @@ class Tags extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('tag')]
     public function create(
         string $name,
         string $color = 'D1CFD7'
@@ -100,6 +103,7 @@ class Tags extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('tag/{$id}')]
     public function update(
         int $id,
         string $name = null,
@@ -132,6 +136,7 @@ class Tags extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('tag/{$id}')]
     public function delete(int $id): mixed
     {
         return $this->request('DELETE', "tag/{$id}");
@@ -150,6 +155,7 @@ class Tags extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('tag/nomenclature/link')]
     public function manage(int $nmID, array $tagsIds): mixed
     {
         return $this->request(

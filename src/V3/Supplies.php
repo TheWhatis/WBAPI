@@ -16,6 +16,7 @@ namespace Whatis\WBAPI\V3;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\MarketplaceV3Category;
+use Whatis\WBAPI\Attribute\Mapping;
 use RuntimeException;
 
 /**
@@ -35,16 +36,6 @@ class Supplies extends BaseService
     use MarketplaceV3Category;
 
     /**
-     * Получить тип сервиса
-     *
-     * @return ServiceType
-     */
-    public static function getType(): ServiceType
-    {
-        return ServiceType::Suppliers;
-    }
-
-    /**
      * Создать новую поставку
      *
      * `api/v3/supplies`
@@ -53,6 +44,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies')]
     public function new(string $name): mixed
     {
         return $this->request(
@@ -70,6 +62,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies')]
     public function get(int $limit = 10, int $next = 0): mixed
     {
         return $this->request(
@@ -90,6 +83,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}/orders/{$orderId}')]
     public function addOrder(string $supplyId, int $orderId): mixed
     {
         return $this->request(
@@ -106,6 +100,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}')]
     public function byId(string $supplyId): mixed
     {
         return $this->request(
@@ -122,6 +117,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}')]
     public function cancel(string $supplyId): mixed
     {
         return $this->request(
@@ -138,6 +134,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}/orders')]
     public function orders(string $supplyId): mixed
     {
         return $this->request(
@@ -154,6 +151,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}/deliver')]
     public function toDeliver(string $supplyId): mixed
     {
         return $this->request(
@@ -171,6 +169,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}/barcode')]
     public function barcode(string $supplyId, string $type): mixed
     {
         return $this->request(
@@ -189,6 +188,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}/trbx')]
     public function getTrbx(string $supplyId): mixed
     {
         return $this->request(
@@ -207,6 +207,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}/trbx')]
     public function setTrbx(string $supplyId, array $amount): mixed
     {
         if (count($amount) > 1000) {
@@ -232,6 +233,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}/trbx')]
     public function deleteTrbx(
         string $supplyId,
         array $trbxIds
@@ -254,6 +256,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}/trbx/{$trbxId}')]
     public function addOrdersToTrbx(
         string $supplyId,
         string $trbxId,
@@ -277,6 +280,9 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping(
+        'supplies/{$supplyId}/trbx/{$trbxId}/orders/{$orderId}'
+    )]
     public function removeOrderFromTrbx(
         string $supplyId,
         string $trbxId,
@@ -299,6 +305,7 @@ class Supplies extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('supplies/{$supplyId}/trbx/stickers')]
     public function trbxStickers(
         string $supplyId,
         string $type,

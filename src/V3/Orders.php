@@ -17,6 +17,7 @@ namespace Whatis\WBAPI\V3;
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\MarketplaceV3Category;
 use Whatis\WBAPI\Service\Payload;
+use Whatis\WBAPI\Attribute\Mapping;
 
 use DateTime;
 use RuntimeException;
@@ -44,6 +45,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders/new')]
     public function new(): mixed
     {
         return $this->request('GET', 'orders/new');
@@ -63,6 +65,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders')]
     public function get(
         int $limit = 10,
         int $next = 0,
@@ -90,6 +93,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders/status')]
     public function statuses(array $orders): mixed
     {
         if (count($orders) > 1000) {
@@ -114,6 +118,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders/{$orderId}/cancel')]
     public function cancel(int $orderId): mixed
     {
         return $this->request(
@@ -132,6 +137,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders/{$orderId}/meta/sgtin')]
     public function metaSgtin(int $orderId, array $sgtin): mixed
     {
         if (count($sgtin) > 24) {
@@ -159,6 +165,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders/stickers')]
     public function stickers(
         string $type,
         int $width,
@@ -191,6 +198,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders/{$orderId}/meta')]
     public function getMeta(int $orderId): mixed
     {
         return $this->request(
@@ -209,6 +217,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders/{$orderId}/meta')]
     public function deleteMeta(int $orderId, string $key): mixed
     {
         return $this->request(
@@ -229,6 +238,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders/{$orderId}/meta/uin')]
     public function metaUin(int $orderId, string $uin): mixed
     {
         return $this->request(
@@ -248,6 +258,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders/{$orderId}/meta/imei')]
     public function metaImei(int $orderId, string $imei): mixed
     {
         return $this->request(
@@ -267,6 +278,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('orders/{$orderId}/meta/gtin')]
     public function metaGtin(int $orderId, string $gtin): mixed
     {
         return $this->request(
@@ -287,6 +299,7 @@ class Orders extends BaseService
      *
      * @return mixed
      */
+    #[Mapping('files/orders/external-stickers')]
     public function externalStickers(array $orders): mixed
     {
         if (count($orders) > 100) {
