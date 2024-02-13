@@ -39,9 +39,9 @@ class Passes extends BaseService
      *
      * `api/v3/passes/offices`
      *
-     * @return array
+     * @return mixed
      */
-    public function offices(): array
+    public function offices(): mixed
     {
         return $this->request(
             'GET', 'passes/offices'
@@ -53,9 +53,9 @@ class Passes extends BaseService
      *
      * `api/v3/passes`
      *
-     * @return array
+     * @return mixed
      */
-    public function get(): array
+    public function get(): mixed
     {
         return $this->request(
             'GET', 'passes'

@@ -38,9 +38,9 @@ class Warehouses extends BaseService
      *
      * `api/v3/offices`
      *
-     * @return array
+     * @return mixed
      */
-    public function wbGet(): array
+    public function wbGet(): mixed
     {
         return $this->request('GET', 'offices');
     }
@@ -50,9 +50,9 @@ class Warehouses extends BaseService
      *
      * `api/v3/warehouses`
      *
-     * @return array
+     * @return mixed
      */
-    public function get(): array
+    public function get(): mixed
     {
         return $this->request('GET', 'warehouses');
     }
@@ -65,9 +65,9 @@ class Warehouses extends BaseService
      * @param string $name     Название склада
      * @param int    $officeId Идентификатор склада WB
      *
-     * @return array
+     * @return mixed
      */
-    public function create(string $name, int $officeId): array
+    public function create(string $name, int $officeId): mixed
     {
         return $this->request(
             'POST', 'warehouses', [

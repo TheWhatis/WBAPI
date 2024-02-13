@@ -16,7 +16,12 @@ namespace Whatis\WBAPI\V2;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\ContentV2Category;
+use Whatis\WBAPI\Service\Payload;
+
+use Psr\Http\Message\StreamInterface;
+use GuzzleHttp\Psr7\MultipartStream;
 use RuntimeException;
+use resource;
 
 /**
  * Класс-сервис для работы
@@ -52,12 +57,31 @@ class Media extends BaseService
             );
         }
 
-        return $this->request(
-            'POST', 'media/save', [
-                'vendorCode' => $vendorCode,
-                'data' => $data
-            ]
-        );
+        return $this->request('POST', 'media/save', [
+            'vendorCode' => $vendorCode,
+            'data' => $data
+        ]);
+    }
+
+    /**
+     * Получить контент файла из ресурса
+     *
+     * @param string|resource|StreamInterface $file Файл
+     *
+     * @return string|resource|StreamInterface
+     */
+    protected function getFile(
+        string|resource|StreamInterface $file
+    ): string|resource|StreamInterface {
+        if (is_resource($file)) {
+            return $file;
+        }
+
+        if (is_a($file, StreamInterface::class)) {
+            return $file;
+        }
+
+        return is_file($file) ? file_get_contents($file) : $file;
     }
 
     /**
@@ -67,30 +91,25 @@ class Media extends BaseService
      *
      * @param string          $vendorCode  Артикул продавца
      * @param int             $photoNumber Номер изображения
-     * @param string|resource $uploadFile  Контент или файл для
-     *                                     загрузки
+     * @param string|resource|StreamInterface $uploadFile Изображение
      *
-     * @return array
+     * @return mixed
      */
     public function addFile(
         string $vendorCode,
         int $photoNumber,
-        string|\resource $uploadFile
-    ): array {
-        if (is_file($uploadFile)) {
-            $uploadFile = file_get_contents($uploadFile);
-        }
-
+        string|resource|StreamInterface $uploadFile
+    ): mixed {
         return $this->request(
-            'POST', 'media/file', headers: [
-                'X-Vendor-Code' => $vendorCode,
-                'X-Photo-Number' => $photoNumber
-            ], multipart: [
-                [
+            'POST', 'media/file', Payload::make()
+                ->withHeaders([
+                    'X-Vendor-Code' => $vendorCode,
+                    'X-Photo-Number' => $photoNumber
+                ])
+                ->withBody(new MultipartStream([[
                     'name' => 'uploadfile',
-                    'contents' => $uploadFile,
-                ]
-            ]
+                    'contents' => $this->getFile($uploadFile),
+                ]]))
         );
     }
 }

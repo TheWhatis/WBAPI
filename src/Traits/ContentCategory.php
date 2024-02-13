@@ -15,8 +15,8 @@
 
 namespace Whatis\WBAPI\Traits;
 
-use Whatis\WBAPI\Permission;
 use Whatis\WBAPI\Permissions;
+use Whatis\WBAPI\Enums\Permission;
 
 /**
  * Трейт для установки
@@ -38,7 +38,7 @@ trait ContentCategory
      *
      * @return string
      */
-    public static function getBaseUri(): string
+    public function basePath(): string
     {
         return 'content/';
     }

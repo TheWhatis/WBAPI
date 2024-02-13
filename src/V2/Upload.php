@@ -64,9 +64,9 @@ class Upload extends BaseService
      *
      * @param array $cards Список обновленных карточек товара
      *
-     * @return array
+     * @return mixed
      */
-    public function update(array $cards): array
+    public function update(array $cards): mixed
     {
         if (count($cards) > 1000) {
             throw new RuntimeException(
@@ -111,9 +111,9 @@ class Upload extends BaseService
      * @param int   $subjectID Идентификатор предмета
      * @param array $variants  Массив вариантов товара
      *
-     * @return array
+     * @return mixed
      */
-    public function create(int $subjectID, array $variants): array
+    public function create(int $subjectID, array $variants): mixed
     {
         if (count($variants) > 1000) {
             throw new RuntimeException(
@@ -148,9 +148,9 @@ class Upload extends BaseService
      * @param int   $imtID      imtID, к которой добавляется НМ
      * @param array $cardsToAdd Структура добавляемой НМ
      *
-     * @return array
+     * @return mixed
      */
-    public function addNm(int $imtID, array $cardsToAdd): array
+    public function addNm(int $imtID, array $cardsToAdd): mixed
     {
         return $this->request(
             'POST', 'cards/upload/add', [
@@ -169,9 +169,9 @@ class Upload extends BaseService
      *                         под которым необходимо объединить НМ
      * @param array $nmIDs     НМ которые необходимо объеденить
      *
-     * @return array
+     * @return mixed
      */
-    public function moveNm(int $targetIMT, array $nmIDs): array
+    public function moveNm(int $targetIMT, array $nmIDs): mixed
     {
         return $this->request(
             'POST', 'cards/moveNm', [
@@ -189,9 +189,9 @@ class Upload extends BaseService
      * @param int $count Количество баркодов, которые необходимо
      *                   сгенерировать
      *
-     * @return array
+     * @return mixed
      */
-    public function barcodes(int $count): array
+    public function barcodes(int $count): mixed
     {
         if ($count > 5000) {
             throw new RuntimeException(

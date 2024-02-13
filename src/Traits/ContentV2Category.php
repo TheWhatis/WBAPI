@@ -31,7 +31,7 @@ namespace Whatis\WBAPI\Traits;
 trait ContentV2Category
 {
     use ContentCategory {
-        ContentCategory::getBaseUri as private traitBaseUri;
+        ContentCategory::basePath as private previousBasePath;
     }
 
     /**
@@ -39,8 +39,8 @@ trait ContentV2Category
      *
      * @return string
      */
-    public static function getBaseUri(): string
+    public function basePath(): string
     {
-        return static::traitBaseUri() . 'v2/';
+        return $this->previousBasePath() . 'v2/';
     }
 }

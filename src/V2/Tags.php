@@ -53,9 +53,9 @@ class Tags extends BaseService
      *
      * `content/v2/tags`
      *
-     * @return array
+     * @return mixed
      */
-    public function get(): array
+    public function get(): mixed
     {
         return $this->request('GET', 'tags');
     }
@@ -68,13 +68,13 @@ class Tags extends BaseService
      * @param string $name  Название тега
      * @param string $color Цвет тега
      *
-     * @return array
+     * @return mixed
      */
     public function create(
         string $name,
         string $color = 'D1CFD7'
-    ): array {
-        if (!in_array($color, $this->colors)) {
+    ): mixed {
+        if (!in_mixed($color, $this->colors)) {
             throw new RuntimeException(
                 'Argument $color must be in \''
                     . implode(', ', $this->colors) . '\''
@@ -98,14 +98,14 @@ class Tags extends BaseService
      * @param string $name  Название тега
      * @param string $color Цвет тега
      *
-     * @return array
+     * @return mixed
      */
     public function update(
         int $id,
         string $name = null,
         string $color = null
-    ): array {
-        if ($color && !in_array($color, $this->colors)) {
+    ): mixed {
+        if ($color && !in_mixed($color, $this->colors)) {
             throw new RuntimeException(
                 'Argument $color must be in \''
                     . implode(', ', $this->colors) . '\''
@@ -130,9 +130,9 @@ class Tags extends BaseService
      *
      * @param int $id Идентификатор тега
      *
-     * @return array
+     * @return mixed
      */
-    public function delete(int $id): array
+    public function delete(int $id): mixed
     {
         return $this->request('DELETE', "tag/{$id}");
     }
@@ -148,9 +148,9 @@ class Tags extends BaseService
      * @param int   $nmID    Артикул wildberries
      * @param array $tagsIds Массив идентификаторов тегов
      *
-     * @return array
+     * @return mixed
      */
-    public function manage(int $nmID, array $tagsIds): array
+    public function manage(int $nmID, array $tagsIds): mixed
     {
         return $this->request(
             'POST', 'tag/nomenclature/link', [

@@ -31,7 +31,7 @@ namespace Whatis\WBAPI\Traits;
 trait MarketplaceV3Category
 {
     use MarketplaceCategory {
-        MarketplaceCategory::getBaseUri as private traitBaseUri;
+        MarketplaceCategory::basePath as private previousBasePath;
     }
 
     /**
@@ -39,8 +39,8 @@ trait MarketplaceV3Category
      *
      * @return string
      */
-    public static function getBaseUri(): string
+    public function basePath(): string
     {
-        return static::traitBaseUri() . 'v3/';
+        return $this->previousBasePath() . 'v3/';
     }
 }

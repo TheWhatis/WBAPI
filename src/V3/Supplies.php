@@ -51,9 +51,9 @@ class Supplies extends BaseService
      *
      * @param string $name Название поставки
      *
-     * @return array
+     * @return mixed
      */
-    public function new(string $name): array
+    public function new(string $name): mixed
     {
         return $this->request(
             'POST', 'supplies', ['name' => $name]
@@ -68,9 +68,9 @@ class Supplies extends BaseService
      * @param int $limit Лимит по количеству данных
      * @param int $next  Параметр пагинации
      *
-     * @return array
+     * @return mixed
      */
-    public function get(int $limit = 10, int $next = 0): array
+    public function get(int $limit = 10, int $next = 0): mixed
     {
         return $this->request(
             'GET', 'supplies', [
@@ -104,9 +104,9 @@ class Supplies extends BaseService
      *
      * @param string $supplyId Идентификатор поставки
      *
-     * @return array
+     * @return mixed
      */
-    public function byId(string $supplyId): array
+    public function byId(string $supplyId): mixed
     {
         return $this->request(
             'GET', "supplies/{$supplyId}"
@@ -136,9 +136,9 @@ class Supplies extends BaseService
      *
      * @param string $supplyId Идентификатор поставки
      *
-     * @return array
+     * @return mixed
      */
-    public function orders(string $supplyId): array
+    public function orders(string $supplyId): mixed
     {
         return $this->request(
             'GET', "supplies/{$supplyId}/orders"
@@ -152,9 +152,9 @@ class Supplies extends BaseService
      *
      * @param string $supplyId Идентификатор поставки
      *
-     * @return array
+     * @return mixed
      */
-    public function toDeliver(string $supplyId): array
+    public function toDeliver(string $supplyId): mixed
     {
         return $this->request(
             'PATCH', "supplies/{$supplyId}/deliver"
@@ -169,9 +169,9 @@ class Supplies extends BaseService
      * @param string $supplyId Идентификатор поставки
      * @param string $type     Тип этикетки
      *
-     * @return array
+     * @return mixed
      */
-    public function barcode(string $supplyId, string $type): array
+    public function barcode(string $supplyId, string $type): mixed
     {
         return $this->request(
             'GET', "supplies/{$supplyId}/barcode", query: [
@@ -187,9 +187,9 @@ class Supplies extends BaseService
      *
      * @param string $supplyId Идентификатор поставки
      *
-     * @return array
+     * @return mixed
      */
-    public function getTrbx(string $supplyId): array
+    public function getTrbx(string $supplyId): mixed
     {
         return $this->request(
             'GET', "supplies/{$supplyId}/trbx"
@@ -205,9 +205,9 @@ class Supplies extends BaseService
      * @param array  $amount   Количество коробов, которые
      *                         необходимо добавить к поставке
      *
-     * @return array
+     * @return mixed
      */
-    public function setTrbx(string $supplyId, array $amount): array
+    public function setTrbx(string $supplyId, array $amount): mixed
     {
         if (count($amount) > 1000) {
             throw new RuntimeException(
@@ -297,13 +297,13 @@ class Supplies extends BaseService
      * @param string $type     Тип этикетки
      * @param array  $trbxIds  Список идентификаторов коробов
      *
-     * @return array
+     * @return mixed
      */
     public function trbxStickers(
         string $supplyId,
         string $type,
         array $trbxIds
-    ): array {
+    ): mixed {
         return $this->request(
             'POST', "supplies/{$supplyId}/trbx/stickers", [
                 'trbxIds' => $trbxIds

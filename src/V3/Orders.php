@@ -16,6 +16,7 @@ namespace Whatis\WBAPI\V3;
 
 use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Traits\MarketplaceV3Category;
+use Whatis\WBAPI\Service\Payload;
 
 use DateTime;
 use RuntimeException;
@@ -41,9 +42,9 @@ class Orders extends BaseService
      *
      * `api/v3/orders/new`
      *
-     * @return array
+     * @return mixed
      */
-    public function new(): array
+    public function new(): mixed
     {
         return $this->request('GET', 'orders/new');
     }
@@ -60,23 +61,23 @@ class Orders extends BaseService
      * @param DateTime|int $to    Дата конца периода в
      *                            формате unix timestamp
      *
-     * @return array
+     * @return mixed
      */
     public function get(
         int $limit = 10,
         int $next = 0,
         DateTime|int $from = null,
         DateTime|int $to = null
-    ): array {
+    ): mixed {
         return $this->request(
-            'GET', 'orders', [
+            'GET', 'orders', Payload::byParams([
                 'limit' => $limit,
                 'next' => $next,
                 'dateFrom' => $from instanceof DateTime
                     ? $from->getTimestamp() : $from,
                 'dateTo' => $to instanceof DateTime
                     ? $to->getTimestamp() : $to
-            ]
+            ])
         );
     }
 
@@ -87,9 +88,9 @@ class Orders extends BaseService
      *
      * @param array $orders Идентификаторы сборочных заданий
      *
-     * @return array
+     * @return mixed
      */
-    public function statuses(array $orders): array
+    public function statuses(array $orders): mixed
     {
         if (count($orders) > 1000) {
             throw new RuntimeException(
@@ -111,9 +112,9 @@ class Orders extends BaseService
      *
      * @param int $orderId Идентификатор сборочного задания
      *
-     * @return array
+     * @return mixed
      */
-    public function cancel(int $orderId): array
+    public function cancel(int $orderId): mixed
     {
         return $this->request(
             'PATCH', "orders/{$orderId}/cancel"
@@ -129,9 +130,9 @@ class Orders extends BaseService
      * @param int   $orderId Идентификатор сборочного задания
      * @param array $sgtin   Массив КиЗов
      *
-     * @return array
+     * @return mixed
      */
-    public function metaSgtin(int $orderId, array $sgtin): array
+    public function metaSgtin(int $orderId, array $sgtin): mixed
     {
         if (count($sgtin) > 24) {
             throw new RuntimeException(
@@ -156,14 +157,14 @@ class Orders extends BaseService
      * @param int    $height Высота этикетки
      * @param array  $orders Идентификаторы сборочных заданий
      *
-     * @return array
+     * @return mixed
      */
     public function stickers(
         string $type,
         int $width,
         int $height,
         array $orders,
-    ): array {
+    ): mixed {
         if (count($orders) > 100) {
             throw new RuntimeException(
                 'Count orders must be less then 100'
@@ -188,9 +189,9 @@ class Orders extends BaseService
      *
      * @param int $orderId Идентификатор сборочного задания
      *
-     * @return array
+     * @return mixed
      */
-    public function getMeta(int $orderId): array
+    public function getMeta(int $orderId): mixed
     {
         return $this->request(
             'GET', "orders/{$orderId}/meta"
@@ -206,9 +207,9 @@ class Orders extends BaseService
      * @param string $key     Название метаданных для удаления (
      *                        imei, uin, gtin)
      *
-     * @return array
+     * @return mixed
      */
-    public function deleteMeta(int $orderId, string $key): array
+    public function deleteMeta(int $orderId, string $key): mixed
     {
         return $this->request(
             'DELETE', "orders/{$orderId}/meta", [
@@ -226,9 +227,9 @@ class Orders extends BaseService
      * @param int    $orderId Идентификатор сборочного задания
      * @param string $uin     УИН
      *
-     * @return array
+     * @return mixed
      */
-    public function metaUin(int $orderId, string $uin): array
+    public function metaUin(int $orderId, string $uin): mixed
     {
         return $this->request(
             'PUT', "orders/{$orderId}/meta/uin", [
@@ -245,9 +246,9 @@ class Orders extends BaseService
      * @param int    $orderId Идентификатор сборочного задания
      * @param string $imei    IMEI
      *
-     * @return array
+     * @return mixed
      */
-    public function metaImei(int $orderId, string $imei): array
+    public function metaImei(int $orderId, string $imei): mixed
     {
         return $this->request(
             'PUT', "orders/{$orderId}/meta/imei", [
@@ -264,9 +265,9 @@ class Orders extends BaseService
      * @param int    $orderId Идентификатор сборочного задания
      * @param string $gtin    GTIN
      *
-     * @return array
+     * @return mixed
      */
-    public function metaGtin(int $orderId, string $gtin): array
+    public function metaGtin(int $orderId, string $gtin): mixed
     {
         return $this->request(
             'PUT', "orders/{$orderId}/meta/gtin", [
@@ -284,9 +285,9 @@ class Orders extends BaseService
      *
      * @param array $orders Идентификаторы сборочных заданий
      *
-     * @return array
+     * @return mixed
      */
-    public function externalStickers(array $orders): array
+    public function externalStickers(array $orders): mixed
     {
         if (count($orders) > 100) {
             throw new RuntimeException(

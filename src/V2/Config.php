@@ -45,7 +45,7 @@ class Config extends BaseService
      * @param int    $offset   Номер позиции с которой получать ответ
      * @param int    $parentID Идентификатор родельской категории
      *
-     * @return array
+     * @return mixed
      */
     public function getObjects(
         string $name = null,
@@ -53,7 +53,7 @@ class Config extends BaseService
         string $locale = 'en',
         int $offset = 0,
         int $parentID = null,
-    ): array {
+    ): mixed {
         $params = [
             'limit' => $limit,
             'offset' => $offset,
@@ -78,15 +78,13 @@ class Config extends BaseService
      *
      * @param string $locale Параметр для выбора языка
      *
-     * @return array
+     * @return mixed
      */
-    public function getParentCategories(string $locale = 'en'): array
+    public function getParentCategories(string $locale = 'en'): mixed
     {
-        return $this->request(
-            'GET', 'object/parent/all', [
-                'locale' => $locale
-            ]
-        );
+        return $this->request('GET', 'object/parent/all', [
+            'locale' => $locale
+        ]);
     }
 
     /**
@@ -98,16 +96,14 @@ class Config extends BaseService
      * @param int    $subjectId Идентификатор предмета
      * @param string $locale    Параметр для выбора языка
      *
-     * @return array
+     * @return mixed
      */
     public function getObjectCharcs(
         string $subjectId, string $locale = 'en'
-    ): array {
-        return $this->request(
-            'GET', "object/charcs/{$subjectId}", [
-                'locale' => $locale
-            ]
-        );
+    ): mixed {
+        return $this->request('GET', "object/charcs/{$subjectId}", [
+            'locale' => $locale
+        ]);
     }
 
     /**
@@ -117,15 +113,13 @@ class Config extends BaseService
      *
      * @param string $locale Параметр выбора языка
      *
-     * @return array
+     * @return mixed
      */
-    public function getColors(string $locale = 'en'): array
+    public function getColors(string $locale = 'en'): mixed
     {
-        return $this->request(
-            'GET', 'directory/colors', [
-                'locale' => $locale
-            ]
-        );
+        return $this->request('GET', 'directory/colors', [
+            'locale' => $locale
+        ]);
     }
 
     /**
@@ -135,15 +129,13 @@ class Config extends BaseService
      *
      * @param string $locale Параметр выбора языка
      *
-     * @return array
+     * @return mixed
      */
-    public function getKinds(string $locale = 'en'): array
+    public function getKinds(string $locale = 'en'): mixed
     {
-        return $this->request(
-            'GET', 'directory/kinds', [
-                'locale' => $locale
-            ]
-        );
+        return $this->request('GET', 'directory/kinds', [
+            'locale' => $locale
+        ]);
     }
 
     /**
@@ -154,15 +146,13 @@ class Config extends BaseService
      *
      * @param string $locale Параметр выбора языка
      *
-     * @return array
+     * @return mixed
      */
-    public function getCountries(string $locale = 'en'): array
+    public function getCountries(string $locale = 'en'): mixed
     {
-        return $this->request(
-            'GET', 'directory/countries', [
-                'locale' => $locale
-            ]
-        );
+        return $this->request('GET', 'directory/countries', [
+            'locale' => $locale
+        ]);
     }
 
     /**
@@ -172,15 +162,13 @@ class Config extends BaseService
      *
      * @param string $locale Параметр выбора языка
      *
-     * @return array
+     * @return mixed
      */
-    public function getSeasons(string $locale = 'en'): array
+    public function getSeasons(string $locale = 'en'): mixed
     {
-        return $this->request(
-            'GET', 'directory/seasons', [
-                'locale' => $locale
-            ]
-        );
+        return $this->request('GET', 'directory/seasons', [
+            'locale' => $locale
+        ]);
     }
 
     /**
@@ -192,18 +180,18 @@ class Config extends BaseService
      * @param string $search    Поиск по ТНВЭД коду
      * @param string $locale    Параметр выбора языка
      *
-     * @return array
+     * @return mixed
      */
     public function getTnved(
-        int $subjectID, string $search, string $locale = 'en'
-    ): array {
-        return $this->request(
-            'GET', 'directory/tnved', [
-                'subjectID' => $subjectID,
-                'search' => $search,
-                'locale' => $locale
-            ]
-        );
+        int $subjectID,
+        string $search,
+        string $locale = 'en'
+    ): mixed {
+        return $this->request('GET', 'directory/tnved', [
+            'subjectID' => $subjectID,
+            'search' => $search,
+            'locale' => $locale
+        ]);
     }
 
     /**
@@ -213,15 +201,13 @@ class Config extends BaseService
      *
      * @param string $locale Параметр выбора языка
      *
-     * @return array
+     * @return mixed
      */
-    public function getVat(string $locale = 'en'): array
+    public function getVat(string $locale = 'en'): mixed
     {
-        return $this->request(
-            'GET', 'directory/vat', [
-                'locale' => $locale
-            ]
-        );
+        return $this->request('GET', 'directory/vat', [
+            'locale' => $locale
+        ]);
     }
 
 }

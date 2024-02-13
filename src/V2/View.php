@@ -43,13 +43,13 @@ class View extends BaseService
      * @param array $filter Фильтры для поиска
      * @param array $sort   Сортировка
      *
-     * @return array
+     * @return mixed
      */
     public function list(
         array $cursor,
         array $filter = [],
         array $sort = null
-    ): array {
+    ): mixed {
         if (!array_key_exists('limit', $cursor)) {
             throw new RuntimeException(
                 '\'limit\' key is required in cursor'
@@ -95,9 +95,9 @@ class View extends BaseService
      *
      * @param string $locale Параметр выбора языка вывода
      *
-     * @return array
+     * @return mixed
      */
-    public function errList(string $locale = 'en'): array
+    public function errList(string $locale = 'en'): mixed
     {
         return $this->request(
             'GET', 'cards/error/list', [
@@ -111,9 +111,9 @@ class View extends BaseService
      *
      * `content/v2/cards/limits`
      *
-     * @return array
+     * @return mixed
      */
-    public function getLimits(): array
+    public function getLimits(): mixed
     {
         return $this->request('GET', 'cards/limits');
     }

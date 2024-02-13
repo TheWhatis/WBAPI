@@ -44,14 +44,14 @@ class Trash extends BaseService
      * @param array  $cursor Элемент пагинации
      * @param string $locale Параметр выбора языка
      *
-     * @return array
+     * @return mixed
      */
     public function list(
         array $sort,
         array $filter,
         array $cursor,
         string $locale = 'en'
-    ): array {
+    ): mixed {
         return $this->request(
             'POST', 'cards/trash', [
                 'sort' => $sort,
@@ -68,9 +68,9 @@ class Trash extends BaseService
      *
      * @param array $nmIDs Артикулы WB
      *
-     * @return array
+     * @return mixed
      */
-    public function recover(array $nmIDs): array
+    public function recover(array $nmIDs): mixed
     {
         return $this->request(
             'POST', 'cards/recover', [

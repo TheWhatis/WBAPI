@@ -14,10 +14,10 @@
 
 namespace Whatis\WBAPI\V1;
 
-use Whatis\WBAPI\Permission;
 use Whatis\WBAPI\Permissions;
+use Whatis\WBAPI\Enums\Permission;
 use Whatis\WBAPI\Service\BaseService;
-
+use Whatis\WBAPI\Service\Payload;
 use RuntimeException;
 
 /**
@@ -50,7 +50,7 @@ class Prices extends BaseService
      *
      * @return string
      */
-    public static function baseUri(): string
+    public function basePath(): string
     {
         return 'public/api/v1/';
     }
@@ -63,9 +63,9 @@ class Prices extends BaseService
      * @param int $quantity 1 - товар с ненулевым остатком,
      *                      0 - товар с любым остатком
      *
-     * @return array
+     * @return mixed
      */
-    public function get(int $quantity = 0): array
+    public function get(int $quantity = 0): mixed
     {
         if (!in_array($quantity, [0, 1])) {
             throw new RuntimeException(
@@ -74,11 +74,9 @@ class Prices extends BaseService
             );
         }
 
-        return $this->request(
-            'GET', 'info', query: [
-                'quantity' => $quantity
-            ]
-        );
+        return $this->request('GET', 'info', Payload::byParams([
+            'quantity' => $quantity
+        ]));
     }
 
     /**
@@ -88,9 +86,9 @@ class Prices extends BaseService
      *
      * @param array $prices Массив с новыми ценами
      *
-     * @return array
+     * @return mixed
      */
-    public function set(array $prices): array
+    public function set(array $prices): mixed
     {
         if (count($prices) > 1000) {
             throw new RuntimeException(

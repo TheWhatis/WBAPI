@@ -14,10 +14,10 @@
 
 namespace Whatis\WBAPI\V1;
 
-use Whatis\WBAPI\Permission;
 use Whatis\WBAPI\Permissions;
+use Whatis\WBAPI\Enums\Permission;
 use Whatis\WBAPI\Service\BaseService;
-
+use Whatis\WBAPI\Service\Payload;
 use DateTime;
 
 /**
@@ -46,13 +46,23 @@ class Statistics extends BaseService
     }
 
     /**
+     * Получить домен для обращения
+     *
+     * @return string
+     */
+    public function domain(): string
+    {
+        return 'statistics-api.wildberries.ru';
+    }
+
+    /**
      * Получить базовый uri
      *
      * @return string
      */
-    public static function baseUri(): string
+    public function basePath(): string
     {
-        return 'api/v1/supplier/';
+        return 'api/v1/supplier';
     }
 
     /**
@@ -63,17 +73,15 @@ class Statistics extends BaseService
      * @param DateTime|string $dateFrom Дата и время последнего
      *                                  изменения поставок
      *
-     * @return array
+     * @return mixed
      */
-    public function supplier(DateTime|string $dateFrom): array
+    public function supplier(DateTime|string $dateFrom): mixed
     {
-        return $this->request(
-            'GET', 'incomes', query: [
-                'dateFrom' => is_string($dateFrom)
-                    ? $dateFrom
-                    : $dateFrom->format('Y-m-d\TH:i:s.u\Z')
-            ]
-        );
+        return $this->request('GET', 'incomes', Payload::byParams([
+            'dateFrom' => is_string($dateFrom)
+                ? $dateFrom
+                : $dateFrom->format('Y-m-d\TH:i:s.u\Z')
+        ]));
     }
 
     /**
@@ -85,17 +93,15 @@ class Statistics extends BaseService
      * @param DateTime|string $dateFrom Дата и время последнего
      *                                  изменения по товару
      *
-     * @return array
+     * @return mixed
      */
-    public function stocks(DateTime|string $dateFrom): array
+    public function stocks(DateTime|string $dateFrom): mixed
     {
-        return $this->request(
-            'GET', 'stocks', query: [
-                'dateFrom' => is_string($dateFrom)
-                    ? $dateFrom
-                    : $dateFrom->format('Y-m-d\TH:i:s.u\Z')
-            ]
-        );
+        return $this->request('GET', 'stocks', Payload::byParams([
+            'dateFrom' => is_string($dateFrom)
+                ? $dateFrom
+                : $dateFrom->format('Y-m-d\TH:i:s.u\Z')
+        ]));
     }
 
     /**
@@ -107,20 +113,18 @@ class Statistics extends BaseService
      *                                  изменения по товару
      * @param int             $flag     Флаг по поиску
      *
-     * @return array
+     * @return mixed
      */
     public function orders(
         DateTime|string $dateFrom,
         int $flag = 0
-    ): array {
-        return $this->request(
-            'GET', 'orders', query: [
-                'dateFrom' => is_string($dateFrom)
-                    ? $dateFrom
-                    : $dateFrom->format('Y-m-d\TH:i:s.u\Z'),
-                'flag' => $flag
-            ]
-        );
+    ): mixed {
+        return $this->request('GET', 'orders', Payload::byParams([
+            'dateFrom' => is_string($dateFrom)
+                ? $dateFrom
+                : $dateFrom->format('Y-m-d\TH:i:s.u\Z'),
+            'flag' => $flag
+        ]));
     }
 
     /**
@@ -133,20 +137,18 @@ class Statistics extends BaseService
      *                                  изменения продажи/возврата
      * @param int             $flag     Флаг по поиску
      *
-     * @return array
+     * @return mixed
      */
     public function sales(
         DateTime|string $dateFrom,
         int $flag = 0
-    ): array {
-        return $this->request(
-            'GET', 'sales', query: [
-                'dateFrom' => is_string($dateFrom)
-                    ? $dateFrom
-                    : $dateFrom->format('Y-m-d\TH:i:s.u\Z'),
-                'flag' => $flag
-            ]
-        );
+    ): mixed {
+        return $this->request('GET', 'sales', Payload::byParams([
+            'dateFrom' => is_string($dateFrom)
+                ? $dateFrom
+                : $dateFrom->format('Y-m-d\TH:i:s.u\Z'),
+            'flag' => $flag
+        ]));
     }
 
     /**
@@ -159,16 +161,16 @@ class Statistics extends BaseService
      * @param int             $limit    Максимальное количество строк
      * @param int             $rrdid    Идентификатор строки отчета
      *
-     * @return array
+     * @return mixed
      */
     public function reportDetailByPeriod(
         DateTime|string $dateFrom,
         DateTime|string $dateTo,
         int $limit = 10000,
         int $rrdid = 0
-    ): array {
+    ): mixed {
         return $this->request(
-            'GET', 'reportDetailByPeriod', query: [
+            'GET', 'reportDetailByPeriod', Payload::byParams([
                 'dateFrom' => is_string($dateFrom)
                     ? $dateFrom
                     : $dateFrom->format('Y-m-d\TH:i:s.u\Z'),
@@ -177,7 +179,7 @@ class Statistics extends BaseService
                     : $dateTo->format('Y-m-d\TH:i:s.u\Z'),
                 'limit' => $limit,
                 'rrdid' => $rrdid
-            ]
+            ])
         );
     }
 }
