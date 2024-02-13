@@ -13,7 +13,12 @@
 
 namespace Whatis\WBAPI\Service;
 
+use Whatis\WBAPI\Http\IClient;
+use Whatis\WBAPI\Enums\HttpMethod;
 use Whatis\WBAPI\Permissions;
+use Whatis\WBAPI\Formatters\IJsonFormatter;
+use Psr\Http\Message\RequestFactoryInterface;
+use BadMethodCallException;
 
 /**
  * Интерфейс сервиса
@@ -44,11 +49,51 @@ interface IService
     public static function getPermissions(): Permissions;
 
     /**
+     * Установить форматировщик
+     *
+     * @param IJsonFormatter $formatter Форматировщик
+     *
+     * @return static
+     */
+    public function withFormatter(IJsonFormatter $formatter): static;
+
+    /**
+     * Получить форматировщик
+     *
+     * @return IJsonFormatter
+     */
+    public function getFormatter(): IJsonFormatter;
+
+    /**
+     * Установить фабрику запросов
+     *
+     * @param RequestFactoryInterface $factory Фабрика запросов
+     *
+     * @return static
+     */
+    public function withRequestFactory(
+        RequestFactoryInterface $factory
+    ): static;
+
+    /**
+     * Получить фабрику запросов
+     *
+     * @return RequestFactoryInterface
+     */
+    public function getRequestFactory(): RequestFactoryInterface;
+
+    /**
      * Воспроизвести запрос
      *
-     * @param ...$args Аргументы для запроса Request
+     * @param string|HttpMethod $method  Метод
+     * @param string            $path    Путь до запроса
+     * @param mixed             $payload Полезная нагрузка запроса
      *
-     * @return array
+     * @return mixed
      */
-    public function request(...$args): array;
+    public function request(
+        string|HttpMethod $method,
+        string $path,
+        mixed $payload = null
+    ): mixed;
 }
