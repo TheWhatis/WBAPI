@@ -1,6 +1,6 @@
 # Библиотека для WB API
 ## Документация
-  * [Documentation](https://github.com/TheWhatis/WBAPI/tree/master/docs/markdown/index.md "Documentation")
+  * [Documentation](https://github.com/TheWhatis/WBAPI/tree/master/docs/markdown/Home.md "Documentation")
 ## Установка
 ```
 composer require whatis/wbapi
