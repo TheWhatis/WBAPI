@@ -21,12 +21,14 @@ use Whatis\WBAPI\Formatters\ArrayFormatter;
 use GuzzleHttp\Psr7\HttpFactory;
 
 $token 'some.jwt.token.-asdffsdfJLA';
-$manager = ServiceManager::make($token)
-    ->initNew(     // Иницилизируем сервис
-        'v2/tags', // Ключ сервиса в ServiceManager::$mapping
-        'tags'     // Алиас для последующего взаимодейстия
-    )->initNew('v2/config')
-     ->initNew('v3/orders', 'orders');
+$manager = ServiceManager::make($token)->initNew(
+    'v2/tags', // Ключ сервиса в ServiceManager::$mapping
+    'tags'     // Алиас для последующего взаимодейстия
+);
+
+// Иницилизируем ещё несколько
+$manager->initNew('v3/orders', 'orders');
+        ->initNew('v2/config')
 
 // Создание алиаса отдельно
 $manager->alias('v2/config', 'config')
