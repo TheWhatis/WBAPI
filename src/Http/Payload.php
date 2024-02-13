@@ -1,0 +1,122 @@
+<?php
+/**
+ * Файл с классом полезной нагрузки
+ * для создания запросов из
+ * клиента `IClient`
+ *
+ * Имеет все необходимые данные
+ * для запроса
+ *
+ * PHP version 8
+ *
+ * @category Http
+ * @package  WBAPI
+ * @author   Whatis <anton-gogo@mail.ru>
+ * @license  unlicense
+ * @link     https://github.com/TheWhatis/WBAPI
+ */
+
+namespace Whatis\WBAPI\Http;
+
+use Whatis\WBAPI\Enums\HttpMethod;
+
+/**
+ * Класс полезной нагрузки
+ * для создания запросов из
+ * клиента `IClient`
+ *
+ * Имеет все необходимые данные
+ * для запроса
+ *
+ * PHP version 8
+ *
+ * @category Http
+ * @package  WBAPI
+ * @author   Whatis <anton-gogo@mail.ru>
+ * @license  unlicense
+ * @link     https://github.com/TheWhatis/WBAPI
+ */
+class Payload
+{
+    /**
+     * Метод
+     *
+     * @var HttpMethod
+     */
+    public readonly HttpMethod $method;
+
+    /**
+     * Домен
+     *
+     * @var string
+     */
+    public readonly string $domain;
+
+    /**
+     * Путь до ресурса
+     *
+     * @var string
+     */
+    public readonly string $path;
+
+    /**
+     * Заголовки для запроса
+     *
+     * @var array
+     */
+    public readonly array $headers;
+
+    /**
+     * Параметры
+     *
+     * @var array
+     */
+    public readonly array $params;
+
+    /**
+     * Тело запроса
+     *
+     * @var mixed
+     */
+    public readonly mixed $body;
+
+    /**
+     * Создание экземпляра полезной нагрузки
+     *
+     * @param HttpMethod $method  Метод
+     * @param string     $domain  Домен
+     * @param string     $path    Путь
+     * @param array      $headers Заголовки
+     * @param array      $params  Параметры
+     * @param mixed      $body    Тело запроса
+     */
+    public function __construct(
+        HttpMethod $method,
+        string $domain,
+        string $path,
+        array $headers,
+        array $params,
+        mixed $body
+    ) {
+        $this->method = $method;
+        $this->domain = $domain;
+        $this->path = $this->correctPath($path);
+        $this->headers = $headers;
+        $this->params = $params;
+        $this->body = $body;
+    }
+
+    /**
+     * Получить корректный путь до ресурса
+     *
+     * @param string $path Путь
+     *
+     * @return string Корректный путь
+     */
+    protected function correctPath(string $path): string
+    {
+        $path = substr($path, 0, 1) == '/'
+              ? substr($path, 1) : $path;
+        return str_replace('//', '/', $path);
+    }
+}
