@@ -27,8 +27,8 @@ $manager = ServiceManager::make($token)->initNew(
 );
 
 // Иницилизируем ещё несколько
-$manager->initNew('v3/orders', 'orders');
-        ->initNew('v2/config')
+$manager->initNew('v3/orders', 'orders')
+        ->initNew('v2/config');
 
 // Создание алиаса отдельно
 $manager->alias('v2/config', 'config')
