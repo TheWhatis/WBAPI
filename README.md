@@ -62,6 +62,10 @@ use Whatis\WBAPI\Service\BaseService;
 use Whatis\WBAPI\Enums\Permission;
 use Whatis\WBAPI\Permissions;
 
+// Атрибут, необходимый для
+// метода ServiceManager::mapping
+use Whatis\WBAPI\Attribute\Mapping;
+
 use DateTime;
 use DateTimeZone;
 
@@ -87,7 +91,7 @@ class Service extends BaseService
     public static function getPermissions(): Permissions
     {
         return new Permissions(
-            Permission::Orders,
+            Permission::Marketplace,
             Permission::Statistics,
             Permission::Promotion
         );
@@ -106,9 +110,10 @@ class Service extends BaseService
     /**
      * Получить что-то
      *
-     * @return array
+     * @return mixed
      */
-    public function get(): array
+    #[Mapping('orders')]
+    public function get(): mixed
     {
         $timezone = new DateTimeZone('UTC');
 
@@ -133,7 +138,7 @@ class Service extends BaseService
 
 use Whatis\WBAPI\Example\Service;
 
-$token = 'wbtoken';
+$token = 'some.jwt.token.-asdffsdfJLA';
 $service = new Service($token);
 
 var_dump($service->get());
