@@ -1,7 +1,7 @@
 <?php
 /**
- * Файл с абстрактным классом
- * клиента
+ * Файл с абстрактным
+ * классом клиента
  *
  * PHP version 8
  *
@@ -12,7 +12,7 @@
  * @link     https://github.com/TheWhatis/WBAPI
  */
 
-namespace Whatis\WBAPI\Client;
+namespace Whatis\WBAPI\Http;
 
 /**
  * Абстрактный класс клиента
