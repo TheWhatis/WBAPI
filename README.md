@@ -9,28 +9,44 @@ composer require whatis/wbapi
 ```php
 /// ... Подключение пакета (require_once 'vendor/autoload.php')
 
-// Фасад для взаимодествия с "сервисами" -
-// классами, реализуюими методы для
+// Менеджер для взаимодествия с "сервисами" -
+// классами, реализующими методы для
 // взаимодействия с api
-use Whatis\WBAPI\ServiceFacade;
+use Whatis\WBAPI\ServiceManager;
+
+// Форматировщик тела ответа
+use Whatis\WBAPI\Formatters\ArrayFormatter;
+
+// Фабрика запросов (RequestFactoryInterface)
+use GuzzleHttp\Psr7\HttpFactory;
 
 $token 'some.jwt.token.-asdffsdfJLA';
-$facade = ServiceFacade::make($token)
-    ->useService(
-        'v2/tags', // Ключ сервиса, находиться
-                   // в ServiceFacade::$mapping,
-        'tags' // Алиас для последующего взаимодейстия
-    )
-    ->useService('v2/config', 'config')
-    ->useService('v3/orders', 'orders')
-    ->build(); // Создаем фасад
+$manager = ServiceManager::make($token)
+    ->initNew(     // Иницилизируем сервис
+        'v2/tags', // Ключ сервиса в ServiceManager::$mapping
+        'tags'     // Алиас для последующего взаимодейстия
+    )->initNew('v2/config')
+     ->initNew('v3/orders', 'orders');
 
-// Получение сбор-х заданий
-$orders = $facade->use('orders')->get();
+// Создание алиаса отдельно
+$manager->alias('v2/config', 'config')
+
+// Можно установить свой форматировщик
+$manager->withFormatter(new ArrayFormatter);
+
+// Можно установить свою фабрику запросов
+$manager->withRequestFactory(new HttpFactory);
+
+// Получение сборочныхх заданий
+$orders = $manager->use('orders')->get(limit: 1);
+$orders = $manager->getOrders(limit: 1);
+$orders = $manager->ordersGet(limit: 1);
 var_dump($orders);
 
 // Получение тегов
-$tags = $facade->use('tags')->get();
+$tags = $manager->use('tags')->get();
+$tags = $manager->getTags();
+$tags = $manager->tagsGet();
 var_dump($tags);
 // ...
 ```
@@ -42,8 +58,8 @@ var_dump($tags);
 
 namespace Whatis\WBAPI\Example;
 
-use Whatis\WBAPI\BaseService;
-use Whatis\WBAPI\Permission;
+use Whatis\WBAPI\Service\BaseService;
+use Whatis\WBAPI\Enums\Permission;
 use Whatis\WBAPI\Permissions;
 
 use DateTime;
@@ -82,7 +98,7 @@ class Service extends BaseService
      *
      * @return string
      */
-    public static function getBaseUri(): string
+    public static function basePath(): string
     {
         return 'api/v3/';
     }
@@ -121,11 +137,11 @@ $token = 'wbtoken';
 $service = new Service($token);
 
 var_dump($service->get());
-// > array(2) {
+// > stdClass {
 // >   ["orders"]=>
 // >   array(10) {
 // >     [0]=>
-// >     array(19) {
+// >     stdClass {
 // >       ["address"]=>
 // >       NULL
 // >       ["deliveryType"]=>
