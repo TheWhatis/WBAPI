@@ -1,7 +1,8 @@
 <?php
 /**
- * Файл с трейтом, реализующим
- * интерфейса `IService`
+ * Файл с исключением, возникающим
+ * когда сервис не найден в
+ * менеджере
  *
  * PHP version 8
  *
@@ -14,14 +15,15 @@
 
 namespace Whatis\WBAPI\Exceptions;
 
-use Whatis\WBAPI\ServiceFacade;
+use Whatis\WBAPI\ServiceManager;
 
 use Exception;
 use Throwable;
 
 /**
- * Трейт с реализацией
- * интерфейса `IService`
+ * Исключение, возникающее
+ * когда сервис не найден в
+ * менеджере
  *
  * PHP version 8
  *
@@ -59,9 +61,8 @@ class ServiceNotFound extends Exception
     ) {
         parent::__construct(
             sprintf(
-                'Service does not exists in \'%s\' Facade '
-                    . 'with name \'%s\'',
-                ServiceFacade::class, $name
+                'Service \'%s\' does not exists in \'%s\' ',
+                $name, ServiceManager::class
             ), 0, $previous
         );
 

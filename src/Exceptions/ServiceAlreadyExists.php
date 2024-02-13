@@ -1,7 +1,7 @@
 <?php
 /**
- * Файл с трейтом, реализующим
- * интерфейса `IService`
+ * Файл с исключением, возникающим
+ * когда сервис уже имеется в mapping
  *
  * PHP version 8
  *
@@ -14,14 +14,14 @@
 
 namespace Whatis\WBAPI\Exceptions;
 
-use Whatis\WBAPI\ServiceFacade;
+use Whatis\WBAPI\ServiceManager;
 
 use Exception;
 use Throwable;
 
 /**
- * Трейт с реализацией
- * интерфейса `IService`
+ * Исключение, возникающее когда
+ * сервис уже имеется в mapping
  *
  * PHP version 8
  *
@@ -59,9 +59,9 @@ class ServiceAlreadyExists extends Exception
     ) {
         parent::__construct(
             sprintf(
-                'Service with name \'%s\' in facade \'%s\' '
+                'Service with name \'%s\' in \'%s\' '
                     . 'already exists',
-                $name, ServiceFacade::class
+                $name, ServiceManager::class
             ), 0, $previous
         );
 
