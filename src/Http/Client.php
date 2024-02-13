@@ -5,7 +5,7 @@
  *
  * PHP version 8
  *
- * @category Main
+ * @category Client
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
@@ -20,7 +20,7 @@ namespace Whatis\WBAPI\Http;
  *
  * PHP version 8
  *
- * @category Main
+ * @category Client
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
