@@ -37,7 +37,7 @@ $manager->withFormatter(new ArrayFormatter);
 // Можно установить свою фабрику запросов
 $manager->withRequestFactory(new HttpFactory);
 
-// Получение сборочныхх заданий
+// Получение сборочных заданий
 $orders = $manager->use('orders')->get(limit: 1);
 $orders = $manager->getOrders(limit: 1);
 $orders = $manager->ordersGet(limit: 1);
