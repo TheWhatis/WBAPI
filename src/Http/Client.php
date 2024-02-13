@@ -12,9 +12,7 @@
  * @link     https://github.com/TheWhatis/WBAPI
  */
 
-namespace Whatis\WBAPI;
-
-use Whatis\WBAPI\Client\BaseClient;
+namespace Whatis\WBAPI\Http;
 
 /**
  * Основной класс клиента
