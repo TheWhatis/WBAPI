@@ -2,8 +2,9 @@
 
 # PermissionsDoesNotExistsException
 
-Трейт с реализацией
-интерфейса `IService`
+Исключение, возникающее
+когда у токена недостаточно
+прав для работы с сервисом
 
 PHP version 8
 
@@ -20,4 +21,4 @@ PHP version 8
 
 
 ***
-> Automatically generated on 2023-12-22
+> Automatically generated on 2024-02-13

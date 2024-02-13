@@ -25,7 +25,7 @@ PHP version 8
 Получить новые сборочные задания
 
 ```php
-public new(): array
+public new(): mixed
 ```
 
 `api/v3/orders/new`
@@ -46,7 +46,7 @@ public new(): array
 Получить информацию по сборочнм заданиям
 
 ```php
-public get(int $limit = 10, int $next, \DateTime|int $from = null, \DateTime|int $to = null): array
+public get(int $limit = 10, int $next, \DateTime|int $from = null, \DateTime|int $to = null): mixed
 ```
 
 `api/v3/orders`
@@ -76,7 +76,7 @@ public get(int $limit = 10, int $next, \DateTime|int $from = null, \DateTime|int
 Получить статусы сборочных заданий
 
 ```php
-public statuses(array $orders): array
+public statuses(array $orders): mixed
 ```
 
 `api/v3/orders/status`
@@ -103,7 +103,7 @@ public statuses(array $orders): array
 Отменить сборочное задание
 
 ```php
-public cancel(int $orderId): array
+public cancel(int $orderId): mixed
 ```
 
 `api/v3/orders/{orderId}/cancel`
@@ -131,7 +131,7 @@ public cancel(int $orderId): array
 (маркировку честного знака)
 
 ```php
-public metaSgtin(int $orderId, array $sgtin): array
+public metaSgtin(int $orderId, array $sgtin): mixed
 ```
 
 `api/v3/orders/{orderId}/meta/sgtin`
@@ -159,7 +159,7 @@ public metaSgtin(int $orderId, array $sgtin): array
 Получить этикетки сборочных заданий
 
 ```php
-public stickers(string $type, int $width, int $height, array $orders): array
+public stickers(string $type, int $width, int $height, array $orders): mixed
 ```
 
 `api/v3/orders/stickers`
@@ -189,7 +189,7 @@ public stickers(string $type, int $width, int $height, array $orders): array
 Получить метаданные сборочного задания
 
 ```php
-public getMeta(int $orderId): array
+public getMeta(int $orderId): mixed
 ```
 
 `api/v3/orders/{orderId}/meta`
@@ -216,7 +216,7 @@ public getMeta(int $orderId): array
 Удалить метаданные сборочного задания
 
 ```php
-public deleteMeta(int $orderId, string $key): array
+public deleteMeta(int $orderId, string $key): mixed
 ```
 
 `api/v3/orders/{orderId}/meta`
@@ -245,7 +245,7 @@ public deleteMeta(int $orderId, string $key): array
 (уникальный идентификационный номер)
 
 ```php
-public metaUin(int $orderId, string $uin): array
+public metaUin(int $orderId, string $uin): mixed
 ```
 
 `api/v3/orders/{orderId}/meta/uin`
@@ -273,7 +273,7 @@ public metaUin(int $orderId, string $uin): array
 Закрепить за сборочным заданием IMEI
 
 ```php
-public metaImei(int $orderId, string $imei): array
+public metaImei(int $orderId, string $imei): mixed
 ```
 
 `api/v3/orders/{orderId}/meta/imei`
@@ -301,7 +301,7 @@ public metaImei(int $orderId, string $imei): array
 Закрепить за сборочным заданием GTIN
 
 ```php
-public metaGtin(int $orderId, string $gtin): array
+public metaGtin(int $orderId, string $gtin): mixed
 ```
 
 `api/v3/orders/{orderId}/meta/gtin`
@@ -331,7 +331,7 @@ public metaGtin(int $orderId, string $gtin): array
 требуются при кроссбордере
 
 ```php
-public externalStickers(array $orders): array
+public externalStickers(array $orders): mixed
 ```
 
 `api/v3/files/orders/external-stickers`
@@ -357,12 +357,12 @@ public externalStickers(array $orders): array
 ## Inherited methods
 
 
-### getBaseUri
+### basePath
 
 Получить базовый uri
 
 ```php
-public static getBaseUri(): string
+public static basePath(): string
 ```
 
 
@@ -402,6 +402,35 @@ public __construct(string $token): mixed
 
 
 
+
+***
+
+### throwNotEnoughPermissions
+
+Вывести ошибку о том, что у токена
+недостаточно разрешений для работы
+этого сервиса
+
+```php
+protected throwNotEnoughPermissions(string $token): never
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$token` | **string** | Токен |
+
+
+
+
 **Throws:**
 
 - [`PermissionsDoesNotExistsException`](../Exceptions/PermissionsDoesNotExistsException.md)
@@ -410,12 +439,44 @@ public __construct(string $token): mixed
 
 ***
 
-### getDomain
+### validateToken
+
+Валидировать токен
+
+```php
+protected validateToken(string $token): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$token` | **string** | Токен |
+
+
+
+
+**Throws:**
+
+- [`InvalidArgumentException`](../../../InvalidArgumentException.md)
+
+
+
+***
+
+### domain
 
 Получить домен для обращения
 
 ```php
-public static getDomain(): string
+public static domain(): string
 ```
 
 
@@ -431,12 +492,12 @@ public static getDomain(): string
 
 ***
 
-### request
+### withFormatter
 
-Воспроизвести запрос
+Установить форматировщик
 
 ```php
-public request( $args): array
+public withFormatter(\Whatis\WBAPI\Formatters\IJsonFormatter $formatter): static
 ```
 
 
@@ -450,7 +511,186 @@ public request( $args): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$args` | **** | Аргументы для запроса Request |
+| `$formatter` | **\Whatis\WBAPI\Formatters\IJsonFormatter** | Форматировщик |
+
+
+
+
+
+***
+
+### getFormatter
+
+Получить форматировщик
+
+```php
+public getFormatter(): \Whatis\WBAPI\Formatters\IJsonFormatter
+```
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+### withRequestFactory
+
+Установить фабрику запросов
+
+```php
+public withRequestFactory(\Psr\Http\Message\RequestFactoryInterface $factory): static
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$factory` | **\Psr\Http\Message\RequestFactoryInterface** | Фабрика запросов |
+
+
+
+
+
+***
+
+### getRequestFactory
+
+Получить фабрику запросов
+
+```php
+public getRequestFactory(): \Psr\Http\Message\RequestFactoryInterface
+```
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+### headers
+
+Получить заголовки из Payload
+
+```php
+protected headers(mixed $payload): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$payload` | **mixed** | Полезная нагрузка |
+
+
+
+
+
+***
+
+### params
+
+Получить параметры из Payload
+
+```php
+protected params(mixed $payload): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$payload` | **mixed** | Полезная нагрузка |
+
+
+
+
+
+***
+
+### body
+
+Получить тело запроса из Payload
+
+```php
+protected body(mixed $payload): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$payload` | **mixed** | Полезная нагрузка |
+
+
+
+
+
+***
+
+### request
+
+Воспроизвести запрос
+
+```php
+public request(string|\Whatis\WBAPI\Enums\HttpMethod $method, string $path, mixed $payload = null): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$method` | **string&#124;\Whatis\WBAPI\Enums\HttpMethod** | Метод |
+| `$path` | **string** | Путь до запроса |
+| `$payload` | **mixed** | Полезная нагрузка запроса |
 
 
 
@@ -460,4 +700,4 @@ public request( $args): array
 
 
 ***
-> Automatically generated on 2023-12-22
+> Automatically generated on 2024-02-13

@@ -66,12 +66,12 @@ public static getPermissions(): \Whatis\WBAPI\Permissions
 
 ***
 
-### request
+### withFormatter
 
-Воспроизвести запрос
+Установить форматировщик
 
 ```php
-public request( $args): array
+public withFormatter(\Whatis\WBAPI\Formatters\IJsonFormatter $formatter): static
 ```
 
 
@@ -85,7 +85,105 @@ public request( $args): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$args` | **** | Аргументы для запроса Request |
+| `$formatter` | **\Whatis\WBAPI\Formatters\IJsonFormatter** | Форматировщик |
+
+
+
+
+
+***
+
+### getFormatter
+
+Получить форматировщик
+
+```php
+public getFormatter(): \Whatis\WBAPI\Formatters\IJsonFormatter
+```
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+### withRequestFactory
+
+Установить фабрику запросов
+
+```php
+public withRequestFactory(\Psr\Http\Message\RequestFactoryInterface $factory): static
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$factory` | **\Psr\Http\Message\RequestFactoryInterface** | Фабрика запросов |
+
+
+
+
+
+***
+
+### getRequestFactory
+
+Получить фабрику запросов
+
+```php
+public getRequestFactory(): \Psr\Http\Message\RequestFactoryInterface
+```
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+### request
+
+Воспроизвести запрос
+
+```php
+public request(string|\Whatis\WBAPI\Enums\HttpMethod $method, string $path, mixed $payload = null): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$method` | **string&#124;\Whatis\WBAPI\Enums\HttpMethod** | Метод |
+| `$path` | **string** | Путь до запроса |
+| `$payload` | **mixed** | Полезная нагрузка запроса |
 
 
 
@@ -95,4 +193,4 @@ public request( $args): array
 
 
 ***
-> Automatically generated on 2023-12-22
+> Automatically generated on 2024-02-13

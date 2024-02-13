@@ -17,36 +17,21 @@ This is an automatically generated documentation for **Documentation**.
 
 | Class | Description |
 |-------|-------------|
-| [`Builder`](./classes/Whatis/WBAPI/Builder.md) | Интерфейс сервиса|
-| [`Client`](./classes/Whatis/WBAPI/Client.md) | Основной класс клиента<br />wildberries api|
 | [`Permissions`](./classes/Whatis/WBAPI/Permissions.md) | Интерфейс сервиса|
-| [`ServiceFacade`](./classes/Whatis/WBAPI/ServiceFacade.md) | Интерфейс сервиса|
+| [`ServiceManager`](./classes/Whatis/WBAPI/ServiceManager.md) | Класс для управления<br />классами-сервисами<br />для wb api|
+| [`Utils`](./classes/Whatis/WBAPI/Utils.md) | Класс с вспомогательными методами|
 
 
 
 
-### \Whatis\WBAPI\Client
+### \Whatis\WBAPI\Attribute
 
 #### Classes
 
 | Class | Description |
 |-------|-------------|
-| [`BaseClient`](./classes/Whatis/WBAPI/Client/BaseClient.md) | Абстрактный класс клиента<br />для wildberries api|
+| [`Mapping`](./classes/Whatis/WBAPI/Attribute/Mapping.md) | Трейт с реализацией<br />интерфейса `IService`|
 
-
-#### Traits
-
-| Trait | Description |
-|-------|-------------|
-| [`TClient`](./classes/Whatis/WBAPI/Client/TClient.md) | Трейт, реализующий `IClient`|
-
-
-
-#### Interfaces
-
-| Interface | Description |
-|-----------|-------------|
-| [`IClient`](./classes/Whatis/WBAPI/Client/IClient.md) | Интерфейс клиента<br />для wildberries api|
 
 
 
@@ -56,10 +41,65 @@ This is an automatically generated documentation for **Documentation**.
 
 | Class | Description |
 |-------|-------------|
-| [`PermissionsDoesNotExistsException`](./classes/Whatis/WBAPI/Exceptions/PermissionsDoesNotExistsException.md) | Трейт с реализацией<br />интерфейса `IService`|
-| [`ServiceAlreadyExists`](./classes/Whatis/WBAPI/Exceptions/ServiceAlreadyExists.md) | Трейт с реализацией<br />интерфейса `IService`|
-| [`ServiceNotFound`](./classes/Whatis/WBAPI/Exceptions/ServiceNotFound.md) | Трейт с реализацией<br />интерфейса `IService`|
+| [`PermissionsDoesNotExistsException`](./classes/Whatis/WBAPI/Exceptions/PermissionsDoesNotExistsException.md) | Исключение, возникающее<br />когда у токена недостаточно<br />прав для работы с сервисом|
+| [`ServiceAlreadyExists`](./classes/Whatis/WBAPI/Exceptions/ServiceAlreadyExists.md) | Исключение, возникающее когда<br />сервис уже существует|
+| [`ServiceNotFound`](./classes/Whatis/WBAPI/Exceptions/ServiceNotFound.md) | Исключение, возникающее<br />когда сервис не найден в<br />менеджере|
 
+
+
+
+### \Whatis\WBAPI\Formatters
+
+#### Classes
+
+| Class | Description |
+|-------|-------------|
+| [`ArrayFormatter`](./classes/Whatis/WBAPI/Formatters/ArrayFormatter.md) | Форматировщик тела ответа,<br />чтобы получить массив|
+| [`BaseFormatter`](./classes/Whatis/WBAPI/Formatters/BaseFormatter.md) | Абстракный класс форматировщика json<br />для ответов и запросов от api, с<br />реализацией основных методов|
+| [`StdClassFormatter`](./classes/Whatis/WBAPI/Formatters/StdClassFormatter.md) | Форматировщик тела ответа,<br />чтобы получить stdClass|
+
+
+#### Traits
+
+| Trait | Description |
+|-------|-------------|
+| [`MultiEncodeTrait`](./classes/Whatis/WBAPI/Formatters/MultiEncodeTrait.md) | Трейт с реализованным методом<br />для закодирования переданных данных<br />в string json или StreamInterface|
+| [`WithContextTrait`](./classes/Whatis/WBAPI/Formatters/WithContextTrait.md) | Трейт, с реализованным методом<br />для установки контекста<br />выполнения форматировщика|
+
+
+
+#### Interfaces
+
+| Interface | Description |
+|-----------|-------------|
+| [`IJsonFormatter`](./classes/Whatis/WBAPI/Formatters/IJsonFormatter.md) | Интерфейс форматировщика ответа и запроса<br />от api, чтобы получить определённый<br />формат данных|
+
+
+
+### \Whatis\WBAPI\Http
+
+#### Classes
+
+| Class | Description |
+|-------|-------------|
+| [`BaseClient`](./classes/Whatis/WBAPI/Http/BaseClient.md) | Абстрактный класс клиента<br />для wildberries api|
+| [`Client`](./classes/Whatis/WBAPI/Http/Client.md) | Основной класс клиента<br />wildberries api|
+| [`Payload`](./classes/Whatis/WBAPI/Http/Payload.md) | Класс полезной нагрузки<br />для создания запросов из<br />клиента `IClient`|
+
+
+#### Traits
+
+| Trait | Description |
+|-------|-------------|
+| [`TClient`](./classes/Whatis/WBAPI/Http/TClient.md) | Трейт, реализующий `IClient`|
+
+
+
+#### Interfaces
+
+| Interface | Description |
+|-----------|-------------|
+| [`IClient`](./classes/Whatis/WBAPI/Http/IClient.md) | Интерфейс клиента<br />для wildberries api|
 
 
 
@@ -70,6 +110,7 @@ This is an automatically generated documentation for **Documentation**.
 | Class | Description |
 |-------|-------------|
 | [`BaseService`](./classes/Whatis/WBAPI/Service/BaseService.md) | Абстрактный класс сервиса<br />для wildberries api|
+| [`Payload`](./classes/Whatis/WBAPI/Service/Payload.md) | Класс полезной нагрузки<br />для создания запросов из<br />сервиса `IService`|
 
 
 #### Traits
@@ -148,4 +189,4 @@ This is an automatically generated documentation for **Documentation**.
 
 
 ***
-> Automatically generated on 2023-12-22
+> Automatically generated on 2024-02-13

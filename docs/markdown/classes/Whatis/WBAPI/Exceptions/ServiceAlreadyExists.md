@@ -2,8 +2,8 @@
 
 # ServiceAlreadyExists
 
-Трейт с реализацией
-интерфейса `IService`
+Исключение, возникающее когда
+сервис уже существует
 
 PHP version 8
 
@@ -125,4 +125,4 @@ public getMapping(): array
 
 
 ***
-> Automatically generated on 2023-12-22
+> Automatically generated on 2024-02-13

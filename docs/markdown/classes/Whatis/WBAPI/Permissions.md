@@ -38,7 +38,7 @@ protected int $bitmask
 Список переданных разрешений
 
 ```php
-protected array&lt;int,\Whatis\WBAPI\Permission&gt; $permissions
+protected array&lt;int,\Whatis\WBAPI\Enums\Permission&gt; $permissions
 ```
 
 
@@ -58,7 +58,7 @@ protected array&lt;int,\Whatis\WBAPI\Permission&gt; $permissions
 токена
 
 ```php
-public __construct(\Whatis\WBAPI\Permission $permissions): mixed
+public __construct(\Whatis\WBAPI\Enums\Permission $permissions): mixed
 ```
 
 
@@ -72,7 +72,7 @@ public __construct(\Whatis\WBAPI\Permission $permissions): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$permissions` | **\Whatis\WBAPI\Permission** | Разрешения |
+| `$permissions` | **\Whatis\WBAPI\Enums\Permission** | Разрешения |
 
 
 
@@ -85,7 +85,7 @@ public __construct(\Whatis\WBAPI\Permission $permissions): mixed
 Получить все разрешения
 
 ```php
-public get(): array&lt;int,\Whatis\WBAPI\Permission&gt;
+public get(): array&lt;int,\Whatis\WBAPI\Enums\Permission&gt;
 ```
 
 
@@ -111,7 +111,7 @@ public get(): array&lt;int,\Whatis\WBAPI\Permission&gt;
 разрешенний установлено
 
 ```php
-public has(\Whatis\WBAPI\Permission $permissions): bool
+public has(\Whatis\WBAPI\Enums\Permission $permissions): bool
 ```
 
 
@@ -125,7 +125,7 @@ public has(\Whatis\WBAPI\Permission $permissions): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$permissions` | **\Whatis\WBAPI\Permission** | Разрешения |
+| `$permissions` | **\Whatis\WBAPI\Enums\Permission** | Разрешения |
 
 
 
@@ -139,7 +139,7 @@ public has(\Whatis\WBAPI\Permission $permissions): bool
 разрешения установлены
 
 ```php
-public contains(\Whatis\WBAPI\Permission $permissions): bool
+public contains(\Whatis\WBAPI\Enums\Permission $permissions): bool
 ```
 
 
@@ -153,7 +153,7 @@ public contains(\Whatis\WBAPI\Permission $permissions): bool
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$permissions` | **\Whatis\WBAPI\Permission** | Разрешения |
+| `$permissions` | **\Whatis\WBAPI\Enums\Permission** | Разрешения |
 
 
 
@@ -166,7 +166,7 @@ public contains(\Whatis\WBAPI\Permission $permissions): bool
 Установить новые разрешения
 
 ```php
-public set(\Whatis\WBAPI\Permission $permissions): void
+public set(\Whatis\WBAPI\Enums\Permission $permissions): void
 ```
 
 
@@ -180,7 +180,7 @@ public set(\Whatis\WBAPI\Permission $permissions): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$permissions` | **\Whatis\WBAPI\Permission** | Разрешения |
+| `$permissions` | **\Whatis\WBAPI\Enums\Permission** | Разрешения |
 
 
 
@@ -193,7 +193,7 @@ public set(\Whatis\WBAPI\Permission $permissions): void
 Удалить разрешения из текущих
 
 ```php
-public delete(\Whatis\WBAPI\Permission $permissions): void
+public delete(\Whatis\WBAPI\Enums\Permission $permissions): void
 ```
 
 
@@ -207,7 +207,7 @@ public delete(\Whatis\WBAPI\Permission $permissions): void
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$permissions` | **\Whatis\WBAPI\Permission** | Разрешения |
+| `$permissions` | **\Whatis\WBAPI\Enums\Permission** | Разрешения |
 
 
 
@@ -282,7 +282,7 @@ private static _throwInvalidToken(string $token): never
 Сгенерировать битмаску
 
 ```php
-public static createBitmask(\Whatis\WBAPI\Permission $permissions): int
+public static createBitmask(\Whatis\WBAPI\Enums\Permission $permissions): int
 ```
 
 
@@ -296,7 +296,7 @@ public static createBitmask(\Whatis\WBAPI\Permission $permissions): int
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$permissions` | **\Whatis\WBAPI\Permission** | Разрешения |
+| `$permissions` | **\Whatis\WBAPI\Enums\Permission** | Разрешения |
 
 
 **Return Value:**
@@ -344,6 +344,27 @@ public static getJwtBitmask(string $jwtToken): int
 
 ***
 
+### asString
+
+Конвертировать в строку
+
+```php
+public asString(): string
+```
+
+
+
+
+
+
+
+
+
+
+
 
 ***
-> Automatically generated on 2023-12-22
+
+
+***
+> Automatically generated on 2024-02-13

@@ -111,7 +111,9 @@
 
     </h4>
     <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Whatis-WBAPI-Client-IClient.html"><abbr title="\Whatis\WBAPI\Client\IClient">IClient</abbr></a></dt><dd>Интерфейс клиента
+                    <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Whatis-WBAPI-Formatters-IJsonFormatter.html"><abbr title="\Whatis\WBAPI\Formatters\IJsonFormatter">IJsonFormatter</abbr></a></dt><dd>Интерфейс форматировщика ответа и запроса
+от api, чтобы получить определённый
+формат данных</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Whatis-WBAPI-Http-IClient.html"><abbr title="\Whatis\WBAPI\Http\IClient">IClient</abbr></a></dt><dd>Интерфейс клиента
 для wildberries api</dd>            <dt class="phpdocumentor-table-of-contents__entry -interface"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a></dt><dd>Интерфейс сервиса</dd>    </dl>
 
     <h4 id="toc-classes">
@@ -120,13 +122,26 @@
 
     </h4>
     <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Builder.html"><abbr title="\Whatis\WBAPI\Builder">Builder</abbr></a></dt><dd>Интерфейс сервиса</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Client-BaseClient.html"><abbr title="\Whatis\WBAPI\Client\BaseClient">BaseClient</abbr></a></dt><dd>Абстрактный класс клиента
-для wildberries api</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Client.html"><abbr title="\Whatis\WBAPI\Client">Client</abbr></a></dt><dd>Основной класс клиента
-wildberries api</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Exceptions-PermissionsDoesNotExistsException.html"><abbr title="\Whatis\WBAPI\Exceptions\PermissionsDoesNotExistsException">PermissionsDoesNotExistsException</abbr></a></dt><dd>Трейт с реализацией
-интерфейса `IService`</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html"><abbr title="\Whatis\WBAPI\Exceptions\ServiceAlreadyExists">ServiceAlreadyExists</abbr></a></dt><dd>Трейт с реализацией
-интерфейса `IService`</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Exceptions-ServiceNotFound.html"><abbr title="\Whatis\WBAPI\Exceptions\ServiceNotFound">ServiceNotFound</abbr></a></dt><dd>Трейт с реализацией
-интерфейса `IService`</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Permissions.html"><abbr title="\Whatis\WBAPI\Permissions">Permissions</abbr></a></dt><dd>Интерфейс сервиса</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Service-BaseService.html"><abbr title="\Whatis\WBAPI\Service\BaseService">BaseService</abbr></a></dt><dd>Абстрактный класс сервиса
-для wildberries api</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-ServiceFacade.html"><abbr title="\Whatis\WBAPI\ServiceFacade">ServiceFacade</abbr></a></dt><dd>Интерфейс сервиса</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-V1-Prices.html"><abbr title="\Whatis\WBAPI\V1\Prices">Prices</abbr></a></dt><dd>Класс-сервис для работы
+                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Attribute-Mapping.html"><abbr title="\Whatis\WBAPI\Attribute\Mapping">Mapping</abbr></a></dt><dd>Трейт с реализацией
+интерфейса `IService`</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Exceptions-PermissionsDoesNotExistsException.html"><abbr title="\Whatis\WBAPI\Exceptions\PermissionsDoesNotExistsException">PermissionsDoesNotExistsException</abbr></a></dt><dd>Исключение, возникающее
+когда у токена недостаточно
+прав для работы с сервисом</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html"><abbr title="\Whatis\WBAPI\Exceptions\ServiceAlreadyExists">ServiceAlreadyExists</abbr></a></dt><dd>Исключение, возникающее когда
+сервис уже существует</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Exceptions-ServiceNotFound.html"><abbr title="\Whatis\WBAPI\Exceptions\ServiceNotFound">ServiceNotFound</abbr></a></dt><dd>Исключение, возникающее
+когда сервис не найден в
+менеджере</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Formatters-ArrayFormatter.html"><abbr title="\Whatis\WBAPI\Formatters\ArrayFormatter">ArrayFormatter</abbr></a></dt><dd>Форматировщик тела ответа,
+чтобы получить массив</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Formatters-BaseFormatter.html"><abbr title="\Whatis\WBAPI\Formatters\BaseFormatter">BaseFormatter</abbr></a></dt><dd>Абстракный класс форматировщика json
+для ответов и запросов от api, с
+реализацией основных методов</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Formatters-StdClassFormatter.html"><abbr title="\Whatis\WBAPI\Formatters\StdClassFormatter">StdClassFormatter</abbr></a></dt><dd>Форматировщик тела ответа,
+чтобы получить stdClass</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Http-BaseClient.html"><abbr title="\Whatis\WBAPI\Http\BaseClient">BaseClient</abbr></a></dt><dd>Абстрактный класс клиента
+для wildberries api</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Http-Client.html"><abbr title="\Whatis\WBAPI\Http\Client">Client</abbr></a></dt><dd>Основной класс клиента
+wildberries api</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Http-Payload.html"><abbr title="\Whatis\WBAPI\Http\Payload">Payload</abbr></a></dt><dd>Класс полезной нагрузки
+для создания запросов из
+клиента `IClient`</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Permissions.html"><abbr title="\Whatis\WBAPI\Permissions">Permissions</abbr></a></dt><dd>Интерфейс сервиса</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Service-BaseService.html"><abbr title="\Whatis\WBAPI\Service\BaseService">BaseService</abbr></a></dt><dd>Абстрактный класс сервиса
+для wildberries api</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Service-Payload.html"><abbr title="\Whatis\WBAPI\Service\Payload">Payload</abbr></a></dt><dd>Класс полезной нагрузки
+для создания запросов из
+сервиса `IService`</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-ServiceManager.html"><abbr title="\Whatis\WBAPI\ServiceManager">ServiceManager</abbr></a></dt><dd>Класс для управления
+классами-сервисами
+для wb api</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-Utils.html"><abbr title="\Whatis\WBAPI\Utils">Utils</abbr></a></dt><dd>Класс с вспомогательными методами</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-V1-Prices.html"><abbr title="\Whatis\WBAPI\V1\Prices">Prices</abbr></a></dt><dd>Класс-сервис для работы
 с ценами</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-V1-Statistics.html"><abbr title="\Whatis\WBAPI\V1\Statistics">Statistics</abbr></a></dt><dd>Класс-сервис для работы
 со статистикой</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-V2-Config.html"><abbr title="\Whatis\WBAPI\V2\Config">Config</abbr></a></dt><dd>Класс-сервис для работы
 с конфигурацией контента</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/Whatis-WBAPI-V2-Media.html"><abbr title="\Whatis\WBAPI\V2\Media">Media</abbr></a></dt><dd>Класс-сервис для работы
@@ -147,7 +162,11 @@ wildberries api</dd>            <dt class="phpdocumentor-table-of-contents__entr
 
     </h4>
     <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Whatis-WBAPI-Client-TClient.html"><abbr title="\Whatis\WBAPI\Client\TClient">TClient</abbr></a></dt><dd>Трейт, реализующий `IClient`</dd>        <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Whatis-WBAPI-Service-TService.html"><abbr title="\Whatis\WBAPI\Service\TService">TService</abbr></a></dt><dd>Трейт с реализацией
+            <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Whatis-WBAPI-Formatters-MultiEncodeTrait.html"><abbr title="\Whatis\WBAPI\Formatters\MultiEncodeTrait">MultiEncodeTrait</abbr></a></dt><dd>Трейт с реализованным методом
+для закодирования переданных данных
+в string json или StreamInterface</dd>        <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Whatis-WBAPI-Formatters-WithContextTrait.html"><abbr title="\Whatis\WBAPI\Formatters\WithContextTrait">WithContextTrait</abbr></a></dt><dd>Трейт, с реализованным методом
+для установки контекста
+выполнения форматировщика</dd>        <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Whatis-WBAPI-Http-TClient.html"><abbr title="\Whatis\WBAPI\Http\TClient">TClient</abbr></a></dt><dd>Трейт, реализующий `IClient`</dd>        <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Whatis-WBAPI-Service-TService.html"><abbr title="\Whatis\WBAPI\Service\TService">TService</abbr></a></dt><dd>Трейт с реализацией
 интерфейса `IService`</dd>        <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Whatis-WBAPI-Traits-ContentCategory.html"><abbr title="\Whatis\WBAPI\Traits\ContentCategory">ContentCategory</abbr></a></dt><dd>Трейт для установки
 базового начального
 uri content/</dd>        <dt class="phpdocumentor-table-of-contents__entry -trait"><a href="classes/Whatis-WBAPI-Traits-ContentV2Category.html"><abbr title="\Whatis\WBAPI\Traits\ContentV2Category">ContentV2Category</abbr></a></dt><dd>Трейт для установки
@@ -164,7 +183,8 @@ uri api/v3/</dd>    </dl>
 
     </h4>
     <dl class="phpdocumentor-table-of-contents">
-            <dt class="phpdocumentor-table-of-contents__entry -enum"><a href="classes/Whatis-WBAPI-Permission.html"><abbr title="\Whatis\WBAPI\Permission">Permission</abbr></a></dt><dd>Интерфейс сервиса</dd></dl>
+            <dt class="phpdocumentor-table-of-contents__entry -enum"><a href="classes/Whatis-WBAPI-Enums-HttpMethod.html"><abbr title="\Whatis\WBAPI\Enums\HttpMethod">HttpMethod</abbr></a></dt><dd>Класс перечисления методов
+для запроса Http(s)</dd>        <dt class="phpdocumentor-table-of-contents__entry -enum"><a href="classes/Whatis-WBAPI-Enums-Permission.html"><abbr title="\Whatis\WBAPI\Enums\Permission">Permission</abbr></a></dt><dd>Перечисление разрешений для токена</dd></dl>
 
 
 

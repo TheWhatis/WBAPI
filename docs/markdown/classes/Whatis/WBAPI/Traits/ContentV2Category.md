@@ -20,12 +20,12 @@ PHP version 8
 ## Methods
 
 
-### getBaseUri
+### basePath
 
 Получить базовый uri
 
 ```php
-public static getBaseUri(): string
+public static basePath(): string
 ```
 
 
@@ -42,5 +42,5 @@ public static getBaseUri(): string
 ***
 
 ***
-> Automatically generated on 2023-12-22
+> Automatically generated on 2024-02-13
 

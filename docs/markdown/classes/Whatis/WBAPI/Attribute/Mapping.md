@@ -1,0 +1,69 @@
+***
+
+# Mapping
+
+Трейт с реализацией
+интерфейса `IService`
+
+PHP version 8
+
+* Full name: `\Whatis\WBAPI\Attribute\Mapping`
+
+**See Also:**
+
+* https://github.com/TheWhatis/WBAPI - 
+
+
+
+## Properties
+
+
+### path
+
+Путь ресурса по которому
+обращается метод
+
+```php
+public string $path
+```
+
+
+
+
+
+
+***
+
+## Methods
+
+
+### __construct
+
+Создание атрибута
+
+```php
+public __construct(string $path): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$path` | **string** | Путь запроса |
+
+
+
+
+
+***
+
+
+***
+> Automatically generated on 2024-02-13

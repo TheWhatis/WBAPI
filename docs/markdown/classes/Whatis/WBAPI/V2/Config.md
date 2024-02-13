@@ -25,7 +25,7 @@ PHP version 8
 Получить список предметов
 
 ```php
-public getObjects(string $name = null, int $limit = 1000, string $locale = &#039;en&#039;, int $offset, int $parentID = null): array
+public getObjects(string $name = null, int $limit = 1000, string $locale = &#039;en&#039;, int $offset, int $parentID = null): mixed
 ```
 
 `content/v2/object/all`
@@ -56,7 +56,7 @@ public getObjects(string $name = null, int $limit = 1000, string $locale = &#039
 Получить родительские категории товаров
 
 ```php
-public getParentCategories(string $locale = &#039;en&#039;): array
+public getParentCategories(string $locale = &#039;en&#039;): mixed
 ```
 
 `content/v2/object/parent/all`
@@ -84,7 +84,7 @@ public getParentCategories(string $locale = &#039;en&#039;): array
 по всем категориям
 
 ```php
-public getObjectCharcs(int $subjectId, string $locale = &#039;en&#039;): array
+public getObjectCharcs(int $subjectId, string $locale = &#039;en&#039;): mixed
 ```
 
 `content/v2/object/charcs/{subjectId}`
@@ -112,7 +112,7 @@ public getObjectCharcs(int $subjectId, string $locale = &#039;en&#039;): array
 Получение значения характеристики цвет
 
 ```php
-public getColors(string $locale = &#039;en&#039;): array
+public getColors(string $locale = &#039;en&#039;): mixed
 ```
 
 `content/v2/directory/colors`
@@ -139,7 +139,7 @@ public getColors(string $locale = &#039;en&#039;): array
 Получение значения характеристики пол
 
 ```php
-public getKinds(string $locale = &#039;en&#039;): array
+public getKinds(string $locale = &#039;en&#039;): mixed
 ```
 
 `content/v2/directory/kinds`
@@ -167,7 +167,7 @@ public getKinds(string $locale = &#039;en&#039;): array
 производства
 
 ```php
-public getCountries(string $locale = &#039;en&#039;): array
+public getCountries(string $locale = &#039;en&#039;): mixed
 ```
 
 `content/v2/directory/countries`
@@ -194,7 +194,7 @@ public getCountries(string $locale = &#039;en&#039;): array
 Получение значения характеристики сезон
 
 ```php
-public getSeasons(string $locale = &#039;en&#039;): array
+public getSeasons(string $locale = &#039;en&#039;): mixed
 ```
 
 `content/v2/directory/seasons`
@@ -221,7 +221,7 @@ public getSeasons(string $locale = &#039;en&#039;): array
 Получение ТНВЭД кодов
 
 ```php
-public getTnved(int $subjectID, string $search, string $locale = &#039;en&#039;): array
+public getTnved(int $subjectID, string $search, string $locale = &#039;en&#039;): mixed
 ```
 
 `content/v2/directory/tnved`
@@ -250,7 +250,7 @@ public getTnved(int $subjectID, string $search, string $locale = &#039;en&#039;)
 Получить значения ставки НДС
 
 ```php
-public getVat(string $locale = &#039;en&#039;): array
+public getVat(string $locale = &#039;en&#039;): mixed
 ```
 
 `content/v2/directory/vat`
@@ -276,12 +276,12 @@ public getVat(string $locale = &#039;en&#039;): array
 ## Inherited methods
 
 
-### getBaseUri
+### basePath
 
 Получить базовый uri
 
 ```php
-public static getBaseUri(): string
+public static basePath(): string
 ```
 
 
@@ -321,6 +321,35 @@ public __construct(string $token): mixed
 
 
 
+
+***
+
+### throwNotEnoughPermissions
+
+Вывести ошибку о том, что у токена
+недостаточно разрешений для работы
+этого сервиса
+
+```php
+protected throwNotEnoughPermissions(string $token): never
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$token` | **string** | Токен |
+
+
+
+
 **Throws:**
 
 - [`PermissionsDoesNotExistsException`](../Exceptions/PermissionsDoesNotExistsException.md)
@@ -329,12 +358,44 @@ public __construct(string $token): mixed
 
 ***
 
-### getDomain
+### validateToken
+
+Валидировать токен
+
+```php
+protected validateToken(string $token): void
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$token` | **string** | Токен |
+
+
+
+
+**Throws:**
+
+- [`InvalidArgumentException`](../../../InvalidArgumentException.md)
+
+
+
+***
+
+### domain
 
 Получить домен для обращения
 
 ```php
-public static getDomain(): string
+public static domain(): string
 ```
 
 
@@ -350,12 +411,12 @@ public static getDomain(): string
 
 ***
 
-### request
+### withFormatter
 
-Воспроизвести запрос
+Установить форматировщик
 
 ```php
-public request( $args): array
+public withFormatter(\Whatis\WBAPI\Formatters\IJsonFormatter $formatter): static
 ```
 
 
@@ -369,7 +430,186 @@ public request( $args): array
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$args` | **** | Аргументы для запроса Request |
+| `$formatter` | **\Whatis\WBAPI\Formatters\IJsonFormatter** | Форматировщик |
+
+
+
+
+
+***
+
+### getFormatter
+
+Получить форматировщик
+
+```php
+public getFormatter(): \Whatis\WBAPI\Formatters\IJsonFormatter
+```
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+### withRequestFactory
+
+Установить фабрику запросов
+
+```php
+public withRequestFactory(\Psr\Http\Message\RequestFactoryInterface $factory): static
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$factory` | **\Psr\Http\Message\RequestFactoryInterface** | Фабрика запросов |
+
+
+
+
+
+***
+
+### getRequestFactory
+
+Получить фабрику запросов
+
+```php
+public getRequestFactory(): \Psr\Http\Message\RequestFactoryInterface
+```
+
+
+
+
+
+
+
+
+
+
+
+
+***
+
+### headers
+
+Получить заголовки из Payload
+
+```php
+protected headers(mixed $payload): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$payload` | **mixed** | Полезная нагрузка |
+
+
+
+
+
+***
+
+### params
+
+Получить параметры из Payload
+
+```php
+protected params(mixed $payload): array
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$payload` | **mixed** | Полезная нагрузка |
+
+
+
+
+
+***
+
+### body
+
+Получить тело запроса из Payload
+
+```php
+protected body(mixed $payload): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$payload` | **mixed** | Полезная нагрузка |
+
+
+
+
+
+***
+
+### request
+
+Воспроизвести запрос
+
+```php
+public request(string|\Whatis\WBAPI\Enums\HttpMethod $method, string $path, mixed $payload = null): mixed
+```
+
+
+
+
+
+
+
+
+**Parameters:**
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| `$method` | **string&#124;\Whatis\WBAPI\Enums\HttpMethod** | Метод |
+| `$path` | **string** | Путь до запроса |
+| `$payload` | **mixed** | Полезная нагрузка запроса |
 
 
 
@@ -379,4 +619,4 @@ public request( $args): array
 
 
 ***
-> Automatically generated on 2023-12-22
+> Automatically generated on 2024-02-13

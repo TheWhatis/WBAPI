@@ -2,8 +2,9 @@
 
 # ServiceNotFound
 
-Трейт с реализацией
-интерфейса `IService`
+Исключение, возникающее
+когда сервис не найден в
+менеджере
 
 PHP version 8
 
@@ -125,4 +126,4 @@ public getMapping(): array
 
 
 ***
-> Automatically generated on 2023-12-22
+> Automatically generated on 2024-02-13
