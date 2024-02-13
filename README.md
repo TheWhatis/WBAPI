@@ -129,7 +129,20 @@ class Service extends BaseService
             ]
         );
     }
+
+    // ...
 }
+```
+### Регистрация сервиса в ServiceManager
+```php
+/// ... Подключение пакета (require_once 'vendor/autoload.php')
+
+use Whatis\WBAPI\ServiceManager;
+use Whatis\WBAPI\Example\Service;
+
+ServiceManager::set('example', Service::class);
+
+// ...
 ```
 ### Использование сервиса
 ```php
@@ -137,11 +150,21 @@ class Service extends BaseService
 /// ... Подключение пакета (require_once 'vendor/autoload.php')
 
 use Whatis\WBAPI\Example\Service;
+use Whatis\WBAPI\ServiceManager;
 
 $token = 'some.jwt.token.-asdffsdfJLA';
-$service = new Service($token);
 
+// Обычное использование
+$service = new Service($token);
 var_dump($service->get());
+
+// С помощью ServiceManager
+$manager = ServiceManager::make($token)->initNew('example');
+
+$result = $manager->use('example')->get();
+$result = $manager->exampleGet();
+$result = $manager->getExample();
+var_dump($result);
 // > stdClass {
 // >   ["orders"]=>
 // >   array(10) {
@@ -154,4 +177,6 @@ var_dump($service->get());
 // >       ["supplyId"]=>
 // >       string(14) "WB-GI-63588689"
 // >       ...
+
+
 ```
