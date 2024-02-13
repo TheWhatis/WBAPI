@@ -13,6 +13,7 @@
 
 namespace Whatis\WBAPI;
 
+use Whatis\WBAPI\Enums\Permission;
 use InvalidArgumentException;
 
 /**
@@ -206,5 +207,21 @@ class Permissions
         }
 
         return $payload['s'];
+    }
+
+    /**
+     * Конвертировать в строку
+     *
+     * @return string
+     */
+    public function asString(): string
+    {
+        return implode(
+            ', ', array_map(
+                static function ($permission) {
+                    return $permission->asString();
+                }, $this->permissions
+            )
+        );
     }
 }
