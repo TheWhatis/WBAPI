@@ -41,9 +41,7 @@ interface IJsonFormatter
      *
      * @return static
      */
-    public function withContext(
-        RequestInterface|ResponseInterface $context
-    ): static;
+    public function withContext(RequestInterface|ResponseInterface $context): static;
 
     /**
      * Закодировать переданный контент
