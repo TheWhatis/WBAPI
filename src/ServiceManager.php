@@ -24,9 +24,6 @@ use Whatis\WBAPI\Attribute\Mapping;
 use Psr\Http\Message\RequestFactoryInterface;
 use GuzzleHttp\Exception\ClientException;
 
-use ReflectionClass;
-// use ReflectionMethod;
-
 use InvalidArgumentException;
 use BadMethodCallException;
 use Throwable;
@@ -232,15 +229,13 @@ class ServiceManager
     /**
      * Иницилизация нового сервиса
      *
-     * @param string $name  Название
-     * @param string $alias Используемый алиас
+     * @param string  $name  Название
+     * @param ?string $alias Используемый алиас
      *
      * @return static
      */
-    public function initNew(
-        string $name,
-        string $alias = null
-    ): static {
+    public function initNew(string $name, ?string $alias = null): static
+    {
         $this->checkServiceExists($name);
         $this->alias($name, $alias);
         $this->services[$name] = static::getService(
@@ -297,6 +292,7 @@ class ServiceManager
         foreach ($this->services as $service) {
             $service->withFormatter($formatter);
         }
+
         return $this;
     }
 
@@ -307,12 +303,12 @@ class ServiceManager
      *
      * @return static
      */
-    public function withRequestFactory(
-        RequestFactoryInterface $factory
-    ): static {
+    public function withRequestFactory(RequestFactoryInterface $factory): static
+    {
         foreach ($this->services as $service) {
             $service->withRequestFactory($factory);
         }
+
         return $this;
     }
 
