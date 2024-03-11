@@ -328,7 +328,7 @@ public alias(string $name, ?string $alias): static
 Иницилизация нового сервиса
 
 ```php
-public initNew(string $name, string $alias = null): static
+public initNew(string $name, ?string $alias = null): static
 ```
 
 
@@ -343,7 +343,7 @@ public initNew(string $name, string $alias = null): static
 | Parameter | Type | Description |
 |-----------|------|-------------|
 | `$name` | **string** | Название |
-| `$alias` | **string** | Используемый алиас |
+| `$alias` | **?string** | Используемый алиас |
 
 
 
@@ -499,4 +499,4 @@ public __call(string $method, array $arguments): mixed
 
 
 ***
-> Automatically generated on 2024-02-13
+> Automatically generated on 2024-03-11

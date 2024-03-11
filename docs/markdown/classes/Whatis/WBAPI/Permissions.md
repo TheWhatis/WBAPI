@@ -346,7 +346,7 @@ public static getJwtBitmask(string $jwtToken): int
 
 ### asString
 
-Конвертировать в строку
+Преобразовать в строку
 
 ```php
 public asString(): string
@@ -367,4 +367,4 @@ public asString(): string
 
 
 ***
-> Automatically generated on 2024-02-13
+> Automatically generated on 2024-03-11

@@ -493,7 +493,7 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Permissions\u003A\u003AasString\u0028\u0029",
             "name": "asString",
-            "summary": "\u041A\u043E\u043D\u0432\u0435\u0440\u0442\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0020\u0432\u0020\u0441\u0442\u0440\u043E\u043A\u0443",
+            "summary": "\u041F\u0440\u0435\u043E\u0431\u0440\u0430\u0437\u043E\u0432\u0430\u0442\u044C\u0020\u0432\u0020\u0441\u0442\u0440\u043E\u043A\u0443",
             "url": "classes/Whatis-WBAPI-Permissions.html#method_asString"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Permissions\u003A\u003A\u0024bitmask",

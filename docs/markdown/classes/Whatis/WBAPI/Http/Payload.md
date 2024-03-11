@@ -149,4 +149,4 @@ public __construct(\Whatis\WBAPI\Enums\HttpMethod $method, string $domain, strin
 
 
 ***
-> Automatically generated on 2024-02-13
+> Automatically generated on 2024-03-11
