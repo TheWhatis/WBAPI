@@ -35,9 +35,15 @@ interface IClient
     /**
      * Иницилизация клиента
      *
-     * @param string $token Токен Wildberries
+     * @param string                   $token     Токен wildberries api
+     * @param ?IJsomFormatter          $formatter Форматировщик данных
+     * @param ?RequestFactoryInterface $factory   Фабрика запросов
      */
-    public function __construct(string $token);
+    public function __construct(
+        string $token,
+        ?IJsonFormatter $formatter = null,
+        ?RequestFactoryInterface $factory = null
+    );
 
     /**
      * Получить токен
@@ -47,38 +53,11 @@ interface IClient
     public function getToken(): string;
 
     /**
-     * Установить форматтер body
-     *
-     * @param IJsonFormatter $formatter Форматер
-     *
-     * @return static
-     */
-    public function withFormatter(IJsonFormatter $formatter): static;
-
-    /**
      * Получить форматер
      *
      * @return IJsonFormatter
      */
     public function getFormatter(): IJsonFormatter;
-
-    /**
-     * Установить фабрику запросов
-     *
-     * @param RequestFactoryInterface $factory Фабрика запросов
-     *
-     * @return static
-     */
-    public function withRequestFactory(
-        RequestFactoryInterface $factory
-    ): static;
-
-    /**
-     * Получить фабрику запросов
-     *
-     * @return RequestFactoryInterface
-     */
-    public function getRequestFactory(): RequestFactoryInterface;
 
     /**
      * Выполнить запрос к wb api
