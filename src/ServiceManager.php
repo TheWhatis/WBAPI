@@ -15,18 +15,18 @@
 
 namespace Whatis\WBAPI;
 
+use Whatis\WBAPI\Http\IClient;
+use Whatis\WBAPI\Http\Client;
 use Whatis\WBAPI\Service\IService;
+use Whatis\WBAPI\Package\IPackage;
+
 use Whatis\WBAPI\Exceptions\ServiceNotFound;
 use Whatis\WBAPI\Exceptions\ServiceAlreadyExists;
-use Whatis\WBAPI\Formatters\IJsonFormatter;
-use Whatis\WBAPI\Attribute\Mapping;
-
-use Psr\Http\Message\RequestFactoryInterface;
 use GuzzleHttp\Exception\ClientException;
 
-use InvalidArgumentException;
 use BadMethodCallException;
 use Throwable;
+use Closure;
 
 /**
  * Класс для управления
@@ -44,20 +44,11 @@ use Throwable;
 class ServiceManager
 {
     /**
-     * Карта, связывающая пути
-     * до сервисов (их имена)
-     * и классы сервисов
+     * Генераторы сервисов
      *
-     * @var array
+     * @var array<string, Closure>
      */
-    public static array $mapping = [];
-
-    /**
-     * Используемый токен
-     *
-     * @var string
-     */
-    protected string $token;
+    protected array $creators = [];
 
     /**
      * Используемые сервисы
@@ -67,180 +58,78 @@ class ServiceManager
     protected array $services = [];
 
     /**
-     * Алиасы сервисов
+     * Общий клиент для всех сервисов
      *
-     * @var array<string, string>
+     * @var IClient
      */
-    protected array $aliases = [];
+    public readonly IClient $client;
 
     /**
-     * Иницилизировать фасад
+     * Иницилизировать менеджер
      *
-     * @param string $token Токен
+     * @param IClient|string $clientOrToken Клиент
      */
-    public function __construct(string $token)
+    public function __construct(IClient|string $clientOrToken)
     {
-        $this->token = $token;
+        $this->client = is_string($clientOrToken)
+            ? new Client($clientOrToken)
+            : $clientOrToken;
     }
 
     /**
-     * Получить простую карту сервисов и запросов
+     * Создать экземпляр этого класса
+     * со всеми параметрами
      *
-     * @return array
-     */
-    public static function mapping(): array
-    {
-        $mapping = [];
-        foreach (static::$mapping as $name => $service) {
-            $methods = Utils::serviceMappingMethods($service);
-            $mapping[$name] = array_combine(
-                array_map(
-                    fn ($method) => sprintf(
-                        '%s::%s', $service, $method->getName()
-                    ), $methods
-                ),
-                array_map(
-                    fn ($method) => Utils::preparePath(
-                        sprintf(
-                            '%s/%s', Utils::serviceBasePath(
-                                $service, $name
-                            ), Utils::serviceMethodPath($method)
-                        )
-                    ), $methods
-                )
-            );
-        }
-
-        return $mapping;
-    }
-
-    /**
-     * Получить класс сервиса по названию
-     *
-     * @param string $name Название
-     *
-     * @return string Клаcc сервиса
-     * @throw  ServiceNotFound
-     */
-    public static function get(string $name): string
-    {
-        if (array_key_exists($name, static::$mapping)) {
-            return static::$mapping[$name];
-        }
-
-        throw new ServiceNotFound($name, static::$mapping);
-    }
-
-    /**
-     * Получить иницилизированный сервис
-     * по его названию
-     *
-     * @param string $name  Название
-     * @param string $token Токен
-     *
-     * @return IService Сервис
-     */
-    public static function getService(
-        string $name,
-        string $token,
-    ): IService {
-        return new (static::get($name))($token);
-    }
-
-    /**
-     * Установить новый сервис
-     *
-     * @param string $name    Название
-     * @param string $service Класс сервиса
-     *
-     * @return void
-     * @throw  ServiceAlreadyExists
-     * @throw  InvalidArgumentException
-     */
-    public static function set(string $name, string $service): void
-    {
-        if (array_key_exists($name, static::$mapping)) {
-            throw new ServiceAlreadyExists(
-                $name, static::$mapping
-            );
-        }
-
-        if (is_a($service, IService::class, true)) {
-            static::$mapping[$name] = $service;
-            return;
-        }
-
-        throw new InvalidArgumentException(
-            sprintf(
-                'Parameter $service must implements \'%s\'. '
-                    . 'Passed class: \'%s\'',
-                IService::class, $service
-            )
-        );
-    }
-
-    /**
-     * Создать текущий объект
-     *
-     * @param string $token Токен
+     * @param ...$args Аргументы
      *
      * @return static
      */
-    public static function make(string $token): static
+    public static function new(...$args): static
     {
-        return new static($token);
+        return new static(...$args);
     }
 
     /**
-     * Проверить что сервис уже иницилизирован
+     * Установить новый сервис (расширить менеджер)
      *
-     * @param string $name Название
-     *
-     * @return void
-     * @throw  ServiceAlreadyExists
-     */
-    protected function checkServiceExists(string $name)
-    {
-        if (array_key_exists($name, $this->services)
-            || array_key_exists($name, $this->aliases)
-        ) {
-            throw new ServiceAlreadyExists($name, $this->services);
-        }
-    }
-
-    /**
-     * Установить alias на сервис
-     *
-     * @param string   $name Название
-     * @param ?string $alias Псевдоним
+     * @param string         $abstract Абстрактное название
+     * @param Closure|string $concrete Конкретика
      *
      * @return static
+     * @throw  ServiceAlreadyExists
      */
-    public function alias(string $name, ?string $alias): static
+    public function extend(string $abstract, Closure|string $concrete = null): static
     {
-        if ($alias) {
-            $this->checkServiceExists($alias);
-            $this->aliases[$alias] = $name;
+        if ($this->hasService($abstract)) {
+            throw new ServiceAlreadyExists(sprintf(
+                'Service with [%s] name already exists', $abstract
+            ));
         }
 
+        if (!$concrete) {
+            $concrete = $abstract;
+        }
+
+        if (is_string($concrete)) {
+            $concrete = fn ($manager) => new $concrete($manager->client);
+        }
+
+        $this->creators[$abstract] = $concrete;
         return $this;
     }
 
     /**
-     * Иницилизация нового сервиса
+     * Установить по пакету
      *
-     * @param string  $name  Название
-     * @param ?string $alias Используемый алиас
+     * @param IPackage $package Пакет
      *
      * @return static
      */
-    public function initNew(string $name, ?string $alias = null): static
+    public function package(IPackage $package): static
     {
-        $this->checkServiceExists($name);
-        $this->alias($name, $alias);
-        $this->services[$name] = static::getService(
-            $name, $this->token
-        );
+        foreach ($package as $name => $creator) {
+            $this->extend($name, $creator);
+        }
 
         return $this;
     }
@@ -254,62 +143,63 @@ class ServiceManager
      */
     public function hasService(string $name): bool
     {
-        return array_key_exists($name, $this->services)
-            || array_key_exists($name, $this->aliases);
+        return array_key_exists($name, $this->creators)
+            || array_key_exists($name, $this->services);
     }
 
     /**
-     * Использовать определённый иницилизированный
-     * сервис
+     * Получить "генератор" сервиса
+     *
+     * @param string $name название сервиса
+     *
+     * @return Closure
+     */
+    public function creator(string $name): Closure
+    {
+        if ($this->hasService($name)) {
+            return fn () => $this->creators[$name]($this);
+        }
+
+        throw new ServiceNotFound(sprintf(
+            'Service with [%s] name not found', $name
+        ));
+    }
+
+    /**
+     * Разрешить сервис
+     *
+     * @param string $name Название сервиса
+     *
+     * @return IService|ServiceCompositor
+     * @throw  ServiceNotFound
+     */
+    protected function resolve(string $name): IService|ServiceCompositor
+    {
+        return $this->creator($name)();
+    }
+
+    /**
+     * Получить сервис
+     *
+     * @param string $name название сервиса
+     *
+     * @return IService|ServiceCompositor Сервис
+     */
+    public function service(string $name): IService|ServiceCompositor
+    {
+        return $this->services[$name] ??= $this->resolve($name);
+    }
+
+    /**
+     * Использовать сервис
      *
      * @param string $name Название используемого сервиса
      *
-     * @return IService Сервис
-     * @throw  ServiceNotFound
+     * @return IService|ServiceCompositor Сервис
      */
-    public function use(string $name): IService
+    public function use(string $name): IService|ServiceCompositor
     {
-        if (!$this->hasService($name)) {
-            throw new ServiceNotFound($name, $this->services);
-        }
-
-        if (array_key_exists($name, $this->services)) {
-            return $this->services[$name];
-        }
-
-        return $this->services[$this->aliases[$name]];
-    }
-
-    /**
-     * Установить форматтер body
-     *
-     * @param IJsonFormatter $formatter Форматер
-     *
-     * @return static
-     */
-    public function withFormatter(IJsonFormatter $formatter): static
-    {
-        foreach ($this->services as $service) {
-            $service->withFormatter($formatter);
-        }
-
-        return $this;
-    }
-
-    /**
-     * Установить фабрику запросов
-     *
-     * @param RequestFactoryInterface $factory Фабрика запросов
-     *
-     * @return static
-     */
-    public function withRequestFactory(RequestFactoryInterface $factory): static
-    {
-        foreach ($this->services as $service) {
-            $service->withRequestFactory($factory);
-        }
-
-        return $this;
+        return $this->service($name);
     }
 
     /**
@@ -336,15 +226,12 @@ class ServiceManager
 
             $sMethod = lcfirst(str_ireplace($segment, '', $method));
             return $this->use($segment)->$sMethod(...$arguments);
-
-        } catch (ClientException $exception) {
+        } catch (ClientException|BadMethodCallException $exception) {
             throw $exception;
         } catch (Throwable $exception) {
             throw new BadMethodCallException(
-                sprintf(
-                    'Method %s::%s does not exists',
-                    static::class, $method
-                ), $exception->getCode(), $exception
+                sprintf('Method %s::%s does not exists', static::class, $method),
+                previous: $exception
             );
         }
     }
