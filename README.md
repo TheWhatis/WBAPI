@@ -26,6 +26,7 @@ var_dump($prices->get());
 
 use Whatis\WBAPI\Client\Client;
 use Whatis\WBAPI\ServiceManager;
+use Whatis\WBAPI\ServiceCompositor;
 use Whatis\WBAPI\Package\DefaultPackage;
 
 $token 'some.jwt.token.-asdffsdfJLA';
