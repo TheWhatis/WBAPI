@@ -9,7 +9,7 @@
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/wb-api-skeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 
 namespace Whatis\WBAPI\V3;
@@ -32,7 +32,7 @@ use RuntimeException;
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/wb-api-skeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 class Orders extends BaseService
 {

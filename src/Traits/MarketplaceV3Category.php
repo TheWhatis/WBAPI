@@ -10,7 +10,7 @@
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/wb-api-skeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 
 namespace Whatis\WBAPI\Traits;
@@ -26,7 +26,7 @@ namespace Whatis\WBAPI\Traits;
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/wb-api-skeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 trait MarketplaceV3Category
 {

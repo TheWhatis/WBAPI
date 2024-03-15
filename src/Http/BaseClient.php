@@ -24,7 +24,7 @@ namespace Whatis\WBAPI\Http;
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/WBApiSkeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 abstract class BaseClient implements IClient
 {

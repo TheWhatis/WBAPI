@@ -9,7 +9,7 @@
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/wb-api-skeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 
 namespace Whatis\WBAPI\V3;
@@ -28,7 +28,7 @@ use Whatis\WBAPI\Attribute\Mapping;
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/wb-api-skeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 class Warehouses extends BaseService
 {

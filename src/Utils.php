@@ -120,10 +120,30 @@ class Utils
      *
      * @return string
      */
-    public static function serviceMethodPath(
-        ReflectionMethod $method
-    ): string {
-        $map = $method->getAttributes(Mapping::class);
-        return $map ? $map[0]->newInstance()->path : '.../unknown';
+    public static function serviceMethodPath(ReflectionMethod $method): string
+    {
+        $map = array_reduce(
+            $method->getAttributes(Mapping::class), function ($carry, $map) {
+                return $carry ? $carry : $map->newInstance();
+            }
+        );
+
+        if ($map) {
+            $class = $method->getDeclaringClass()->newInstanceWithoutConstructor();
+            preg_match('/:(?<name>\w+)/', $map->path, $matches);
+            foreach ($matches as $match) {
+                if (substr($match, 0, 1) === ':') {
+                    continue;
+                }
+
+                $map->path = str_replace(
+                    ":$match", $class->$match, $map->path
+                );
+            }
+
+            return $map->path;
+        }
+
+        return '.../unknown';
     }
 }

@@ -9,7 +9,7 @@
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/wb-api-skeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 
 namespace Whatis\WBAPI\V2;
@@ -34,7 +34,7 @@ use resource;
  * @package  WBAPI
  * @author   Whatis <anton-gogo@mail.ru>
  * @license  unlicense
- * @link     https://github.com/TheWhatis/wb-api-skeleton
+ * @link     https://github.com/TheWhatis/WBAPI
  */
 class Media extends BaseService
 {
