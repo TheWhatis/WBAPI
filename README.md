@@ -79,8 +79,8 @@ namespace Whatis\WBAPI\Example;
 
 use Whatis\WBAPI\Service\BaseService;
 
-// Атрибут, необходимый для
-// метода ServiceManager::mapping
+// Атрибут, необходимый для создания
+// карты api методов->методов класса
 use Whatis\WBAPI\Attribute\Mapping;
 
 use DateTime;
