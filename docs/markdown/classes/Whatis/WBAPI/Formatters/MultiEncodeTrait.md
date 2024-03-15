@@ -218,5 +218,5 @@ protected contentIsEmpty(mixed $content): bool
 ***
 
 ***
-> Automatically generated on 2024-03-11
+> Automatically generated on 2024-03-15
 

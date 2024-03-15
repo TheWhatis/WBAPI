@@ -29,7 +29,7 @@ PHP version 8
 Иницилизация сервиса
 
 ```php
-public __construct(string $token): mixed
+public __construct(\Whatis\WBAPI\Http\IClient $client): mixed
 ```
 
 
@@ -43,7 +43,7 @@ public __construct(string $token): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$token` | **string** | Токен |
+| `$client` | **\Whatis\WBAPI\Http\IClient** | Клиент |
 
 
 
@@ -149,102 +149,6 @@ public static basePath(): string
 
 
 * This method is **static**.
-
-
-
-
-
-
-
-
-***
-
-### withFormatter
-
-Установить форматировщик
-
-```php
-public withFormatter(\Whatis\WBAPI\Formatters\IJsonFormatter $formatter): static
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$formatter` | **\Whatis\WBAPI\Formatters\IJsonFormatter** | Форматировщик |
-
-
-
-
-
-***
-
-### getFormatter
-
-Получить форматировщик
-
-```php
-public getFormatter(): \Whatis\WBAPI\Formatters\IJsonFormatter
-```
-
-
-
-
-
-
-
-
-
-
-
-
-***
-
-### withRequestFactory
-
-Установить фабрику запросов
-
-```php
-public withRequestFactory(\Psr\Http\Message\RequestFactoryInterface $factory): static
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$factory` | **\Psr\Http\Message\RequestFactoryInterface** | Фабрика запросов |
-
-
-
-
-
-***
-
-### getRequestFactory
-
-Получить фабрику запросов
-
-```php
-public getRequestFactory(): \Psr\Http\Message\RequestFactoryInterface
-```
-
-
-
-
 
 
 
@@ -367,4 +271,4 @@ public request(string|\Whatis\WBAPI\Enums\HttpMethod $method, string $path, mixe
 
 
 ***
-> Automatically generated on 2024-03-11
+> Automatically generated on 2024-03-15

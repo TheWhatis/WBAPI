@@ -12,7 +12,7 @@ PHP version 8
 
 **See Also:**
 
-* https://github.com/TheWhatis/wb-api-skeleton - 
+* https://github.com/TheWhatis/WBAPI - 
 
 
 
@@ -64,5 +64,5 @@ public static getPermissions(): \Whatis\WBAPI\Permissions
 ***
 
 ***
-> Automatically generated on 2024-03-11
+> Automatically generated on 2024-03-15
 

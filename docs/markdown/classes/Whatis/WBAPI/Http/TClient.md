@@ -53,7 +53,7 @@ public \GuzzleHttp\Client $client
 тела запроса/ответа
 
 ```php
-protected \Whatis\WBAPI\Formatters\IJsonFormatter $formatter
+public \Whatis\WBAPI\Formatters\IJsonFormatter $formatter
 ```
 
 
@@ -68,7 +68,7 @@ protected \Whatis\WBAPI\Formatters\IJsonFormatter $formatter
 Фабрика запросов
 
 ```php
-protected \Psr\Http\Message\RequestFactoryInterface $requestFactory
+public \Psr\Http\Message\RequestFactoryInterface $requestFactory
 ```
 
 
@@ -86,7 +86,7 @@ protected \Psr\Http\Message\RequestFactoryInterface $requestFactory
 Иницилизация клиента
 
 ```php
-public __construct(string $token): mixed
+public __construct(string $token, ?\Whatis\WBAPI\Http\IJsomFormatter $formatter = null, ?\Psr\Http\Message\RequestFactoryInterface $factory = null): mixed
 ```
 
 
@@ -100,7 +100,9 @@ public __construct(string $token): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$token` | **string** | Токен Wildberries |
+| `$token` | **string** | Токен wildberries api |
+| `$formatter` | **?\Whatis\WBAPI\Http\IJsomFormatter** | Форматировщик данных |
+| `$factory` | **?\Psr\Http\Message\RequestFactoryInterface** | Фабрика запросов |
 
 
 
@@ -129,87 +131,12 @@ public getToken(): string
 
 ***
 
-### withFormatter
-
-Установить форматтер body
-
-```php
-public withFormatter(\Whatis\WBAPI\Formatters\IJsonFormatter $formatter): static
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$formatter` | **\Whatis\WBAPI\Formatters\IJsonFormatter** | Форматер |
-
-
-
-
-
-***
-
 ### getFormatter
 
 Получить форматер
 
 ```php
 public getFormatter(): \Whatis\WBAPI\Formatters\IJsonFormatter
-```
-
-
-
-
-
-
-
-
-
-
-
-
-***
-
-### withRequestFactory
-
-Установить фабрику запросов
-
-```php
-public withRequestFactory(\Psr\Http\Message\RequestFactoryInterface $factory): static
-```
-
-
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$factory` | **\Psr\Http\Message\RequestFactoryInterface** | Фабрика запросов |
-
-
-
-
-
-***
-
-### getRequestFactory
-
-Получить фабрику запросов
-
-```php
-public getRequestFactory(): \Psr\Http\Message\RequestFactoryInterface
 ```
 
 
@@ -307,5 +234,5 @@ public request(\Whatis\WBAPI\Http\Payload $payload): \Psr\Http\Message\ResponseI
 ***
 
 ***
-> Automatically generated on 2024-03-11
+> Automatically generated on 2024-03-15
 

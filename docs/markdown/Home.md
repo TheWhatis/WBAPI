@@ -18,6 +18,7 @@ This is an automatically generated documentation for **Documentation**.
 | Class | Description |
 |-------|-------------|
 | [`Permissions`](./classes/Whatis/WBAPI/Permissions.md) | Интерфейс сервиса|
+| [`ServiceCompositor`](./classes/Whatis/WBAPI/ServiceCompositor.md) | Класс-компановщик для сервисов|
 | [`ServiceManager`](./classes/Whatis/WBAPI/ServiceManager.md) | Класс для управления<br />классами-сервисами<br />для wb api|
 | [`Utils`](./classes/Whatis/WBAPI/Utils.md) | Класс с вспомогательными методами|
 
@@ -43,7 +44,7 @@ This is an automatically generated documentation for **Documentation**.
 |-------|-------------|
 | [`PermissionsDoesNotExistsException`](./classes/Whatis/WBAPI/Exceptions/PermissionsDoesNotExistsException.md) | Исключение, возникающее<br />когда у токена недостаточно<br />прав для работы с сервисом|
 | [`ServiceAlreadyExists`](./classes/Whatis/WBAPI/Exceptions/ServiceAlreadyExists.md) | Исключение, возникающее когда<br />сервис уже существует|
-| [`ServiceNotFound`](./classes/Whatis/WBAPI/Exceptions/ServiceNotFound.md) | Исключение, возникающее<br />когда сервис не найден в<br />менеджере|
+| [`ServiceNotFound`](./classes/Whatis/WBAPI/Exceptions/ServiceNotFound.md) | Исключение, возникающее когда<br />сервиса не существует|
 
 
 
@@ -100,6 +101,25 @@ This is an automatically generated documentation for **Documentation**.
 | Interface | Description |
 |-----------|-------------|
 | [`IClient`](./classes/Whatis/WBAPI/Http/IClient.md) | Интерфейс клиента<br />для wildberries api|
+
+
+
+### \Whatis\WBAPI\Package
+
+#### Classes
+
+| Class | Description |
+|-------|-------------|
+| [`BasePackage`](./classes/Whatis/WBAPI/Package/BasePackage.md) | Файл с абстрактным классом для<br />пакета (с реализацией основных<br />методов)|
+| [`DefaultPackage`](./classes/Whatis/WBAPI/Package/DefaultPackage.md) | Пакет с основными сервисами библиотеки|
+
+
+
+#### Interfaces
+
+| Interface | Description |
+|-----------|-------------|
+| [`IPackage`](./classes/Whatis/WBAPI/Package/IPackage.md) | Интерфейс для реализации<br />пакетов сервисов|
 
 
 
@@ -189,4 +209,4 @@ This is an automatically generated documentation for **Documentation**.
 
 
 ***
-> Automatically generated on 2024-03-11
+> Automatically generated on 2024-03-15

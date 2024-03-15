@@ -121,60 +121,10 @@ Search.appendIndex(
             "summary": "\u0418\u0441\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435,\u0020\u0432\u043E\u0437\u043D\u0438\u043A\u0430\u044E\u0449\u0435\u0435\u0020\u043A\u043E\u0433\u0434\u0430\n\u0441\u0435\u0440\u0432\u0438\u0441\u0020\u0443\u0436\u0435\u0020\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
             "url": "classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceAlreadyExists\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u0438\u0441\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F",
-            "url": "classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html#method___construct"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceAlreadyExists\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0435",
-            "url": "classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html#method_getName"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceAlreadyExists\u003A\u003AgetMapping\u0028\u0029",
-            "name": "getMapping",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043A\u0430\u0440\u0442\u0443",
-            "url": "classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html#method_getMapping"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceAlreadyExists\u003A\u003A\u0024name",
-            "name": "name",
-            "summary": "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435",
-            "url": "classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html#property_name"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceAlreadyExists\u003A\u003A\u0024mapping",
-            "name": "mapping",
-            "summary": "\u041A\u0430\u0440\u0442\u0430",
-            "url": "classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html#property_mapping"
-        },                {
             "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceNotFound",
             "name": "ServiceNotFound",
-            "summary": "\u0418\u0441\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435,\u0020\u0432\u043E\u0437\u043D\u0438\u043A\u0430\u044E\u0449\u0435\u0435\n\u043A\u043E\u0433\u0434\u0430\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0020\u043D\u0435\u0020\u043D\u0430\u0439\u0434\u0435\u043D\u0020\u0432\n\u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0435",
+            "summary": "\u0418\u0441\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435,\u0020\u0432\u043E\u0437\u043D\u0438\u043A\u0430\u044E\u0449\u0435\u0435\u0020\u043A\u043E\u0433\u0434\u0430\n\u0441\u0435\u0440\u0432\u0438\u0441\u0430\u0020\u043D\u0435\u0020\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
             "url": "classes/Whatis-WBAPI-Exceptions-ServiceNotFound.html"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceNotFound\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
-            "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u0438\u0441\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F",
-            "url": "classes/Whatis-WBAPI-Exceptions-ServiceNotFound.html#method___construct"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceNotFound\u003A\u003AgetName\u0028\u0029",
-            "name": "getName",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0435",
-            "url": "classes/Whatis-WBAPI-Exceptions-ServiceNotFound.html#method_getName"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceNotFound\u003A\u003AgetMapping\u0028\u0029",
-            "name": "getMapping",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043A\u0430\u0440\u0442\u0443",
-            "url": "classes/Whatis-WBAPI-Exceptions-ServiceNotFound.html#method_getMapping"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceNotFound\u003A\u003A\u0024name",
-            "name": "name",
-            "summary": "\u041D\u0430\u0437\u0432\u0430\u043D\u0438\u0435",
-            "url": "classes/Whatis-WBAPI-Exceptions-ServiceNotFound.html#property_name"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Exceptions\\ServiceNotFound\u003A\u003A\u0024mapping",
-            "name": "mapping",
-            "summary": "\u041A\u0430\u0440\u0442\u0430",
-            "url": "classes/Whatis-WBAPI-Exceptions-ServiceNotFound.html#property_mapping"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Formatters\\ArrayFormatter",
             "name": "ArrayFormatter",
@@ -301,25 +251,10 @@ Search.appendIndex(
             "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0442\u043E\u043A\u0435\u043D",
             "url": "classes/Whatis-WBAPI-Http-IClient.html#method_getToken"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Http\\IClient\u003A\u003AwithFormatter\u0028\u0029",
-            "name": "withFormatter",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u0444\u043E\u0440\u043C\u0430\u0442\u0442\u0435\u0440\u0020body",
-            "url": "classes/Whatis-WBAPI-Http-IClient.html#method_withFormatter"
-        },                {
             "fqsen": "\\Whatis\\WBAPI\\Http\\IClient\u003A\u003AgetFormatter\u0028\u0029",
             "name": "getFormatter",
             "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0444\u043E\u0440\u043C\u0430\u0442\u0435\u0440",
             "url": "classes/Whatis-WBAPI-Http-IClient.html#method_getFormatter"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Http\\IClient\u003A\u003AwithRequestFactory\u0028\u0029",
-            "name": "withRequestFactory",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u0444\u0430\u0431\u0440\u0438\u043A\u0443\u0020\u0437\u0430\u043F\u0440\u043E\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-Http-IClient.html#method_withRequestFactory"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Http\\IClient\u003A\u003AgetRequestFactory\u0028\u0029",
-            "name": "getRequestFactory",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0444\u0430\u0431\u0440\u0438\u043A\u0443\u0020\u0437\u0430\u043F\u0440\u043E\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-Http-IClient.html#method_getRequestFactory"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Http\\IClient\u003A\u003Arequest\u0028\u0029",
             "name": "request",
@@ -381,25 +316,10 @@ Search.appendIndex(
             "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0442\u043E\u043A\u0435\u043D",
             "url": "classes/Whatis-WBAPI-Http-TClient.html#method_getToken"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Http\\TClient\u003A\u003AwithFormatter\u0028\u0029",
-            "name": "withFormatter",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u0444\u043E\u0440\u043C\u0430\u0442\u0442\u0435\u0440\u0020body",
-            "url": "classes/Whatis-WBAPI-Http-TClient.html#method_withFormatter"
-        },                {
             "fqsen": "\\Whatis\\WBAPI\\Http\\TClient\u003A\u003AgetFormatter\u0028\u0029",
             "name": "getFormatter",
             "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0444\u043E\u0440\u043C\u0430\u0442\u0435\u0440",
             "url": "classes/Whatis-WBAPI-Http-TClient.html#method_getFormatter"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Http\\TClient\u003A\u003AwithRequestFactory\u0028\u0029",
-            "name": "withRequestFactory",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u0444\u0430\u0431\u0440\u0438\u043A\u0443\u0020\u0437\u0430\u043F\u0440\u043E\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-Http-TClient.html#method_withRequestFactory"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Http\\TClient\u003A\u003AgetRequestFactory\u0028\u0029",
-            "name": "getRequestFactory",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0444\u0430\u0431\u0440\u0438\u043A\u0443\u0020\u0437\u0430\u043F\u0440\u043E\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-Http-TClient.html#method_getRequestFactory"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Http\\TClient\u003A\u003Auri\u0028\u0029",
             "name": "uri",
@@ -435,6 +355,86 @@ Search.appendIndex(
             "name": "requestFactory",
             "summary": "\u0424\u0430\u0431\u0440\u0438\u043A\u0430\u0020\u0437\u0430\u043F\u0440\u043E\u0441\u043E\u0432",
             "url": "classes/Whatis-WBAPI-Http-TClient.html#property_requestFactory"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\BasePackage",
+            "name": "BasePackage",
+            "summary": "\u0424\u0430\u0439\u043B\u0020\u0441\u0020\u0430\u0431\u0441\u0442\u0440\u0430\u043A\u0442\u043D\u044B\u043C\u0020\u043A\u043B\u0430\u0441\u0441\u043E\u043C\u0020\u0434\u043B\u044F\n\u043F\u0430\u043A\u0435\u0442\u0430\u0020\u0028\u0441\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0435\u0439\u0020\u043E\u0441\u043D\u043E\u0432\u043D\u044B\u0445\n\u043C\u0435\u0442\u043E\u0434\u043E\u0432\u0029",
+            "url": "classes/Whatis-WBAPI-Package-BasePackage.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\BasePackage\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u043F\u0430\u043A\u0435\u0442\u0430",
+            "url": "classes/Whatis-WBAPI-Package-BasePackage.html#method___construct"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\BasePackage\u003A\u003A\u0024packages",
+            "name": "packages",
+            "summary": "\u0420\u0430\u0441\u0448\u0438\u0440\u0435\u043D\u0438\u044F",
+            "url": "classes/Whatis-WBAPI-Package-BasePackage.html#property_packages"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\BasePackage\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+            "url": "classes/Whatis-WBAPI-Package-BasePackage.html#method_current"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\BasePackage\u003A\u003Akey\u0028\u0029",
+            "name": "key",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0435\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+            "url": "classes/Whatis-WBAPI-Package-BasePackage.html#method_key"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\BasePackage\u003A\u003Anext\u0028\u0029",
+            "name": "next",
+            "summary": "\u041F\u0435\u0440\u0435\u0439\u0442\u0438\u0020\u043A\u0020\u0441\u043B\u0435\u0434\u002D\u043C\u0443\u0020\u043F\u0430\u043A\u0435\u0442\u0443",
+            "url": "classes/Whatis-WBAPI-Package-BasePackage.html#method_next"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\BasePackage\u003A\u003Arewind\u0028\u0029",
+            "name": "rewind",
+            "summary": "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C\u0020\u0443\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044C",
+            "url": "classes/Whatis-WBAPI-Package-BasePackage.html#method_rewind"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\BasePackage\u003A\u003Avalid\u0028\u0029",
+            "name": "valid",
+            "summary": "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C\u0020\u0447\u0442\u043E\u0020\u043F\u043E\u0434\u0020\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435\u043C\n\u0443\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044F\u0020\u0435\u0441\u0442\u044C\u0020\u044D\u043B\u0435\u043C\u0435\u043D\u0442",
+            "url": "classes/Whatis-WBAPI-Package-BasePackage.html#method_valid"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\DefaultPackage",
+            "name": "DefaultPackage",
+            "summary": "\u041F\u0430\u043A\u0435\u0442\u0020\u0441\u0020\u043E\u0441\u043D\u043E\u0432\u043D\u044B\u043C\u0438\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430\u043C\u0438\u0020\u0431\u0438\u0431\u043B\u0438\u043E\u0442\u0435\u043A\u0438",
+            "url": "classes/Whatis-WBAPI-Package-DefaultPackage.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\DefaultPackage\u003A\u003Apackages\u0028\u0029",
+            "name": "packages",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043F\u0430\u043A\u0435\u0442\u044B",
+            "url": "classes/Whatis-WBAPI-Package-DefaultPackage.html#method_packages"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\IPackage",
+            "name": "IPackage",
+            "summary": "\u0418\u043D\u0442\u0435\u0440\u0444\u0435\u0439\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0435\u0430\u043B\u0438\u0437\u0430\u0446\u0438\u0438\n\u043F\u0430\u043A\u0435\u0442\u043E\u0432\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432",
+            "url": "classes/Whatis-WBAPI-Package-IPackage.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\IPackage\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+            "url": "classes/Whatis-WBAPI-Package-IPackage.html#method_current"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\IPackage\u003A\u003Akey\u0028\u0029",
+            "name": "key",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0435\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+            "url": "classes/Whatis-WBAPI-Package-IPackage.html#method_key"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\IPackage\u003A\u003Anext\u0028\u0029",
+            "name": "next",
+            "summary": "\u041F\u0435\u0440\u0435\u0439\u0442\u0438\u0020\u043A\u0020\u0441\u043B\u0435\u0434\u002D\u043C\u0443\u0020\u043F\u0430\u043A\u0435\u0442\u0443",
+            "url": "classes/Whatis-WBAPI-Package-IPackage.html#method_next"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\IPackage\u003A\u003Arewind\u0028\u0029",
+            "name": "rewind",
+            "summary": "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C\u0020\u0443\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044C",
+            "url": "classes/Whatis-WBAPI-Package-IPackage.html#method_rewind"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package\\IPackage\u003A\u003Avalid\u0028\u0029",
+            "name": "valid",
+            "summary": "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C\u0020\u0447\u0442\u043E\u0020\u043F\u043E\u0434\u0020\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435\u043C\n\u0443\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044F\u0020\u0435\u0441\u0442\u044C\u0020\u044D\u043B\u0435\u043C\u0435\u043D\u0442",
+            "url": "classes/Whatis-WBAPI-Package-IPackage.html#method_valid"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Permissions",
             "name": "Permissions",
@@ -520,36 +520,6 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
             "url": "classes/Whatis-WBAPI-Service-IService.html#method___construct"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Service\\IService\u003A\u003AgetPermissions\u0028\u0029",
-            "name": "getPermissions",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043C\u0430\u0441\u0441\u0438\u0432\u0020\u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B\u0445\u0020\u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043D\u0438\u0439\n\u0434\u043B\u044F\u0020\u044D\u0442\u043E\u0433\u043E\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
-            "url": "classes/Whatis-WBAPI-Service-IService.html#method_getPermissions"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Service\\IService\u003A\u003AwithFormatter\u0028\u0029",
-            "name": "withFormatter",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u0444\u043E\u0440\u043C\u0430\u0442\u0438\u0440\u043E\u0432\u0449\u0438\u043A",
-            "url": "classes/Whatis-WBAPI-Service-IService.html#method_withFormatter"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Service\\IService\u003A\u003AgetFormatter\u0028\u0029",
-            "name": "getFormatter",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0444\u043E\u0440\u043C\u0430\u0442\u0438\u0440\u043E\u0432\u0449\u0438\u043A",
-            "url": "classes/Whatis-WBAPI-Service-IService.html#method_getFormatter"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Service\\IService\u003A\u003AwithRequestFactory\u0028\u0029",
-            "name": "withRequestFactory",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u0444\u0430\u0431\u0440\u0438\u043A\u0443\u0020\u0437\u0430\u043F\u0440\u043E\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-Service-IService.html#method_withRequestFactory"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Service\\IService\u003A\u003AgetRequestFactory\u0028\u0029",
-            "name": "getRequestFactory",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0444\u0430\u0431\u0440\u0438\u043A\u0443\u0020\u0437\u0430\u043F\u0440\u043E\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-Service-IService.html#method_getRequestFactory"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Service\\IService\u003A\u003Arequest\u0028\u0029",
-            "name": "request",
-            "summary": "\u0412\u043E\u0441\u043F\u0440\u043E\u0438\u0437\u0432\u0435\u0441\u0442\u0438\u0020\u0437\u0430\u043F\u0440\u043E\u0441",
-            "url": "classes/Whatis-WBAPI-Service-IService.html#method_request"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Service\\Payload",
             "name": "Payload",
@@ -641,26 +611,6 @@ Search.appendIndex(
             "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0431\u0430\u0437\u043E\u0432\u044B\u0439\u0020uri",
             "url": "classes/Whatis-WBAPI-Service-TService.html#method_basePath"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\Service\\TService\u003A\u003AwithFormatter\u0028\u0029",
-            "name": "withFormatter",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u0444\u043E\u0440\u043C\u0430\u0442\u0438\u0440\u043E\u0432\u0449\u0438\u043A",
-            "url": "classes/Whatis-WBAPI-Service-TService.html#method_withFormatter"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Service\\TService\u003A\u003AgetFormatter\u0028\u0029",
-            "name": "getFormatter",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0444\u043E\u0440\u043C\u0430\u0442\u0438\u0440\u043E\u0432\u0449\u0438\u043A",
-            "url": "classes/Whatis-WBAPI-Service-TService.html#method_getFormatter"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Service\\TService\u003A\u003AwithRequestFactory\u0028\u0029",
-            "name": "withRequestFactory",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u0444\u0430\u0431\u0440\u0438\u043A\u0443\u0020\u0437\u0430\u043F\u0440\u043E\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-Service-TService.html#method_withRequestFactory"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\Service\\TService\u003A\u003AgetRequestFactory\u0028\u0029",
-            "name": "getRequestFactory",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0444\u0430\u0431\u0440\u0438\u043A\u0443\u0020\u0437\u0430\u043F\u0440\u043E\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-Service-TService.html#method_getRequestFactory"
-        },                {
             "fqsen": "\\Whatis\\WBAPI\\Service\\TService\u003A\u003Aheaders\u0028\u0029",
             "name": "headers",
             "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0437\u0430\u0433\u043E\u043B\u043E\u0432\u043A\u0438\u0020\u0438\u0437\u0020Payload",
@@ -691,6 +641,61 @@ Search.appendIndex(
             "summary": "\u0420\u0430\u0437\u0440\u0435\u0448\u0435\u043D\u0438\u044F\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
             "url": "classes/Whatis-WBAPI-Service-TService.html#property_permissions"
         },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor",
+            "name": "ServiceCompositor",
+            "summary": "\u041A\u043B\u0430\u0441\u0441\u002D\u043A\u043E\u043C\u043F\u0430\u043D\u043E\u0432\u0449\u0438\u043A\u0020\u0434\u043B\u044F\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "\u0421\u043E\u0437\u0434\u0430\u0442\u044C\u0020\u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0442\u043E\u0440n",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html#method___construct"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor\u003A\u003Aadd\u0028\u0029",
+            "name": "add",
+            "summary": "\u0414\u043E\u0431\u0430\u0432\u0438\u0442\u044C\u0020\u043D\u043E\u0432\u044B\u0439\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0020\u0432\u0020\u043A\u043E\u043C\u043F\u043E\u0437\u0438\u0442\u043E\u0440",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html#method_add"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor\u003A\u003Acount\u0028\u0029",
+            "name": "count",
+            "summary": "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C\u0020\u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E\u0020\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C\u044B\u0445\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html#method_count"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor\u003A\u003Acurrent\u0028\u0029",
+            "name": "current",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html#method_current"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor\u003A\u003Akey\u0028\u0029",
+            "name": "key",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043D\u0430\u0437\u0432\u0430\u043D\u0438\u0435\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html#method_key"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor\u003A\u003Anext\u0028\u0029",
+            "name": "next",
+            "summary": "\u041F\u0435\u0440\u0435\u0439\u0442\u0438\u0020\u043A\u0020\u0441\u043B\u0435\u0434\u002D\u043C\u0443\u0020\u043F\u0430\u043A\u0435\u0442\u0443",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html#method_next"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor\u003A\u003Arewind\u0028\u0029",
+            "name": "rewind",
+            "summary": "\u0421\u0431\u0440\u043E\u0441\u0438\u0442\u044C\u0020\u0443\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044C",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html#method_rewind"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor\u003A\u003Avalid\u0028\u0029",
+            "name": "valid",
+            "summary": "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C\u0020\u0447\u0442\u043E\u0020\u043F\u043E\u0434\u0020\u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435\u043C\n\u0443\u043A\u0430\u0437\u0430\u0442\u0435\u043B\u044F\u0020\u0435\u0441\u0442\u044C\u0020\u044D\u043B\u0435\u043C\u0435\u043D\u0442",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html#method_valid"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor\u003A\u003A__call\u0028\u0029",
+            "name": "__call",
+            "summary": "\u0412\u044B\u0437\u043E\u0432\u0020\u043C\u0435\u0442\u043E\u0434\u043E\u0432\u0020\u0438\u0437\u0020\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C\u044B\u0445\n\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432\u0020\u0028\u0435\u0441\u043B\u0438\u0020\u0435\u0441\u0442\u044C\u0029",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html#method___call"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceCompositor\u003A\u003A\u0024services",
+            "name": "services",
+            "summary": "\u041D\u0430\u0431\u043E\u0440\u0020\u0438\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C\u044B\u0445\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432",
+            "url": "classes/Whatis-WBAPI-ServiceCompositor.html#property_services"
+        },                {
             "fqsen": "\\Whatis\\WBAPI\\ServiceManager",
             "name": "ServiceManager",
             "summary": "\u041A\u043B\u0430\u0441\u0441\u0020\u0434\u043B\u044F\u0020\u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F\n\u043A\u043B\u0430\u0441\u0441\u0430\u043C\u0438\u002D\u0441\u0435\u0440\u0432\u0438\u0441\u0430\u043C\u0438\n\u0434\u043B\u044F\u0020wb\u0020api",
@@ -698,88 +703,68 @@ Search.appendIndex(
         },                {
             "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0020\u0444\u0430\u0441\u0430\u0434",
+            "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u0442\u044C\u0020\u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440",
             "url": "classes/Whatis-WBAPI-ServiceManager.html#method___construct"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003A\u0024mapping",
-            "name": "mapping",
-            "summary": "\u041A\u0430\u0440\u0442\u0430,\u0020\u0441\u0432\u044F\u0437\u044B\u0432\u0430\u044E\u0449\u0430\u044F\u0020\u043F\u0443\u0442\u0438\n\u0434\u043E\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432\u0020\u0028\u0438\u0445\u0020\u0438\u043C\u0435\u043D\u0430\u0029\n\u0438\u0020\u043A\u043B\u0430\u0441\u0441\u044B\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#property_mapping"
+            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Anew\u0028\u0029",
+            "name": "new",
+            "summary": "\u0421\u043E\u0437\u0434\u0430\u0442\u044C\u0020\u044D\u043A\u0437\u0435\u043C\u043F\u043B\u044F\u0440\u0020\u044D\u0442\u043E\u0433\u043E\u0020\u043A\u043B\u0430\u0441\u0441\u0430\n\u0441\u043E\u0020\u0432\u0441\u0435\u043C\u0438\u0020\u043F\u0430\u0440\u0430\u043C\u0435\u0442\u0440\u0430\u043C\u0438",
+            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_new"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Aget\u0028\u0029",
-            "name": "get",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043A\u043B\u0430\u0441\u0441\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430\u0020\u043F\u043E\u0020\u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044E",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_get"
+            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Aextend\u0028\u0029",
+            "name": "extend",
+            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u043D\u043E\u0432\u044B\u0439\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0020\u0028\u0440\u0430\u0441\u0448\u0438\u0440\u0438\u0442\u044C\u0020\u043C\u0435\u043D\u0435\u0434\u0436\u0435\u0440\u0029",
+            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_extend"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003AgetService\u0028\u0029",
-            "name": "getService",
-            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0438\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439\u0020\u0441\u0435\u0440\u0432\u0438\u0441\n\u043F\u043E\u0020\u0435\u0433\u043E\u0020\u043D\u0430\u0437\u0432\u0430\u043D\u0438\u044E",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_getService"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Aset\u0028\u0029",
-            "name": "set",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u043D\u043E\u0432\u044B\u0439\u0020\u0441\u0435\u0440\u0432\u0438\u0441",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_set"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Amake\u0028\u0029",
-            "name": "make",
-            "summary": "\u0421\u043E\u0437\u0434\u0430\u0442\u044C\u0020\u0442\u0435\u043A\u0443\u0449\u0438\u0439\u0020\u043E\u0431\u044A\u0435\u043A\u0442",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_make"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003AcheckServiceExists\u0028\u0029",
-            "name": "checkServiceExists",
-            "summary": "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C\u0020\u0447\u0442\u043E\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0020\u0443\u0436\u0435\u0020\u0438\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_checkServiceExists"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Aalias\u0028\u0029",
-            "name": "alias",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020alias\u0020\u043D\u0430\u0020\u0441\u0435\u0440\u0432\u0438\u0441",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_alias"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003AinitNew\u0028\u0029",
-            "name": "initNew",
-            "summary": "\u0418\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0430\u0446\u0438\u044F\u0020\u043D\u043E\u0432\u043E\u0433\u043E\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_initNew"
+            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Apackage\u0028\u0029",
+            "name": "package",
+            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u043F\u043E\u0020\u043F\u0430\u043A\u0435\u0442\u0443",
+            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_package"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003AhasService\u0028\u0029",
             "name": "hasService",
             "summary": "\u041F\u0440\u043E\u0432\u0435\u0440\u0438\u0442\u044C\u0020\u0447\u0442\u043E\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0020\u0441\u0443\u0449\u0435\u0441\u0442\u0432\u0443\u0435\u0442",
             "url": "classes/Whatis-WBAPI-ServiceManager.html#method_hasService"
         },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Acreator\u0028\u0029",
+            "name": "creator",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0022\u0433\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u0022\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_creator"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Aresolve\u0028\u0029",
+            "name": "resolve",
+            "summary": "\u0420\u0430\u0437\u0440\u0435\u0448\u0438\u0442\u044C\u0020\u0441\u0435\u0440\u0432\u0438\u0441",
+            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_resolve"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Aservice\u0028\u0029",
+            "name": "service",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0441\u0435\u0440\u0432\u0438\u0441",
+            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_service"
+        },                {
             "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003Ause\u0028\u0029",
             "name": "use",
-            "summary": "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\u0020\u043E\u043F\u0440\u0435\u0434\u0435\u043B\u0451\u043D\u043D\u044B\u0439\u0020\u0438\u043D\u0438\u0446\u0438\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D\u043D\u044B\u0439\n\u0441\u0435\u0440\u0432\u0438\u0441",
+            "summary": "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u044C\u0020\u0441\u0435\u0440\u0432\u0438\u0441",
             "url": "classes/Whatis-WBAPI-ServiceManager.html#method_use"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003AwithFormatter\u0028\u0029",
-            "name": "withFormatter",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u0444\u043E\u0440\u043C\u0430\u0442\u0442\u0435\u0440\u0020body",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_withFormatter"
-        },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003AwithRequestFactory\u0028\u0029",
-            "name": "withRequestFactory",
-            "summary": "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u044C\u0020\u0444\u0430\u0431\u0440\u0438\u043A\u0443\u0020\u0437\u0430\u043F\u0440\u043E\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#method_withRequestFactory"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003A__call\u0028\u0029",
             "name": "__call",
             "summary": "\u0412\u044B\u0437\u043E\u0432\u0020\u043C\u0435\u0442\u043E\u0434\u043E\u0432\u0020\u0438\u0437\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432",
             "url": "classes/Whatis-WBAPI-ServiceManager.html#method___call"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003A\u0024token",
-            "name": "token",
-            "summary": "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C\u044B\u0439\u0020\u0442\u043E\u043A\u0435\u043D",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#property_token"
+            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003A\u0024creators",
+            "name": "creators",
+            "summary": "\u0413\u0435\u043D\u0435\u0440\u0430\u0442\u043E\u0440\u044B\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432",
+            "url": "classes/Whatis-WBAPI-ServiceManager.html#property_creators"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003A\u0024services",
             "name": "services",
             "summary": "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0435\u043C\u044B\u0435\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u044B",
             "url": "classes/Whatis-WBAPI-ServiceManager.html#property_services"
         },                {
-            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003A\u0024aliases",
-            "name": "aliases",
-            "summary": "\u0410\u043B\u0438\u0430\u0441\u044B\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432",
-            "url": "classes/Whatis-WBAPI-ServiceManager.html#property_aliases"
+            "fqsen": "\\Whatis\\WBAPI\\ServiceManager\u003A\u003A\u0024client",
+            "name": "client",
+            "summary": "\u041E\u0431\u0449\u0438\u0439\u0020\u043A\u043B\u0438\u0435\u043D\u0442\u0020\u0434\u043B\u044F\u0020\u0432\u0441\u0435\u0445\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u043E\u0432",
+            "url": "classes/Whatis-WBAPI-ServiceManager.html#property_client"
         },                {
             "fqsen": "\\Whatis\\WBAPI\\Traits\\ContentCategory",
             "name": "ContentCategory",
@@ -1350,6 +1335,11 @@ Search.appendIndex(
             "name": "Http",
             "summary": "",
             "url": "namespaces/whatis-wbapi-http.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\Package",
+            "name": "Package",
+            "summary": "",
+            "url": "namespaces/whatis-wbapi-package.html"
         },                {
             "fqsen": "\\Whatis\\WBAPI",
             "name": "WBAPI",

@@ -195,20 +195,18 @@
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -public">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#property_mapping">$mapping</a>
+    <a href="classes/Whatis-WBAPI-ServiceManager.html#property_client">$client</a>
     <span>
-                        &nbsp;: array&lt;string|int, mixed&gt;            </span>
+                        &nbsp;: <a href="classes/Whatis-WBAPI-Http-IClient.html"><abbr title="\Whatis\WBAPI\Http\IClient">IClient</abbr></a>            </span>
 </dt>
-<dd>Карта, связывающая пути
-до сервисов (их имена)
-и классы сервисов</dd>
+<dd>Общий клиент для всех сервисов</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#property_aliases">$aliases</a>
+    <a href="classes/Whatis-WBAPI-ServiceManager.html#property_creators">$creators</a>
     <span>
-                        &nbsp;: array&lt;string, string&gt;            </span>
+                        &nbsp;: array&lt;string, <abbr title="\Closure">Closure</abbr>&gt;            </span>
 </dt>
-<dd>Алиасы сервисов</dd>
+<dd>Генераторы сервисов</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -protected">
     <a href="classes/Whatis-WBAPI-ServiceManager.html#property_services">$services</a>
@@ -216,13 +214,6 @@
                         &nbsp;: array&lt;int, <a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>&gt;            </span>
 </dt>
 <dd>Используемые сервисы</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -property -protected">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#property_token">$token</a>
-    <span>
-                        &nbsp;: string            </span>
-</dt>
-<dd>Используемый токен</dd>
 
     </dl>
 
@@ -244,29 +235,21 @@
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Иницилизировать фасад</dd>
+<dd>Иницилизировать менеджер</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_alias">alias()</a>
+    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_creator">creator()</a>
+    <span>
+                                &nbsp;: <abbr title="\Closure">Closure</abbr>    </span>
+</dt>
+<dd>Получить &quot;генератор&quot; сервиса</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_extend">extend()</a>
     <span>
                                 &nbsp;: static    </span>
 </dt>
-<dd>Установить alias на сервис</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_get">get()</a>
-    <span>
-                                &nbsp;: string    </span>
-</dt>
-<dd>Получить класс сервиса по названию</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_getService">getService()</a>
-    <span>
-                                &nbsp;: <a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>    </span>
-</dt>
-<dd>Получить иницилизированный сервис
-по его названию</dd>
+<dd>Установить новый сервис (расширить менеджер)</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Whatis-WBAPI-ServiceManager.html#method_hasService">hasService()</a>
@@ -276,61 +259,40 @@
 <dd>Проверить что сервис существует</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_initNew">initNew()</a>
+    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_new">new()</a>
     <span>
                                 &nbsp;: static    </span>
 </dt>
-<dd>Иницилизация нового сервиса</dd>
+<dd>Создать экземпляр этого класса
+со всеми параметрами</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_make">make()</a>
+    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_package">package()</a>
     <span>
                                 &nbsp;: static    </span>
 </dt>
-<dd>Создать текущий объект</dd>
+<dd>Установить по пакету</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_mapping">mapping()</a>
+    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_service">service()</a>
     <span>
-                                &nbsp;: array&lt;string|int, mixed&gt;    </span>
+                                &nbsp;: <a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>|<a href="classes/Whatis-WBAPI-ServiceCompositor.html"><abbr title="\Whatis\WBAPI\ServiceCompositor">ServiceCompositor</abbr></a>    </span>
 </dt>
-<dd>Получить простую карту сервисов и запросов</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_set">set()</a>
-    <span>
-                                &nbsp;: void    </span>
-</dt>
-<dd>Установить новый сервис</dd>
+<dd>Получить сервис</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
     <a href="classes/Whatis-WBAPI-ServiceManager.html#method_use">use()</a>
     <span>
-                                &nbsp;: <a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>    </span>
+                                &nbsp;: <a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>|<a href="classes/Whatis-WBAPI-ServiceCompositor.html"><abbr title="\Whatis\WBAPI\ServiceCompositor">ServiceCompositor</abbr></a>    </span>
 </dt>
-<dd>Использовать определённый иницилизированный
-сервис</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_withFormatter">withFormatter()</a>
-    <span>
-                                &nbsp;: static    </span>
-</dt>
-<dd>Установить форматтер body</dd>
-
-            <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_withRequestFactory">withRequestFactory()</a>
-    <span>
-                                &nbsp;: static    </span>
-</dt>
-<dd>Установить фабрику запросов</dd>
+<dd>Использовать сервис</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -protected">
-    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_checkServiceExists">checkServiceExists()</a>
+    <a href="classes/Whatis-WBAPI-ServiceManager.html#method_resolve">resolve()</a>
     <span>
-                                &nbsp;: void    </span>
+                                &nbsp;: <a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>|<a href="classes/Whatis-WBAPI-ServiceCompositor.html"><abbr title="\Whatis\WBAPI\ServiceCompositor">ServiceCompositor</abbr></a>    </span>
 </dt>
-<dd>Проверить что сервис уже иницилизирован</dd>
+<dd>Разрешить сервис</dd>
 
     </dl>
 
@@ -351,31 +313,29 @@
             phpdocumentor-element
             -property
             -public
-            -static                                            "
+                                                -read-only        "
 >
-    <h4 class="phpdocumentor-element__name" id="property_mapping">
-        $mapping
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#property_mapping" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_client">
+        $client
+        <a href="classes/Whatis-WBAPI-ServiceManager.html#property_client" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
-                                </span>
+                        <small class="phpdocumentor-element__modifier">read-only</small>        </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">53</span>
+    <span class="phpdocumentor-element-found-in__line">65</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Карта, связывающая пути
-до сервисов (их имена)
-и классы сервисов</p>
+        <p class="phpdocumentor-summary">Общий клиент для всех сервисов</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-    <span class="phpdocumentor-signature__static">static</span>    <span class="phpdocumentor-signature__type">array&lt;string|int, mixed&gt;</span>
-    <span class="phpdocumentor-signature__name">$mapping</span>
-     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+        <span class="phpdocumentor-signature__type"><a href="classes/Whatis-WBAPI-Http-IClient.html"><abbr title="\Whatis\WBAPI\Http\IClient">IClient</abbr></a></span>
+    <span class="phpdocumentor-signature__name">$client</span>
+    </code>
 
     
     
@@ -389,9 +349,9 @@
             -protected
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_aliases">
-        $aliases
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#property_aliases" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_creators">
+        $creators
+        <a href="classes/Whatis-WBAPI-ServiceManager.html#property_creators" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
@@ -399,16 +359,16 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">74</span>
+    <span class="phpdocumentor-element-found-in__line">51</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Алиасы сервисов</p>
+        <p class="phpdocumentor-summary">Генераторы сервисов</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">array&lt;string, string&gt;</span>
-    <span class="phpdocumentor-signature__name">$aliases</span>
+        <span class="phpdocumentor-signature__type">array&lt;string, <abbr title="\Closure">Closure</abbr>&gt;</span>
+    <span class="phpdocumentor-signature__name">$creators</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
@@ -433,7 +393,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">67</span>
+    <span class="phpdocumentor-element-found-in__line">58</span>
 
     </aside>
 
@@ -444,40 +404,6 @@
         <span class="phpdocumentor-signature__type">array&lt;int, <a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>&gt;</span>
     <span class="phpdocumentor-signature__name">$services</span>
      = <span class="phpdocumentor-signature__default-value">[]</span></code>
-
-    
-    
-    
-
-</article>
-                    <article
-        class="
-            phpdocumentor-element
-            -property
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="property_token">
-        $token
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#property_token" class="headerlink"><i class="fas fa-link"></i></a>
-
-        <span class="phpdocumentor-element__modifiers">
-                                </span>
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">60</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Используемый токен</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-        <span class="phpdocumentor-signature__type">string</span>
-    <span class="phpdocumentor-signature__name">$token</span>
-    </code>
 
     
     
@@ -506,7 +432,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">323</span>
+    <span class="phpdocumentor-element-found-in__line">213</span>
 
     </aside>
 
@@ -559,15 +485,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">81</span>
+    <span class="phpdocumentor-element-found-in__line">72</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Иницилизировать фасад</p>
+        <p class="phpdocumentor-summary">Иницилизировать менеджер</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$token</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Whatis-WBAPI-Http-IClient.html"><abbr title="\Whatis\WBAPI\Http\IClient">IClient</abbr></a>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$clientOrToken</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -575,11 +501,11 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$token</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-signature__argument__name">$clientOrToken</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Whatis-WBAPI-Http-IClient.html"><abbr title="\Whatis\WBAPI\Http\IClient">IClient</abbr></a>|string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Токен</p>
+                    <section class="phpdocumentor-description"><p>Клиент</p>
 </section>
 
             </dd>
@@ -595,23 +521,23 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_alias">
-        alias()
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_alias" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_creator">
+        creator()
+        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_creator" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">219</span>
+    <span class="phpdocumentor-element-found-in__line">157</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Установить alias на сервис</p>
+        <p class="phpdocumentor-summary">Получить &quot;генератор&quot; сервиса</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">alias</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+                    <span class="phpdocumentor-signature__name">creator</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><abbr title="\Closure">Closure</abbr></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -623,16 +549,7 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Название</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$alias</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Псевдоним</p>
+                    <section class="phpdocumentor-description"><p>название сервиса</p>
 </section>
 
             </dd>
@@ -642,7 +559,7 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">static</span>
+        <span class="phpdocumentor-signature__response_type"><abbr title="\Closure">Closure</abbr></span>
             </section>
 
 </article>
@@ -650,25 +567,25 @@
         class="phpdocumentor-element
             -method
             -public
-                                    -static                    "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_get">
-        get()
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_get" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_extend">
+        extend()
+        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_extend" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">125</span>
+    <span class="phpdocumentor-element-found-in__line">101</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Получить класс сервиса по названию</p>
+        <p class="phpdocumentor-summary">Установить новый сервис (расширить менеджер)</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">get</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">string</span></code>
+                    <span class="phpdocumentor-signature__name">extend</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$abstract</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Closure">Closure</abbr>|string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$concrete</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -676,11 +593,20 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
+                <span class="phpdocumentor-signature__argument__name">$abstract</span>
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Название</p>
+                    <section class="phpdocumentor-description"><p>Абстрактное название</p>
+</section>
+
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$concrete</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Closure">Closure</abbr>|string</span>
+                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Конкретика</p>
 </section>
 
             </dd>
@@ -689,7 +615,7 @@
     
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_get#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_extend#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -697,7 +623,7 @@
                     <span class="phpdocumentor-tag__name">throws</span>
                 </dt>
                 <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Whatis-WBAPI-Exceptions-ServiceNotFound.html"><abbr title="\Whatis\WBAPI\Exceptions\ServiceNotFound">ServiceNotFound</abbr></a></span>
+                                                                <span class="phpdocumentor-tag-link"><a href="classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html"><abbr title="\Whatis\WBAPI\Exceptions\ServiceAlreadyExists">ServiceAlreadyExists</abbr></a></span>
                                                             
                                              
                                     </dd>
@@ -705,73 +631,7 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">string</span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>Клаcc сервиса</p>
-</section>
-
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_getService">
-        getService()
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_getService" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">143</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Получить иницилизированный сервис
-по его названию</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">getService</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$token</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a></span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Название</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$token</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Токен</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a></span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>Сервис</p>
-</section>
-
+        <span class="phpdocumentor-signature__response_type">static</span>
             </section>
 
 </article>
@@ -789,7 +649,7 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">255</span>
+    <span class="phpdocumentor-element-found-in__line">144</span>
 
     </aside>
 
@@ -827,25 +687,74 @@
         class="phpdocumentor-element
             -method
             -public
+                                    -static                    "
+>
+    <h4 class="phpdocumentor-element__name" id="method_new">
+        new()
+        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_new" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">87</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Создать экземпляр этого класса
+со всеми параметрами</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">new</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href=""></a>&nbsp;</span><span class="phpdocumentor-signature__argument__variadic-operator">...</span><span class="phpdocumentor-signature__argument__name">$args</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$args</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href=""></a></span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Аргументы</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">static</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_initNew">
-        initNew()
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_initNew" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_package">
+        package()
+        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_package" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">237</span>
+    <span class="phpdocumentor-element-found-in__line">128</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Иницилизация нового сервиса</p>
+        <p class="phpdocumentor-summary">Установить по пакету</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">initNew</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>[</span><span>, </span><span class="phpdocumentor-signature__argument__return-type">string|null&nbsp;</span><span class="phpdocumentor-signature__argument__name">$alias</span><span> = </span><span class="phpdocumentor-signature__argument__default-value">null</span><span> ]</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
+                    <span class="phpdocumentor-signature__name">package</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Whatis-WBAPI-Package-IPackage.html"><abbr title="\Whatis\WBAPI\Package\IPackage">IPackage</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$package</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -853,20 +762,11 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                <span class="phpdocumentor-signature__argument__name">$package</span>
+                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Whatis-WBAPI-Package-IPackage.html"><abbr title="\Whatis\WBAPI\Package\IPackage">IPackage</abbr></a></span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Название</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$alias</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string|null</span>
-                 = <span class="phpdocumentor-signature__argument__default-value">null</span>            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Используемый алиас</p>
+                    <section class="phpdocumentor-description"><p>Пакет</p>
 </section>
 
             </dd>
@@ -884,109 +784,25 @@
         class="phpdocumentor-element
             -method
             -public
-                                    -static                    "
+                                                        "
 >
-    <h4 class="phpdocumentor-element__name" id="method_make">
-        make()
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_make" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_service">
+        service()
+        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_service" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">189</span>
+    <span class="phpdocumentor-element-found-in__line">188</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Создать текущий объект</p>
+        <p class="phpdocumentor-summary">Получить сервис</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">make</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$token</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$token</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Токен</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">static</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_mapping">
-        mapping()
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_mapping" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">91</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Получить простую карту сервисов и запросов</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">mapping</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">array&lt;string|int, mixed&gt;</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                    -static                    "
->
-    <h4 class="phpdocumentor-element__name" id="method_set">
-        set()
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_set" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">160</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Установить новый сервис</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-            <span class="phpdocumentor-signature__static">static</span>        <span class="phpdocumentor-signature__name">set</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$service</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+                    <span class="phpdocumentor-signature__name">service</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>|<a href="classes/Whatis-WBAPI-ServiceCompositor.html"><abbr title="\Whatis\WBAPI\ServiceCompositor">ServiceCompositor</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -998,47 +814,23 @@
                 : <span class="phpdocumentor-signature__argument__return-type">string</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Название</p>
-</section>
-
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$service</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Класс сервиса</p>
+                    <section class="phpdocumentor-description"><p>название сервиса</p>
 </section>
 
             </dd>
             </dl>
 
     
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_set#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html"><abbr title="\Whatis\WBAPI\Exceptions\ServiceAlreadyExists">ServiceAlreadyExists</abbr></a></span>
-                                                            
-                                             
-                                    </dd>
-                            <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><abbr title="\InvalidArgumentException">InvalidArgumentException</abbr></span>
-                                                            
-                                             
-                                    </dd>
-                                            </dl>
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>|<a href="classes/Whatis-WBAPI-ServiceCompositor.html"><abbr title="\Whatis\WBAPI\ServiceCompositor">ServiceCompositor</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Сервис</p>
+</section>
 
-    
+            </section>
+
 </article>
                     <article
         class="phpdocumentor-element
@@ -1054,16 +846,15 @@
     <aside class="phpdocumentor-element-found-in">
     <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">270</span>
+    <span class="phpdocumentor-element-found-in__line">200</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Использовать определённый иницилизированный
-сервис</p>
+        <p class="phpdocumentor-summary">Использовать сервис</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">use</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a></span></code>
+                    <span class="phpdocumentor-signature__name">use</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>|<a href="classes/Whatis-WBAPI-ServiceCompositor.html"><abbr title="\Whatis\WBAPI\ServiceCompositor">ServiceCompositor</abbr></a></span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -1082,9 +873,61 @@
             </dl>
 
     
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>|<a href="classes/Whatis-WBAPI-ServiceCompositor.html"><abbr title="\Whatis\WBAPI\ServiceCompositor">ServiceCompositor</abbr></a></span>
+                    &mdash;
+                <section class="phpdocumentor-description"><p>Сервис</p>
+</section>
+
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -protected
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_resolve">
+        resolve()
+        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_resolve" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">176</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Разрешить сервис</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">protected</span>
+                    <span class="phpdocumentor-signature__name">resolve</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>|<a href="classes/Whatis-WBAPI-ServiceCompositor.html"><abbr title="\Whatis\WBAPI\ServiceCompositor">ServiceCompositor</abbr></a></span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$name</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                    <section class="phpdocumentor-description"><p>Название сервиса</p>
+</section>
+
+            </dd>
+            </dl>
+
+    
     <h5 class="phpdocumentor-tag-list__heading" id="tags">
         Tags
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_use#tags" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_resolve#tags" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h5>
     <dl class="phpdocumentor-tag-list">
@@ -1100,168 +943,9 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a></span>
-                    &mdash;
-                <section class="phpdocumentor-description"><p>Сервис</p>
-</section>
-
+        <span class="phpdocumentor-signature__response_type"><a href="classes/Whatis-WBAPI-Service-IService.html"><abbr title="\Whatis\WBAPI\Service\IService">IService</abbr></a>|<a href="classes/Whatis-WBAPI-ServiceCompositor.html"><abbr title="\Whatis\WBAPI\ServiceCompositor">ServiceCompositor</abbr></a></span>
             </section>
 
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_withFormatter">
-        withFormatter()
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_withFormatter" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">290</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Установить форматтер body</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">withFormatter</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><a href="classes/Whatis-WBAPI-Formatters-IJsonFormatter.html"><abbr title="\Whatis\WBAPI\Formatters\IJsonFormatter">IJsonFormatter</abbr></a>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$formatter</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$formatter</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><a href="classes/Whatis-WBAPI-Formatters-IJsonFormatter.html"><abbr title="\Whatis\WBAPI\Formatters\IJsonFormatter">IJsonFormatter</abbr></a></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Форматер</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">static</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_withRequestFactory">
-        withRequestFactory()
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_withRequestFactory" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">306</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Установить фабрику запросов</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">withRequestFactory</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\RequestFactoryInterface">RequestFactoryInterface</abbr>&nbsp;</span><span class="phpdocumentor-signature__argument__name">$factory</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">static</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$factory</span>
-                : <span class="phpdocumentor-signature__argument__return-type"><abbr title="\Psr\Http\Message\RequestFactoryInterface">RequestFactoryInterface</abbr></span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Фабрика запросов</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">static</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -protected
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_checkServiceExists">
-        checkServiceExists()
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_checkServiceExists" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/ServiceManager.php"><a href="files/src-servicemanager.html"><abbr title="src/ServiceManager.php">ServiceManager.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">202</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Проверить что сервис уже иницилизирован</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">protected</span>
-                    <span class="phpdocumentor-signature__name">checkServiceExists</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$name</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
-    <dl class="phpdocumentor-argument-list">
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$name</span>
-                : <span class="phpdocumentor-signature__argument__return-type">string</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                    <section class="phpdocumentor-description"><p>Название</p>
-</section>
-
-            </dd>
-            </dl>
-
-    
-    <h5 class="phpdocumentor-tag-list__heading" id="tags">
-        Tags
-        <a href="classes/Whatis-WBAPI-ServiceManager.html#method_checkServiceExists#tags" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h5>
-    <dl class="phpdocumentor-tag-list">
-                                    <dt class="phpdocumentor-tag-list__entry">
-                    <span class="phpdocumentor-tag__name">throws</span>
-                </dt>
-                <dd class="phpdocumentor-tag-list__definition">
-                                                                <span class="phpdocumentor-tag-link"><a href="classes/Whatis-WBAPI-Exceptions-ServiceAlreadyExists.html"><abbr title="\Whatis\WBAPI\Exceptions\ServiceAlreadyExists">ServiceAlreadyExists</abbr></a></span>
-                                                            
-                                             
-                                    </dd>
-                                            </dl>
-
-    
 </article>
             </section>
 
@@ -1376,10 +1060,9 @@
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/Whatis-WBAPI-ServiceManager.html#property_mapping">$mapping<a href="classes/Whatis-WBAPI-ServiceManager.html"></li>
-                                                    <li><a href="classes/Whatis-WBAPI-ServiceManager.html#property_aliases">$aliases<a href="classes/Whatis-WBAPI-ServiceManager.html"></li>
+                                                    <li><a href="classes/Whatis-WBAPI-ServiceManager.html#property_client">$client<a href="classes/Whatis-WBAPI-ServiceManager.html"></li>
+                                                    <li><a href="classes/Whatis-WBAPI-ServiceManager.html#property_creators">$creators<a href="classes/Whatis-WBAPI-ServiceManager.html"></li>
                                                     <li><a href="classes/Whatis-WBAPI-ServiceManager.html#property_services">$services<a href="classes/Whatis-WBAPI-ServiceManager.html"></li>
-                                                    <li><a href="classes/Whatis-WBAPI-ServiceManager.html#property_token">$token<a href="classes/Whatis-WBAPI-ServiceManager.html"></li>
                                             </ul>
                 </li>
             
@@ -1388,18 +1071,14 @@
                 <ul class="phpdocumentor-list -clean">
                                             <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method___call">__call()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method___construct">__construct()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_alias">alias()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_get">get()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_getService">getService()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_creator">creator()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_extend">extend()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_hasService">hasService()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_initNew">initNew()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_make">make()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_mapping">mapping()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_set">set()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_new">new()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_package">package()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_service">service()</a></li>
                                             <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_use">use()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_withFormatter">withFormatter()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_withRequestFactory">withRequestFactory()</a></li>
-                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_checkServiceExists">checkServiceExists()</a></li>
+                                            <li><a href="classes/Whatis-WBAPI-ServiceManager.html#method_resolve">resolve()</a></li>
                                     </ul>
             </li>
                     </ul>
