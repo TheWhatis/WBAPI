@@ -22,8 +22,7 @@
     "autoload": {
         "psr-4": {
             "Whatis\\WBAPI\\": "src/"
-        },
-        "files": ["src/register/registerServices.php"]
+        }
     },
     "authors": [
         {
