@@ -43,7 +43,7 @@ $manager->package(new DefaultPackage);
 
 // Вы можете расширять менеджер своими сервисами,
 // например, создать псевдоним для существующего
-$manager->extend('prices', fn ($manager) => $manager->service('v2/prices'));
+$manager->extend('prices', fn ($manager) => $manager->service('v1/prices'));
 
 // Или скомпановать несколько сервисов
 // под одним названием
