@@ -1,55 +1,71 @@
-# Библиотека для WB API
+# Библиотека для WBAPI
 ## Документация
   * [Documentation](https://github.com/TheWhatis/WBAPI/tree/master/docs/markdown/Home.md "Documentation")
 ## Установка
 ```
 composer require whatis/wbapi
 ```
+
 ## Использование
+### Использование с ServiceManager
 ```php
 /// ... Подключение пакета (require_once 'vendor/autoload.php')
 
-// Менеджер для взаимодествия с "сервисами" -
-// классами, реализующими методы для
-// взаимодействия с api
-use Whatis\WBAPI\ServiceManager;
-
-// Форматировщик тела ответа
-use Whatis\WBAPI\Formatters\ArrayFormatter;
-
-// Фабрика запросов (RequestFactoryInterface)
-use GuzzleHttp\Psr7\HttpFactory;
+use Whatis\WBAPI\Client\Client;
+use Whatis\WBAPI\V1\Prices;
 
 $token 'some.jwt.token.-asdffsdfJLA';
-$manager = ServiceManager::make($token)->initNew(
-    'v2/tags', // Ключ сервиса в ServiceManager::$mapping
-    'tags'     // Алиас для последующего взаимодейстия
-);
+$prices = new Prices(new Client($clientId, $token));
 
-// Иницилизируем ещё несколько
-$manager->initNew('v3/orders', 'orders')
-        ->initNew('v2/config');
+var_dump($prices->get());
+// ...
+```
+### С использованием ServiceManager
+```php
+/// ... Подключение пакета (require_once 'vendor/autoload.php')
 
-// Создание алиаса отдельно
-$manager->alias('v2/config', 'config')
+use Whatis\WBAPI\Client\Client;
+use Whatis\WBAPI\ServiceManager;
+use Whatis\WBAPI\Package\DefaultPackage;
 
-// Можно установить свой форматировщик
-$manager->withFormatter(new ArrayFormatter);
+$token 'some.jwt.token.-asdffsdfJLA';
 
-// Можно установить свою фабрику запросов
-$manager->withRequestFactory(new HttpFactory);
+// С использованием клиента
+$manager = new ServiceManager(new Client($clientId, $token));
 
-// Получение сборочных заданий
-$orders = $manager->use('orders')->get(limit: 1);
-$orders = $manager->getOrders(limit: 1);
-$orders = $manager->ordersGet(limit: 1);
-var_dump($orders);
+// Без использования клиента
+$manager = new ServiceManager($token);
 
-// Получение тегов
-$tags = $manager->use('tags')->get();
-$tags = $manager->getTags();
-$tags = $manager->tagsGet();
-var_dump($tags);
+// Для работы с сервисами по-умолчанию, необходимо
+// расширить менеджер пакетом DefaultPackage
+$manager->package(new DefaultPackage);
+
+// Вы можете расширять менеджер своими сервисами,
+// например, создать псевдоним для существующего
+$manager->extend('prices', fn ($manager) => $manager->service('v2/prices'));
+
+// Или скомпановать несколько сервисов
+// под одним названием
+$manager->extend('composed', fn ($manager) => new ServiceCompositor([
+    $manager->creator('v1/prices'),
+    $manager->creator('v1/statistics')
+]));
+
+// Стандартное использование
+var_dump($manager->use('prices')->get());
+var_dump($manager->use('v1/prices')->get());
+var_dump($manager->use('composed')->get());
+
+// С автоматическим поиском сервиса и метода.
+// Это работает так: делится название метода по
+// Camel|Case, если находит название сервиса
+// по одному из разделенных слов, то удаляет
+// его из названия метода и вызывает его
+// из сервиса: pricesGet->|prices|get
+// getPrices->get|Prices|
+
+var_dump($manager->pricesGet());
+var_dump($manager->getPrices());
 // ...
 ```
 
@@ -61,8 +77,6 @@ var_dump($tags);
 namespace Whatis\WBAPI\Example;
 
 use Whatis\WBAPI\Service\BaseService;
-use Whatis\WBAPI\Enums\Permission;
-use Whatis\WBAPI\Permissions;
 
 // Атрибут, необходимый для
 // метода ServiceManager::mapping
@@ -84,21 +98,6 @@ use DateTimeZone;
  */
 class Service extends BaseService
 {
-    /**
-     * Получить массив необходимых разрешений
-     * для этого сервиса
-     *
-     * @return Permissions
-     */
-    public static function getPermissions(): Permissions
-    {
-        return new Permissions(
-            Permission::Marketplace,
-            Permission::Statistics,
-            Permission::Promotion
-        );
-    }
-
     /**
      * Получить базовый uri
      *
@@ -134,51 +133,4 @@ class Service extends BaseService
 
     // ...
 }
-```
-### Регистрация сервиса в ServiceManager
-```php
-/// ... Подключение пакета (require_once 'vendor/autoload.php')
-
-use Whatis\WBAPI\ServiceManager;
-use Whatis\WBAPI\Example\Service;
-
-ServiceManager::set('example', Service::class);
-
-// ...
-```
-### Использование сервиса
-```php
-<?php
-/// ... Подключение пакета (require_once 'vendor/autoload.php')
-
-use Whatis\WBAPI\Example\Service;
-use Whatis\WBAPI\ServiceManager;
-
-$token = 'some.jwt.token.-asdffsdfJLA';
-
-// Обычное использование
-$service = new Service($token);
-var_dump($service->get());
-
-// С помощью ServiceManager
-$manager = ServiceManager::make($token)->initNew('example');
-
-$result = $manager->use('example')->get();
-$result = $manager->exampleGet();
-$result = $manager->getExample();
-var_dump($result);
-// > stdClass {
-// >   ["orders"]=>
-// >   array(10) {
-// >     [0]=>
-// >     stdClass {
-// >       ["address"]=>
-// >       NULL
-// >       ["deliveryType"]=>
-// >       string(3) "fbs"
-// >       ["supplyId"]=>
-// >       string(14) "WB-GI-63588689"
-// >       ...
-
-
 ```
