@@ -15,14 +15,11 @@
 namespace Whatis\WBAPI\Service;
 
 use Whatis\WBAPI\Http\IClient;
-use Whatis\WBAPI\Http\Client;
-use Whatis\WBAPI\Permissions;
 use Whatis\WBAPI\Http\Payload as ClientPayload;
 use Whatis\WBAPI\Enums\HttpMethod;
-use Whatis\WBAPI\Formatters\IJsonFormatter;
-use Whatis\WBAPI\Exceptions\PermissionsDoesNotExistsException;
+use Whatis\WBAPI\Permissions;
 
-use Psr\Http\Message\RequestFactoryInterface;
+use Whatis\WBAPI\Exceptions\PermissionsDoesNotExistsException;
 use InvalidArgumentException;
 use BadMethodCallException;
 use Throwable;
@@ -58,14 +55,13 @@ trait TService
     /**
      * Иницилизация сервиса
      *
-     * @param string $token   Токен
+     * @param IClient $client Клиент
      */
-    public function __construct(string $token)
+    public function __construct(IClient $client)
     {
+        $this->client = $client;
         $this->permissions = static::getPermissions();
-        $this->validateToken($token);
-
-        $this->client = new Client($token);
+        $this->validateToken($client->getToken());
     }
 
     /**
@@ -139,53 +135,6 @@ trait TService
     }
 
     /**
-     * Установить форматировщик
-     *
-     * @param IJsonFormatter $formatter Форматировщик
-     *
-     * @return static
-     */
-    public function withFormatter(IJsonFormatter $formatter): static
-    {
-        $this->client->withFormatter($formatter);
-        return $this;
-    }
-
-    /**
-     * Получить форматировщик
-     *
-     * @return IJsonFormatter
-     */
-    public function getFormatter(): IJsonFormatter
-    {
-        return $this->client->getFormatter();
-    }
-
-    /**
-     * Установить фабрику запросов
-     *
-     * @param RequestFactoryInterface $factory Фабрика запросов
-     *
-     * @return static
-     */
-    public function withRequestFactory(
-        RequestFactoryInterface $factory
-    ): static {
-        $this->client->withRequestFactory($factory);
-        return $this;
-    }
-
-    /**
-     * Получить фабрику запросов
-     *
-     * @return RequestFactoryInterface
-     */
-    public function getRequestFactory(): RequestFactoryInterface
-    {
-        return $this->client->getRequestFactory();
-    }
-
-    /**
      * Получить заголовки из Payload
      *
      * @param mixed $payload Полезная нагрузка
@@ -256,7 +205,7 @@ trait TService
             }
         }
 
-        return $this->getFormatter()
+        return $this->client->getFormatter()
             ->withContext($response)
             ->decode($content);
     }
