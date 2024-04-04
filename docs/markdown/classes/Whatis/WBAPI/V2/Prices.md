@@ -63,6 +63,27 @@ public static basePath(): string
 
 ***
 
+### domain
+
+Получить корректный домен для сервиса
+
+```php
+public static domain(): string
+```
+
+
+
+* This method is **static**.
+
+
+
+
+
+
+
+
+***
+
 ### get
 
 Получение информации о товарах (ценах)

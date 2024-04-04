@@ -1001,6 +1001,11 @@ Search.appendIndex(
             "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0431\u0430\u0437\u043E\u0432\u044B\u0439\u0020uri",
             "url": "classes/Whatis-WBAPI-V2-Prices.html#method_basePath"
         },                {
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Prices\u003A\u003Adomain\u0028\u0029",
+            "name": "domain",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043A\u043E\u0440\u0440\u0435\u043A\u0442\u043D\u044B\u0439\u0020\u0434\u043E\u043C\u0435\u043D\u0020\u0434\u043B\u044F\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+            "url": "classes/Whatis-WBAPI-V2-Prices.html#method_domain"
+        },                {
             "fqsen": "\\Whatis\\WBAPI\\V2\\Prices\u003A\u003Aget\u0028\u0029",
             "name": "get",
             "summary": "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435\u0020\u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438\u0020\u043E\u0020\u0442\u043E\u0432\u0430\u0440\u0430\u0445\u0020\u0028\u0446\u0435\u043D\u0430\u0445\u0029",
