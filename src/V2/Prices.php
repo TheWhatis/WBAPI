@@ -57,6 +57,16 @@ class Prices extends BaseService
     }
 
     /**
+     * Получить корректный домен для сервиса
+     *
+     * @return string
+     */
+    public static function domain(): string
+    {
+        return 'discounts-prices-api.wb.ru';
+    }
+
+    /**
      * Получение информации о товарах (ценах)
      *
      * `api/v2/list/goods/filter`
@@ -82,7 +92,7 @@ class Prices extends BaseService
             $body['filterNmID'] = $filterNmID;
         }
 
-        return $this->request('GET', 'list/goods/filter', $body);
+        return $this->request('GET', 'list/goods/filter', Payload::byParams($body));
     }
 
     /**
@@ -102,11 +112,11 @@ class Prices extends BaseService
         int $limit = 10,
         int $offset = 0,
     ): mixed {
-        return $this->request('GET', 'list/goods/filter', [
+        return $this->request('GET', 'list/goods/size/nm', Payload::byParams([
             'nmID' => $nmID,
             'limit' => $limit,
             'offset' => $offset
-        ]);
+        ]));
     }
 
     /**
