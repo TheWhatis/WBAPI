@@ -1,13 +1,13 @@
 ***
 
-# Statistics
+# Prices
 
 Класс-сервис для работы
-со статистикой
+с ценами
 
 PHP version 8
 
-* Full name: `\Whatis\WBAPI\V1\Statistics`
+* Full name: `\Whatis\WBAPI\V2\Prices`
 * Parent class: [`\Whatis\WBAPI\Service\BaseService`](../Service/BaseService.md)
 
 **See Also:**
@@ -27,27 +27,6 @@ PHP version 8
 
 ```php
 public static getPermissions(): \Whatis\WBAPI\Permissions
-```
-
-
-
-* This method is **static**.
-
-
-
-
-
-
-
-
-***
-
-### domain
-
-Получить домен для обращения
-
-```php
-public static domain(): string
 ```
 
 
@@ -84,15 +63,15 @@ public static basePath(): string
 
 ***
 
-### supplier
+### get
 
-Получение статистики поставок
+Получение информации о товарах (ценах)
 
 ```php
-public supplier(\DateTime|string $dateFrom): mixed
+public get(int $limit = 10, int $offset, int $filterNmID = null): mixed
 ```
 
-`api/v1/supplier/incomes`
+`api/v2/list/goods/filter`
 
 
 
@@ -103,7 +82,9 @@ public supplier(\DateTime|string $dateFrom): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$dateFrom` | **\DateTime&#124;string** | Дата и время последнего<br />изменения поставок |
+| `$limit` | **int** | Ограничение по количество элементов |
+| `$offset` | **int** | Сколько элементов пропустить |
+| `$filterNmID` | **int** | Артикул Wildberries для поиска товара |
 
 
 
@@ -111,16 +92,15 @@ public supplier(\DateTime|string $dateFrom): mixed
 
 ***
 
-### stocks
+### getSizes
 
-Получение остатков товаров
-на складах
+Получение информации о размерах товаров (ценах)
 
 ```php
-public stocks(\DateTime|string $dateFrom): mixed
+public getSizes(int $nmID, int $limit = 10, int $offset): mixed
 ```
 
-`api/v1/supplier/stocks`
+`api/v2/list/goods/size/nm`
 
 
 
@@ -131,7 +111,9 @@ public stocks(\DateTime|string $dateFrom): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$dateFrom` | **\DateTime&#124;string** | Дата и время последнего<br />изменения по товару |
+| `$nmID` | **int** | Артикул Wildberries |
+| `$limit` | **int** | Ограничение по количество элементов |
+| `$offset` | **int** | Сколько элементов пропустить |
 
 
 
@@ -139,15 +121,15 @@ public stocks(\DateTime|string $dateFrom): mixed
 
 ***
 
-### orders
+### set
 
-Получение статистики заказов
+Загрузка цен
 
 ```php
-public orders(\DateTime|string $dateFrom, int $flag): mixed
+public set(array $prices): mixed
 ```
 
-`api/v1/supplier/orders`
+`api/v2/upload/task`
 
 
 
@@ -158,8 +140,7 @@ public orders(\DateTime|string $dateFrom, int $flag): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$dateFrom` | **\DateTime&#124;string** | Дата и время последнего<br />изменения по товару |
-| `$flag` | **int** | Флаг по поиску |
+| `$prices` | **array** | Массив с новыми ценами |
 
 
 
@@ -167,16 +148,15 @@ public orders(\DateTime|string $dateFrom, int $flag): mixed
 
 ***
 
-### sales
+### setSizes
 
-Получение статистики продаж
-и возвратов
+Загрузка цен для размеров
 
 ```php
-public sales(\DateTime|string $dateFrom, int $flag): mixed
+public setSizes(array $prices): mixed
 ```
 
-`api/v1/supplier/sales`
+`api/v2/upload/task/size`
 
 
 
@@ -187,38 +167,7 @@ public sales(\DateTime|string $dateFrom, int $flag): mixed
 
 | Parameter | Type | Description |
 |-----------|------|-------------|
-| `$dateFrom` | **\DateTime&#124;string** | Дата и время последнего<br />изменения продажи/возврата |
-| `$flag` | **int** | Флаг по поиску |
-
-
-
-
-
-***
-
-### reportDetailByPeriod
-
-Отчет о продажах по реализации
-
-```php
-public reportDetailByPeriod(\DateTime|string $dateFrom, \DateTime|string $dateTo, int $limit = 10000, int $rrdid): mixed
-```
-
-`api/v1/supplier/reportDetailByPeriod`
-
-
-
-
-
-
-**Parameters:**
-
-| Parameter | Type | Description |
-|-----------|------|-------------|
-| `$dateFrom` | **\DateTime&#124;string** | Начальная дата отчета |
-| `$dateTo` | **\DateTime&#124;string** | Конечная дата отчета |
-| `$limit` | **int** | Максимальное количество строк |
-| `$rrdid` | **int** | Идентификатор строки отчета |
+| `$prices` | **array** | Массив с новыми ценами |
 
 
 

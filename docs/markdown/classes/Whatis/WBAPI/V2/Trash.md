@@ -329,4 +329,4 @@ public request(string|\Whatis\WBAPI\Enums\HttpMethod $method, string $path, mixe
 
 
 ***
-> Automatically generated on 2024-03-15
+> Automatically generated on 2024-04-04

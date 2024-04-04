@@ -254,4 +254,4 @@ public __call(string $method, array $arguments): mixed
 
 
 ***
-> Automatically generated on 2024-03-15
+> Automatically generated on 2024-04-04

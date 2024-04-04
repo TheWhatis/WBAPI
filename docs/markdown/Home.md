@@ -185,6 +185,7 @@ This is an automatically generated documentation for **Documentation**.
 |-------|-------------|
 | [`Config`](./classes/Whatis/WBAPI/V2/Config.md) | Класс-сервис для работы<br />с конфигурацией контента|
 | [`Media`](./classes/Whatis/WBAPI/V2/Media.md) | Класс-сервис для работы<br />с медиаконтентом|
+| [`Prices`](./classes/Whatis/WBAPI/V2/Prices.md) | Класс-сервис для работы<br />с ценами|
 | [`Tags`](./classes/Whatis/WBAPI/V2/Tags.md) | Класс-сервис для работы<br />с тегами|
 | [`Trash`](./classes/Whatis/WBAPI/V2/Trash.md) | Класс-сервис для работы<br />с корзиной|
 | [`Upload`](./classes/Whatis/WBAPI/V2/Upload.md) | Класс-сервис для работы<br />с загрузкой контента|
@@ -209,4 +210,4 @@ This is an automatically generated documentation for **Documentation**.
 
 
 ***
-> Automatically generated on 2024-03-15
+> Automatically generated on 2024-04-04

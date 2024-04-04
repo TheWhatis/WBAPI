@@ -287,4 +287,4 @@ public withHeaders(array $headers): static
 
 
 ***
-> Automatically generated on 2024-03-15
+> Automatically generated on 2024-04-04

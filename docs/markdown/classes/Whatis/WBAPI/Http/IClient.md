@@ -118,4 +118,4 @@ public request(\Whatis\WBAPI\Http\Payload $payload): \Psr\Http\Message\ResponseI
 
 
 ***
-> Automatically generated on 2024-03-15
+> Automatically generated on 2024-04-04

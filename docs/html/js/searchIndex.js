@@ -986,6 +986,41 @@ Search.appendIndex(
             "summary": "\u041E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435\u0020\u043C\u0435\u0434\u0438\u0430\u002D\u043A\u043E\u043D\u0442\u0435\u043D\u0442\u0430\u0020\u043A\u0430\u0440\u0442\u043E\u0447\u043A\u0438\u0020\u0442\u043E\u0432\u0430\u0440\u0430",
             "url": "classes/Whatis-WBAPI-V2-Media.html#method_addFile"
         },                {
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Prices",
+            "name": "Prices",
+            "summary": "\u041A\u043B\u0430\u0441\u0441\u002D\u0441\u0435\u0440\u0432\u0438\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0431\u043E\u0442\u044B\n\u0441\u0020\u0446\u0435\u043D\u0430\u043C\u0438",
+            "url": "classes/Whatis-WBAPI-V2-Prices.html"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Prices\u003A\u003AgetPermissions\u0028\u0029",
+            "name": "getPermissions",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u043C\u0430\u0441\u0441\u0438\u0432\u0020\u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C\u044B\u0445\u0020\u0440\u0430\u0437\u0440\u0435\u0448\u0435\u043D\u0438\u0439\n\u0434\u043B\u044F\u0020\u044D\u0442\u043E\u0433\u043E\u0020\u0441\u0435\u0440\u0432\u0438\u0441\u0430",
+            "url": "classes/Whatis-WBAPI-V2-Prices.html#method_getPermissions"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Prices\u003A\u003AbasePath\u0028\u0029",
+            "name": "basePath",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0438\u0442\u044C\u0020\u0431\u0430\u0437\u043E\u0432\u044B\u0439\u0020uri",
+            "url": "classes/Whatis-WBAPI-V2-Prices.html#method_basePath"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Prices\u003A\u003Aget\u0028\u0029",
+            "name": "get",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435\u0020\u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438\u0020\u043E\u0020\u0442\u043E\u0432\u0430\u0440\u0430\u0445\u0020\u0028\u0446\u0435\u043D\u0430\u0445\u0029",
+            "url": "classes/Whatis-WBAPI-V2-Prices.html#method_get"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Prices\u003A\u003AgetSizes\u0028\u0029",
+            "name": "getSizes",
+            "summary": "\u041F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0435\u0020\u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438\u0020\u043E\u0020\u0440\u0430\u0437\u043C\u0435\u0440\u0430\u0445\u0020\u0442\u043E\u0432\u0430\u0440\u043E\u0432\u0020\u0028\u0446\u0435\u043D\u0430\u0445\u0029",
+            "url": "classes/Whatis-WBAPI-V2-Prices.html#method_getSizes"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Prices\u003A\u003Aset\u0028\u0029",
+            "name": "set",
+            "summary": "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430\u0020\u0446\u0435\u043D",
+            "url": "classes/Whatis-WBAPI-V2-Prices.html#method_set"
+        },                {
+            "fqsen": "\\Whatis\\WBAPI\\V2\\Prices\u003A\u003AsetSizes\u0028\u0029",
+            "name": "setSizes",
+            "summary": "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430\u0020\u0446\u0435\u043D\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0437\u043C\u0435\u0440\u043E\u0432",
+            "url": "classes/Whatis-WBAPI-V2-Prices.html#method_setSizes"
+        },                {
             "fqsen": "\\Whatis\\WBAPI\\V2\\Tags",
             "name": "Tags",
             "summary": "\u041A\u043B\u0430\u0441\u0441\u002D\u0441\u0435\u0440\u0432\u0438\u0441\u0020\u0434\u043B\u044F\u0020\u0440\u0430\u0431\u043E\u0442\u044B\n\u0441\u0020\u0442\u0435\u0433\u0430\u043C\u0438",
