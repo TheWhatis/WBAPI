@@ -1,6 +1,6 @@
 {
     "name": "whatis/wbapi",
-    "version": "0.8.4",
+    "version": "0.8.5",
     "description": "Библиотека для взаимодействия с wildberries api",
     "type": "library",
     "keywords": [
