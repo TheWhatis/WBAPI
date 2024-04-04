@@ -48,6 +48,7 @@ class DefaultPackage extends BasePackage
             'v2/trash'  => V2\Trash::class,
             'v2/upload' => V2\Upload::class,
             'v2/view'   => V2\View::class,
+            'v2/prices' => V2\Prices::class,
 
             // Маркетплейс
             'v3/orders'     => V3\Orders::class,
