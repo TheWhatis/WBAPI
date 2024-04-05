@@ -137,7 +137,9 @@ class Prices extends BaseService
             );
         }
 
-        return $this->request('POST', 'upload/task', $prices);
+        return $this->request('POST', 'upload/task', [
+            'data' => $prices
+        ]);
     }
 
     /**
@@ -158,6 +160,8 @@ class Prices extends BaseService
             );
         }
 
-        return $this->request('POST', 'upload/task/size', $prices);
+        return $this->request('POST', 'upload/task/size', [
+            'data' => $prices
+        ]);
     }
 }
