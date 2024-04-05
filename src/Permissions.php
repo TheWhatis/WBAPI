@@ -190,7 +190,7 @@ class Permissions
     {
         $parsed = explode('.', $jwtToken);
 
-        if (is_null($parsed[1])) {
+        if (!isset($parsed[1])) {
             static::_throwInvalidToken($jwtToken);
         }
 
