@@ -77,9 +77,7 @@ class Permissions
      */
     public function has(Permission ...$permissions): bool
     {
-        return (
-            $this->bitmask & static::createBitmask(...$permissions)
-        ) > 0;
+        return ($this->bitmask & static::createBitmask(...$permissions)) > 0;
     }
 
     /**
@@ -92,9 +90,7 @@ class Permissions
      */
     public function contains(Permission ...$permissions): bool
     {
-        return (
-            static::createBitmask(...$permissions) & ~$this->bitmask
-        ) === 0;
+        return (static::createBitmask(...$permissions) & ~$this->bitmask) === 0;
     }
 
     /**
@@ -107,8 +103,11 @@ class Permissions
     public function set(Permission ...$permissions): void
     {
         foreach ($permissions as $permission) {
+            $this->permissions[] = $permission;
             $this->bitmask |= $permission->value;
         }
+
+        $this->permissions = array_unique($this->permissions, SORT_REGULAR);
     }
 
     /**
@@ -121,6 +120,10 @@ class Permissions
     public function delete(Permission ...$permissions): void
     {
         foreach ($permissions as $permission) {
+            if ($index = array_search($permission, $this->permissions)) {
+                unset($this->permissions[$index]);
+            }
+
             $this->bitmask &= ~$permission->value;
         }
     }
@@ -136,9 +139,7 @@ class Permissions
      */
     public function hasByToken(string $jwtToken): bool
     {
-        return (
-            $this->bitmask & ~static::getJwtBitmask($jwtToken)
-        ) === 0;
+        return ($this->bitmask & ~static::getJwtBitmask($jwtToken)) === 0;
     }
 
     /**
@@ -152,12 +153,10 @@ class Permissions
      */
     private static function _throwInvalidToken(string $token): never
     {
-        throw new InvalidArgumentException(
-            sprintf(
-                'The passed token is not a jwt token or has '
-                    . 'an uncorrect format. Token: %s', $token
-            )
-        );
+        throw new InvalidArgumentException(sprintf(
+            'The passed token is not a jwt token or has '
+                . 'an uncorrect format. Token: %s', $token
+        ));
     }
 
     /**
@@ -167,9 +166,8 @@ class Permissions
      *
      * @return int Битмаска
      */
-    public static function createBitmask(
-        Permission ...$permissions
-    ): int {
+    public static function createBitmask(Permission ...$permissions): int
+    {
         $bitmask = 0;
         foreach ($permissions as $permission) {
             $bitmask |= $permission->value;
@@ -196,9 +194,7 @@ class Permissions
 
         $payload = json_decode(base64_decode($parsed[1]), true);
 
-        if (is_null($payload)
-            && json_last_error() !== JSON_ERROR_NONE
-        ) {
+        if (is_null($payload) && json_last_error() !== JSON_ERROR_NONE) {
             static::_throwInvalidToken($jwtToken);
         }
 
@@ -216,12 +212,10 @@ class Permissions
      */
     public function asString(): string
     {
-        return implode(
-            ', ', array_map(
-                static function ($permission) {
-                    return $permission->asString();
-                }, $this->permissions
-            )
-        );
+        return implode(', ', array_map(
+            static function ($permission) {
+                return $permission->asString();
+            }, $this->permissions
+        ));
     }
 }
